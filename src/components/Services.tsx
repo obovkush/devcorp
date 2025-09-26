@@ -1,7 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTheme } from "@/contexts/ThemeContext";
 import servicesImage from "@/assets/services-bg.jpg";
 
 const Services = () => {
+  const { currentTheme } = useTheme();
   const services = [
     {
       title: "Веб-разработка",
@@ -35,13 +37,37 @@ const Services = () => {
     }
   ];
 
+  const getCardClass = () => {
+    switch (currentTheme) {
+      case 'neomorphism':
+        return "neo-card bg-card backdrop-blur-sm hover:scale-105 transition-all duration-300 animate-slide-up";
+      case 'tile':
+        return "bg-card/80 backdrop-blur-sm border-2 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up shadow-lg";
+      default:
+        return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up";
+    }
+  };
+
+  const getSectionClass = () => {
+    switch (currentTheme) {
+      case 'tile':
+        return "py-20 relative tile-pattern";
+      case 'neomorphism':
+        return "py-20 relative bg-background";
+      default:
+        return "py-20 relative";
+    }
+  };
+
   return (
-    <section id="services" className="py-20 relative">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-5"
-        style={{ backgroundImage: `url(${servicesImage})` }}
-      />
+    <section id="services" className={getSectionClass()}>
+      {/* Background - only for tech theme */}
+      {currentTheme === 'tech' && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-5"
+          style={{ backgroundImage: `url(${servicesImage})` }}
+        />
+      )}
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
@@ -57,7 +83,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up"
+              className={getCardClass()}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>

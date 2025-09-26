@@ -4,6 +4,7 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
+Theme classes will override these base values.
 */
 
 @layer base {
@@ -100,6 +101,105 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+/* THEME: Tech (Default Dark Theme) */
+.theme-tech {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 263 70% 50%;
+  --accent: 262 83% 58%;
+  --gradient-primary: linear-gradient(135deg, hsl(263, 70%, 50%), hsl(262, 83%, 58%));
+  --gradient-hero: linear-gradient(135deg, hsl(263, 70%, 50%) 0%, hsl(262, 83%, 58%) 50%, hsl(220, 70%, 50%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(240, 10%, 3.9%), hsl(240, 3.7%, 15.9%));
+}
+
+/* THEME: Tile (Geometric Tile Design) */
+.theme-tile {
+  --background: 220 13% 91%;
+  --foreground: 220 9% 9%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 9% 9%;
+  --primary: 47 96% 53%;
+  --primary-foreground: 220 9% 9%;
+  --accent: 16 100% 66%;
+  --accent-foreground: 0 0% 98%;
+  --secondary: 220 9% 85%;
+  --secondary-foreground: 220 9% 9%;
+  --muted: 220 9% 85%;
+  --muted-foreground: 220 9% 45%;
+  --border: 220 13% 85%;
+  --input: 220 13% 85%;
+  --gradient-primary: linear-gradient(135deg, hsl(47, 96%, 53%), hsl(16, 100%, 66%));
+  --gradient-hero: linear-gradient(135deg, hsl(47, 96%, 53%) 0%, hsl(16, 100%, 66%) 50%, hsl(340, 100%, 66%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(220, 13%, 91%), hsl(0, 0%, 100%));
+}
+
+/* THEME: Minimal (Clean Light Theme) */
+.theme-minimal {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --primary: 240 100% 50%;
+  --primary-foreground: 0 0% 98%;
+  --accent: 210 100% 50%;
+  --accent-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 10% 3.9%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --gradient-primary: linear-gradient(135deg, hsl(240, 100%, 50%), hsl(210, 100%, 50%));
+  --gradient-hero: linear-gradient(135deg, hsl(240, 100%, 50%) 0%, hsl(210, 100%, 50%) 50%, hsl(180, 100%, 50%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(240, 4.8%, 95.9%));
+}
+
+/* THEME: Neomorphism (Soft Shadows Theme) */
+.theme-neomorphism {
+  --background: 225 15% 95%;
+  --foreground: 225 15% 15%;
+  --card: 225 15% 95%;
+  --card-foreground: 225 15% 15%;
+  --primary: 320 70% 60%;
+  --primary-foreground: 0 0% 98%;
+  --accent: 280 70% 60%;
+  --accent-foreground: 0 0% 98%;
+  --secondary: 225 15% 90%;
+  --secondary-foreground: 225 15% 15%;
+  --muted: 225 15% 90%;
+  --muted-foreground: 225 15% 40%;
+  --border: 225 15% 88%;
+  --input: 225 15% 88%;
+  --gradient-primary: linear-gradient(135deg, hsl(320, 70%, 60%), hsl(280, 70%, 60%));
+  --gradient-hero: linear-gradient(135deg, hsl(320, 70%, 60%) 0%, hsl(280, 70%, 60%) 50%, hsl(240, 70%, 60%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(225, 15%, 95%), hsl(225, 15%, 90%));
+  --neo-shadow-out: 8px 8px 16px hsl(225, 15%, 85%), -8px -8px 16px hsl(0, 0%, 100%);
+  --neo-shadow-in: inset 4px 4px 8px hsl(225, 15%, 85%), inset -4px -4px 8px hsl(0, 0%, 100%);
+}
+
+/* Theme-specific styles */
+.theme-tile .tile-pattern {
+  background-image: 
+    linear-gradient(45deg, transparent 35%, hsl(var(--accent) / 0.1) 35%, hsl(var(--accent) / 0.1) 65%, transparent 65%),
+    linear-gradient(-45deg, transparent 35%, hsl(var(--primary) / 0.1) 35%, hsl(var(--primary) / 0.1) 65%, transparent 65%);
+  background-size: 60px 60px;
+}
+
+.theme-neomorphism .neo-card {
+  box-shadow: var(--neo-shadow-out);
+  border: none;
+}
+
+.theme-neomorphism .neo-button {
+  box-shadow: var(--neo-shadow-out);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.theme-neomorphism .neo-button:hover {
+  box-shadow: var(--neo-shadow-in);
 }
 
 @layer base {

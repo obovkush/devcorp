@@ -1,17 +1,44 @@
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeContext";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
+  const { currentTheme } = useTheme();
+  const getSectionClass = () => {
+    switch (currentTheme) {
+      case 'tile':
+        return "relative min-h-screen flex items-center justify-center overflow-hidden tile-pattern";
+      case 'neomorphism':
+        return "relative min-h-screen flex items-center justify-center overflow-hidden bg-background";
+      default:
+        return "relative min-h-screen flex items-center justify-center overflow-hidden";
+    }
+  };
+
+  const getButtonClass = (isPrimary: boolean) => {
+    if (currentTheme === 'neomorphism') {
+      return isPrimary 
+        ? 'neo-button bg-gradient-primary text-white text-lg px-8 py-3' 
+        : 'neo-button border-primary text-primary text-lg px-8 py-3';
+    }
+    return isPrimary
+      ? 'bg-gradient-primary hover:opacity-90 transition-opacity animate-glow text-lg px-8 py-3'
+      : 'border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-3';
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+    <section className={getSectionClass()}>
+      {/* Background Image - only for tech theme */}
+      {currentTheme === 'tech' && (
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+      )}
       
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-60" />
+      {/* Gradient Overlay - different for each theme */}
+      {currentTheme === 'tech' && <div className="absolute inset-0 bg-gradient-hero opacity-60" />}
+      {currentTheme === 'minimal' && <div className="absolute inset-0 bg-gradient-secondary opacity-30" />}
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -32,14 +59,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:opacity-90 transition-opacity animate-glow text-lg px-8 py-3"
+              className={getButtonClass(true)}
             >
               Начать проект
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-3"
+              className={getButtonClass(false)}
             >
               Наши работы
             </Button>
