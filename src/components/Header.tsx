@@ -29,6 +29,9 @@ const Header = () => {
           <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
             О нас
           </a>
+          <a href="#portfolio" className="text-muted-foreground hover:text-foreground transition-colors">
+            Наши работы
+          </a>
           <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
             Услуги
           </a>

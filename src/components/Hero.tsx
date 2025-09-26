@@ -56,13 +56,7 @@ const Hero = () => {
             Современные технологии, качественный код, надежные системы.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className={getButtonClass(true)}
-            >
-              Начать проект
-            </Button>
+          <div className="flex justify-center">
             <Button 
               variant="outline" 
               size="lg"
