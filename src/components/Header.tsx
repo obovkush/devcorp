@@ -46,6 +46,7 @@ const Header = () => {
           <Button 
             variant="default" 
             className={currentTheme === 'neomorphism' ? 'neo-button' : 'bg-gradient-primary hover:opacity-90 transition-opacity'}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Связаться с нами
           </Button>
