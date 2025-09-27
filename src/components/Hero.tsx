@@ -6,8 +6,6 @@ const Hero = () => {
   const { currentTheme } = useTheme();
   const getSectionClass = () => {
     switch (currentTheme) {
-      case 'tile':
-        return "relative min-h-screen flex items-center justify-center overflow-hidden tile-pattern";
       case 'neomorphism':
         return "relative min-h-screen flex items-center justify-center overflow-hidden bg-background";
       default:
@@ -38,7 +36,6 @@ const Hero = () => {
       
       {/* Gradient Overlay - different for each theme */}
       {currentTheme === 'tech' && <div className="absolute inset-0 bg-gradient-hero opacity-60" />}
-      {currentTheme === 'minimal' && <div className="absolute inset-0 bg-gradient-secondary opacity-30" />}
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -61,6 +58,7 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               className={getButtonClass(false)}
+              onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Наши работы
             </Button>

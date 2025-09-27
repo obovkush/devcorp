@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type ThemeType = 'tech' | 'tile' | 'minimal' | 'neomorphism';
+export type ThemeType = 'tech' | 'neomorphism';
 
 interface ThemeContextType {
   currentTheme: ThemeType;
@@ -16,23 +16,13 @@ interface ThemeConfig {
 
 const themes: Record<ThemeType, ThemeConfig> = {
   tech: {
-    name: 'Технологичный',
-    description: 'Темная тема с синими градиентами',
+    name: 'Технологичная',
+    description: 'Темная тема',
     cssClass: 'theme-tech'
-  },
-  tile: {
-    name: 'Плиточный',
-    description: 'Геометричный дизайн с карточками',
-    cssClass: 'theme-tile'
-  },
-  minimal: {
-    name: 'Минимализм',
-    description: 'Светлая чистая тема',
-    cssClass: 'theme-minimal'
   },
   neomorphism: {
     name: 'Неоморфизм',
-    description: 'Мягкие тени и объем',
+    description: 'Светлая тема',
     cssClass: 'theme-neomorphism'
   }
 };

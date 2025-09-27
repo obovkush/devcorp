@@ -8,8 +8,6 @@ const Header = () => {
     switch (currentTheme) {
       case 'neomorphism':
         return "fixed top-0 w-full z-50 bg-background neo-card border-b-0";
-      case 'tile':
-        return "fixed top-0 w-full z-50 backdrop-blur-md bg-background/90 border-b border-border tile-pattern";
       default:
         return "fixed top-0 w-full z-50 backdrop-blur-md bg-background/80 border-b border-border";
     }

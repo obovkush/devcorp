@@ -41,8 +41,6 @@ const Services = () => {
     switch (currentTheme) {
       case 'neomorphism':
         return "neo-card bg-card backdrop-blur-sm hover:scale-105 transition-all duration-300 animate-slide-up";
-      case 'tile':
-        return "bg-card/80 backdrop-blur-sm border-2 border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up shadow-lg";
       default:
         return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up";
     }
@@ -50,8 +48,6 @@ const Services = () => {
 
   const getSectionClass = () => {
     switch (currentTheme) {
-      case 'tile':
-        return "py-20 relative tile-pattern";
       case 'neomorphism':
         return "py-20 relative bg-background";
       default:

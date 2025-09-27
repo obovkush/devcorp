@@ -41,8 +41,6 @@ const Portfolio = () => {
     switch (currentTheme) {
       case 'neomorphism':
         return "neo-card bg-card group cursor-pointer overflow-hidden";
-      case 'tile':
-        return "bg-card/80 backdrop-blur-sm border-2 border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer overflow-hidden shadow-lg";
       default:
         return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer overflow-hidden";
     }
@@ -50,8 +48,6 @@ const Portfolio = () => {
 
   const getSectionClass = () => {
     switch (currentTheme) {
-      case 'tile':
-        return "py-20 bg-secondary/30 tile-pattern";
       case 'neomorphism':
         return "py-20 bg-background";
       default:
