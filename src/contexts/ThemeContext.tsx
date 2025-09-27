@@ -16,12 +16,12 @@ interface ThemeConfig {
 
 const themes: Record<ThemeType, ThemeConfig> = {
   tech: {
-    name: 'Технологичная',
+    name: 'Темная',
     description: 'Темная тема',
     cssClass: 'theme-tech'
   },
   neomorphism: {
-    name: 'Неоморфизм',
+    name: 'Светлая',
     description: 'Светлая тема',
     cssClass: 'theme-neomorphism'
   }
