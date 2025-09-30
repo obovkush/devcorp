@@ -1,47 +1,99 @@
+import { Award, Target, Heart } from "lucide-react";
+
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-secondary/50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-            О нашей компании
-          </h2>
-          
-          <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto">
-            DevCorp — это команда опытных разработчиков, специализирующихся на создании 
-            высококачественного программного обеспечения. Мы помогаем бизнесу 
-            автоматизировать процессы и внедрять современные технологии.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl text-white font-bold">5+</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Лет опыта</h3>
-              <p className="text-muted-foreground">
-                В разработке программного обеспечения
+    <section id="about" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                Превосходя ожидания более{" "}
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  10 лет
+                </span>
+              </h2>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Banki — это не просто финансовая платформа. Мы создаем экосистему, 
+                которая помогает людям и бизнесу достигать финансовых целей, 
+                используя передовые технологии и индивидуальный подход.
               </p>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl text-white font-bold">50+</span>
+            {/* Values */}
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Миссия</h3>
+                  <p className="text-muted-foreground">
+                    Делать финансовые услуги доступными, понятными и выгодными для каждого.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Проектов</h3>
-              <p className="text-muted-foreground">
-                Успешно реализованных решений
-              </p>
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Award className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Качество</h3>
+                  <p className="text-muted-foreground">
+                    Высочайшие стандарты разработки и обслуживания в каждом проекте.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Забота</h3>
+                  <p className="text-muted-foreground">
+                    Персональный подход и круглосуточная поддержка наших клиентов.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Content - Stats */}
+          <div className="grid grid-cols-2 gap-6">
+            <div className="banking-card p-6 text-center space-y-4">
+              <div className="banking-stats">70K+</div>
+              <div>
+                <h3 className="font-semibold text-foreground">Активных пользователей</h3>
+                <p className="text-sm text-muted-foreground">Растем каждый день</p>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl text-white font-bold">100%</span>
+            <div className="banking-card p-6 text-center space-y-4">
+              <div className="banking-stats">56</div>
+              <div>
+                <h3 className="font-semibold text-foreground">Стран работы</h3>
+                <p className="text-sm text-muted-foreground">По всему миру</p>
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Качество</h3>
-              <p className="text-muted-foreground">
-                Довольных клиентов
-              </p>
+            </div>
+            
+            <div className="banking-card p-6 text-center space-y-4">
+              <div className="banking-stats">24/7</div>
+              <div>
+                <h3 className="font-semibold text-foreground">Поддержка</h3>
+                <p className="text-sm text-muted-foreground">Всегда на связи</p>
+              </div>
+            </div>
+            
+            <div className="banking-card p-6 text-center space-y-4">
+              <div className="banking-stats">99.9%</div>
+              <div>
+                <h3 className="font-semibold text-foreground">Аптайм</h3>
+                <p className="text-sm text-muted-foreground">Стабильность</p>
+              </div>
             </div>
           </div>
         </div>

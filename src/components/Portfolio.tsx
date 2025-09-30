@@ -12,28 +12,28 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Интернет-магазин TechStore",
-      description: "Современный e-commerce сайт с интуитивным интерфейсом, корзиной покупок, системой фильтров и интеграцией с платежными системами.",
+      title: "Банковская экосистема TechBank",
+      description: "Комплексная банковская платформа с мобильным приложением, интернет-банкингом, системой платежей и аналитикой в реальном времени.",
       image: project1Image,
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-      category: "E-commerce",
+      technologies: ["React", "Node.js", "PostgreSQL", "Blockchain"],
+      category: "FinTech",
       year: "2024"
     },
     {
-      title: "Мобильное приложение FinanceTracker",
-      description: "Приложение для управления личными финансами с аналитикой расходов, планированием бюджета и синхронизацией между устройствами.",
+      title: "Платформа криптовалютных платежей",
+      description: "Безопасная платформа для обработки криптовалютных транзакций с поддержкой основных криптовалют и DeFi интеграциями.",
       image: project2Image,
-      technologies: ["React Native", "Firebase", "Chart.js", "Redux"],
-      category: "Mobile App",
-      year: "2023"
+      technologies: ["React Native", "Solidity", "Web3.js", "MongoDB"],
+      category: "Blockchain",
+      year: "2024"
     },
     {
-      title: "CRM-система для управления клиентами",
-      description: "Корпоративная система управления взаимоотношениями с клиентами с модулями продаж, маркетинга и аналитики.",
+      title: "AI-система кредитного скоринга",
+      description: "Интеллектуальная система оценки кредитных рисков с машинным обучением и предиктивной аналитикой для банков.",
       image: project3Image,
-      technologies: ["Vue.js", "Python", "Django", "PostgreSQL"],
-      category: "Enterprise",
-      year: "2023"
+      technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+      category: "AI/ML",
+      year: "2024"
     }
   ];
 
@@ -67,18 +67,19 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-            Наши работы
+            Портфолио решений
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Примеры успешно реализованных проектов различной сложности
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Финтех-проекты, которые меняют индустрию. От банковских экосистем 
+            до блокчейн-решений — создаем будущее финансов
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card 
+            <div 
               key={index} 
-              className={getCardClass()}
+              className="banking-card group cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
@@ -141,7 +142,7 @@ const Portfolio = () => {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
+            </div>
           ))}
         </div>
         
