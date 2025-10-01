@@ -2,19 +2,21 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, TrendingUp, Users, Shield } from "lucide-react";
+import heroBackground from "@/assets/hero-background.avif";
 
 const Hero = () => {
   const { currentTheme } = useTheme();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
-      {/* Floating Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 banking-orb rounded-full"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 banking-orb rounded-full"></div>
-      <div className="absolute top-1/2 right-1/3 w-32 h-32 banking-orb rounded-full"></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      ></div>
       
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/80"></div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
