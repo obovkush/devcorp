@@ -109,22 +109,24 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* THEME: Tech (Dark Banking Theme) */
 .theme-tech {
-  --background: 220 20% 8%;
-  --foreground: 220 15% 95%;
-  --card: 220 20% 10%;
-  --card-foreground: 220 15% 95%;
-  --primary: 142 69% 55%;
-  --accent: 95 100% 50%;
-  --secondary: 220 15% 15%;
-  --secondary-foreground: 220 15% 95%;
-  --muted: 220 15% 15%;
-  --muted-foreground: 220 8% 65%;
-  --border: 220 15% 20%;
-  --input: 220 15% 20%;
-  --gradient-primary: linear-gradient(135deg, hsl(142, 69%, 55%), hsl(95, 100%, 50%));
-  --gradient-hero: linear-gradient(135deg, hsl(142, 69%, 55%) 0%, hsl(95, 100%, 50%) 50%, hsl(80, 100%, 60%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(220, 20%, 8%), hsl(220, 15%, 15%));
-  --gradient-orb: radial-gradient(circle, hsl(95, 100%, 50% / 0.15), hsl(142, 69%, 55% / 0.1), transparent 70%);
+  --background: 165 15% 12%;
+  --foreground: 80 30% 92%;
+  --card: 165 15% 15%;
+  --card-foreground: 80 30% 92%;
+  --primary: 82 70% 55%;
+  --primary-foreground: 165 15% 12%;
+  --accent: 82 70% 55%;
+  --accent-foreground: 165 15% 12%;
+  --secondary: 165 12% 20%;
+  --secondary-foreground: 80 30% 92%;
+  --muted: 165 12% 20%;
+  --muted-foreground: 80 15% 65%;
+  --border: 165 12% 25%;
+  --input: 165 12% 25%;
+  --gradient-primary: linear-gradient(135deg, hsl(82, 70%, 55%), hsl(82, 70%, 65%));
+  --gradient-hero: linear-gradient(135deg, hsl(82, 70%, 55%) 0%, hsl(82, 70%, 65%) 50%, hsl(82, 70%, 75%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(165, 15%, 12%), hsl(165, 12%, 20%));
+  --gradient-orb: radial-gradient(circle, hsl(82, 70%, 55% / 0.15), hsl(82, 70%, 55% / 0.1), transparent 70%);
 }
 
 /* THEME: Tile (Geometric Tile Design) */
@@ -171,26 +173,26 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* THEME: Neomorphism (Light Banking Theme) */
 .theme-neomorphism {
-  --background: 220 15% 97%;
-  --foreground: 220 15% 15%;
-  --card: 220 15% 97%;
-  --card-foreground: 220 15% 15%;
-  --primary: 142 69% 45%;
-  --primary-foreground: 0 0% 98%;
-  --accent: 95 100% 40%;
-  --accent-foreground: 0 0% 98%;
-  --secondary: 220 14% 96%;
-  --secondary-foreground: 220 15% 15%;
-  --muted: 220 14% 96%;
-  --muted-foreground: 220 8% 45%;
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --gradient-primary: linear-gradient(135deg, hsl(142, 69%, 45%), hsl(95, 100%, 40%));
-  --gradient-hero: linear-gradient(135deg, hsl(142, 69%, 45%) 0%, hsl(95, 100%, 40%) 50%, hsl(80, 100%, 50%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(220, 15%, 97%), hsl(220, 14%, 96%));
-  --gradient-orb: radial-gradient(circle, hsl(95, 100%, 70% / 0.3), hsl(142, 69%, 45% / 0.2), transparent 70%);
-  --neo-shadow-out: 8px 8px 24px hsl(220, 15%, 75% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
-  --neo-shadow-in: inset 4px 4px 8px hsl(220, 15%, 85%), inset -4px -4px 8px hsl(0, 0%, 100%);
+  --background: 80 30% 97%;
+  --foreground: 165 50% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 165 50% 12%;
+  --primary: 82 70% 52%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 82 70% 52%;
+  --accent-foreground: 0 0% 100%;
+  --secondary: 80 20% 94%;
+  --secondary-foreground: 165 50% 12%;
+  --muted: 80 20% 94%;
+  --muted-foreground: 165 20% 45%;
+  --border: 80 15% 88%;
+  --input: 80 15% 88%;
+  --gradient-primary: linear-gradient(135deg, hsl(82, 70%, 52%), hsl(82, 70%, 62%));
+  --gradient-hero: linear-gradient(135deg, hsl(82, 70%, 52%) 0%, hsl(82, 70%, 62%) 50%, hsl(82, 70%, 72%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(80, 30%, 97%), hsl(0, 0%, 100%));
+  --gradient-orb: radial-gradient(circle, hsl(82, 70%, 70% / 0.3), hsl(82, 70%, 52% / 0.2), transparent 70%);
+  --neo-shadow-out: 8px 8px 24px hsl(80, 15%, 75% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
+  --neo-shadow-in: inset 4px 4px 8px hsl(80, 15%, 85%), inset -4px -4px 8px hsl(0, 0%, 100%);
 }
 
 /* Theme-specific styles */
