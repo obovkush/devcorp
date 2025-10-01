@@ -173,26 +173,26 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* THEME: Neomorphism (Light Banking Theme) */
 .theme-neomorphism {
-  --background: 80 30% 97%;
-  --foreground: 165 50% 12%;
+  --background: 0 0% 100%;
+  --foreground: 163 76% 13%;
   --card: 0 0% 100%;
-  --card-foreground: 165 50% 12%;
-  --primary: 82 70% 52%;
+  --card-foreground: 163 76% 13%;
+  --primary: 163 76% 13%;
   --primary-foreground: 0 0% 100%;
-  --accent: 82 70% 52%;
+  --accent: 142 70% 45%;
   --accent-foreground: 0 0% 100%;
-  --secondary: 80 20% 94%;
-  --secondary-foreground: 165 50% 12%;
-  --muted: 80 20% 94%;
-  --muted-foreground: 165 20% 45%;
-  --border: 80 15% 88%;
-  --input: 80 15% 88%;
-  --gradient-primary: linear-gradient(135deg, hsl(82, 70%, 52%), hsl(82, 70%, 62%));
-  --gradient-hero: linear-gradient(135deg, hsl(82, 70%, 52%) 0%, hsl(82, 70%, 62%) 50%, hsl(82, 70%, 72%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(80, 30%, 97%), hsl(0, 0%, 100%));
-  --gradient-orb: radial-gradient(circle, hsl(82, 70%, 70% / 0.3), hsl(82, 70%, 52% / 0.2), transparent 70%);
-  --neo-shadow-out: 8px 8px 24px hsl(80, 15%, 75% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
-  --neo-shadow-in: inset 4px 4px 8px hsl(80, 15%, 85%), inset -4px -4px 8px hsl(0, 0%, 100%);
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 163 76% 13%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --gradient-primary: linear-gradient(135deg, hsl(163, 76%, 13%), hsl(163, 76%, 18%));
+  --gradient-hero: linear-gradient(135deg, hsl(163, 76%, 13%) 0%, hsl(163, 76%, 18%) 50%, hsl(142, 70%, 45%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 96%));
+  --gradient-orb: radial-gradient(circle, hsl(142, 70%, 45% / 0.2), hsl(163, 76%, 13% / 0.1), transparent 70%);
+  --neo-shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
+  --neo-shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
 }
 
 /* Theme-specific styles */
@@ -227,18 +227,15 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 .banking-card:hover {
   box-shadow: var(--shadow-medium);
-  transform: translateY(-2px);
 }
 
 .banking-button-primary {
-  @apply bg-gradient-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold;
-  box-shadow: var(--shadow-green);
-  transition: var(--transition-bounce);
+  @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold;
+  transition: var(--transition-smooth);
 }
 
 .banking-button-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-strong);
+  @apply bg-accent;
 }
 
 .banking-orb {
@@ -260,7 +257,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .banking-stats {
-  @apply text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent;
+  @apply text-4xl md:text-5xl font-bold text-primary;
 }
 
 .banking-badge {

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import ThemeSelector from "@/components/ThemeSelector";
 import { useTheme } from "@/contexts/ThemeContext";
-import { BarChart3, Menu } from "lucide-react";
+import { Zap, Menu } from "lucide-react";
 
 const Header = () => {
   const { currentTheme } = useTheme();
@@ -11,10 +11,10 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-            <BarChart3 className="w-6 h-6 text-white" />
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+            <Zap className="w-6 h-6 text-white" />
           </div>
-          <span className="text-2xl font-bold text-foreground">Banki</span>
+          <span className="text-2xl font-bold text-foreground">SOLARM Tech</span>
         </div>
         
         {/* Navigation */}

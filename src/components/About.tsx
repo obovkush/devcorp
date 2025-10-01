@@ -10,13 +10,13 @@ const About = () => {
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground">
                 Превосходя ожидания более{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="text-primary">
                   10 лет
                 </span>
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Banki — это не просто финансовая платформа. Мы создаем экосистему, 
+                 SOLARM Tech — это не просто финансовая платформа. Мы создаем экосистему, 
                 которая помогает людям и бизнесу достигать финансовых целей, 
                 используя передовые технологии и индивидуальный подход.
               </p>
@@ -25,7 +25,7 @@ const About = () => {
             {/* Values */}
             <div className="space-y-6">
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -37,7 +37,7 @@ const About = () => {
               </div>
               
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -49,7 +49,7 @@ const About = () => {
               </div>
               
               <div className="flex gap-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
                 <div>

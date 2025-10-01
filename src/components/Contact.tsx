@@ -26,7 +26,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-lg">
-                  hello@devcorp.ru
+                  hello@solarmtech.ru
                 </CardDescription>
               </CardContent>
             </Card>
@@ -62,7 +62,7 @@ const Contact = () => {
           
           {/* CTA */}
           <div className="flex flex-col justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            <div className="bg-gradient-primary p-8 rounded-2xl text-center">
+            <div className="bg-primary p-8 rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Начнем работу вместе
               </h3>

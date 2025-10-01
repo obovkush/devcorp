@@ -59,7 +59,7 @@ const Portfolio = () => {
     if (currentTheme === 'neomorphism') {
       return 'neo-button text-sm px-3 py-1';
     }
-    return 'text-sm px-3 py-1 hover:scale-105 transition-transform';
+    return 'text-sm px-3 py-1 transition-colors';
   };
 
   return (

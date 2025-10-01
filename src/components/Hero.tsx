@@ -32,7 +32,7 @@ const Hero = () => {
             {/* Main Heading */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-center lg:text-left">
               Превосходство в{" "}
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
+              <span className="text-primary">
                 финансовых
               </span>{" "}
               технологиях
@@ -79,19 +79,19 @@ const Hero = () => {
             {/* Main Card */}
             <div className="banking-card p-6 space-y-6">
               {/* Join the future input */}
-              <div className="flex items-center gap-3 p-4 bg-accent/10 rounded-xl border border-accent/20">
+              <div className="flex items-center gap-3 p-4 bg-primary/10 rounded-xl border border-primary/20">
                 <input 
                   type="text" 
                   placeholder="Присоединиться к будущему"
                   className="flex-1 bg-transparent border-none outline-none text-foreground placeholder:text-muted-foreground"
                 />
-                <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button size="sm">
                   Go
                 </Button>
               </div>
               
               {/* Bank Card */}
-              <div className="bg-gradient-primary p-6 rounded-2xl text-white space-y-4">
+              <div className="bg-primary p-6 rounded-2xl text-white space-y-4">
                 <div className="flex justify-between items-start">
                   <div className="space-y-1">
                     <p className="text-white/80 text-sm">Credit Card No.</p>

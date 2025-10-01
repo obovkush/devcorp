@@ -40,9 +40,9 @@ const Services = () => {
   const getCardClass = () => {
     switch (currentTheme) {
       case 'neomorphism':
-        return "neo-card bg-card backdrop-blur-sm hover:scale-105 transition-all duration-300 animate-slide-up";
+        return "neo-card bg-card backdrop-blur-sm transition-all duration-300 animate-slide-up";
       default:
-        return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-slide-up";
+        return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 animate-slide-up";
     }
   };
 
@@ -80,7 +80,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="banking-card p-6 space-y-4 group hover:scale-105 transition-all duration-300"
+              className="banking-card p-6 space-y-4 group transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-4xl mb-4">{service.icon}</div>
