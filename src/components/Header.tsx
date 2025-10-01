@@ -5,7 +5,7 @@ import { Zap, Menu } from "lucide-react";
 
 const Header = () => {
   const { currentTheme } = useTheme();
-  
+
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/95 border-b border-border">
       <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
@@ -16,7 +16,7 @@ const Header = () => {
           </div>
           <span className="text-2xl font-bold text-foreground">SOLARM Tech</span>
         </div>
-        
+
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#" className="text-primary font-medium">
@@ -43,17 +43,17 @@ const Header = () => {
             </button>
           </div>
         </nav>
-        
+
         {/* Actions */}
         <div className="flex items-center space-x-4">
           <ThemeSelector />
-          <Button 
-            className="banking-button-primary hidden md:flex"
+          <Button
+            className="app-button-primary hidden md:flex"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Связаться
           </Button>
-          
+
           {/* Mobile Menu */}
           <Button variant="ghost" size="sm" className="md:hidden">
             <Menu className="w-5 h-5" />

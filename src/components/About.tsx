@@ -14,14 +14,14 @@ const About = () => {
                   10 лет
                 </span>
               </h2>
-              
+
               <p className="text-lg text-muted-foreground leading-relaxed">
-                 SOLARM Tech — это не просто финансовая платформа. Мы создаем экосистему, 
-                которая помогает людям и бизнесу достигать финансовых целей, 
+                 SOLARM Tech — это не просто финансовая платформа. Мы создаем экосистему,
+                которая помогает людям и бизнесу достигать финансовых целей,
                 используя передовые технологии и индивидуальный подход.
               </p>
             </div>
-            
+
             {/* Values */}
             <div className="space-y-6">
               <div className="flex gap-4">
@@ -35,7 +35,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex gap-4">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-white" />
@@ -47,7 +47,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex gap-4">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Heart className="w-6 h-6 text-white" />
@@ -61,35 +61,35 @@ const About = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right Content - Stats */}
           <div className="grid grid-cols-2 gap-6">
-            <div className="banking-card p-6 text-center space-y-4">
-              <div className="banking-stats">70K+</div>
+            <div className="app-card p-6 text-center space-y-4">
+              <div className="app-stats">70K+</div>
               <div>
                 <h3 className="font-semibold text-foreground">Активных пользователей</h3>
                 <p className="text-sm text-muted-foreground">Растем каждый день</p>
               </div>
             </div>
-            
-            <div className="banking-card p-6 text-center space-y-4">
-              <div className="banking-stats">56</div>
+
+            <div className="app-card p-6 text-center space-y-4">
+              <div className="app-stats">56</div>
               <div>
                 <h3 className="font-semibold text-foreground">Стран работы</h3>
                 <p className="text-sm text-muted-foreground">По всему миру</p>
               </div>
             </div>
-            
-            <div className="banking-card p-6 text-center space-y-4">
-              <div className="banking-stats">24/7</div>
+
+            <div className="app-card p-6 text-center space-y-4">
+              <div className="app-stats">24/7</div>
               <div>
                 <h3 className="font-semibold text-foreground">Поддержка</h3>
                 <p className="text-sm text-muted-foreground">Всегда на связи</p>
               </div>
             </div>
-            
-            <div className="banking-card p-6 text-center space-y-4">
-              <div className="banking-stats">99.9%</div>
+
+            <div className="app-card p-6 text-center space-y-4">
+              <div className="app-stats">99.9%</div>
               <div>
                 <h3 className="font-semibold text-foreground">Аптайм</h3>
                 <p className="text-sm text-muted-foreground">Стабильность</p>

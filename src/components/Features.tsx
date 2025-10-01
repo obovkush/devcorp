@@ -48,26 +48,26 @@ const Features = () => {
             Почему выбирают нас
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Мы предоставляем полный спектр финансовых услуг с использованием 
+            Мы предоставляем полный спектр финансовых услуг с использованием
             передовых технологий и высочайших стандартов безопасности
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={feature.title}
-              className="banking-card p-6 space-y-4 group transition-all duration-300"
+              className="app-card p-6 space-y-4 group transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
-              
+
               <h3 className="text-xl font-semibold text-foreground">
                 {feature.title}
               </h3>
-              
+
               <p className="text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>

@@ -70,21 +70,21 @@ const Portfolio = () => {
             Портфолио решений
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Финтех-проекты, которые меняют индустрию. От банковских экосистем 
+            Финтех-проекты, которые меняют индустрию. От банковских экосистем
             до блокчейн-решений — создаем будущее финансов
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="banking-card group cursor-pointer"
+            <div
+              key={index}
+              className="app-card group cursor-pointer"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -99,41 +99,41 @@ const Portfolio = () => {
                   </Badge>
                 </div>
               </div>
-              
+
               <CardHeader>
                 <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 <CardDescription className="text-muted-foreground line-clamp-3">
                   {project.description}
                 </CardDescription>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="outline" 
+                    <Badge
+                      key={techIndex}
+                      variant="outline"
                       className="text-xs border-primary/30 text-primary"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-2 pt-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className={getButtonClass()}
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Демо
                   </Button>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     className={getButtonClass()}
                   >
@@ -145,10 +145,10 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
             className={currentTheme === 'neomorphism' ? 'neo-button px-8 py-3' : 'border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3'}
           >

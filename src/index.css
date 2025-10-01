@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Banking Design System - Modern Financial Aesthetics
+/* App Design System - Modern Financial Aesthetics
 All colors MUST be HSL. Green-focused palette with premium feel.
 */
 
 @layer base {
 :root {
-    /* Banking Color Palette */
+    /* App Color Palette */
     --background: 220 15% 97%;
     --foreground: 220 15% 15%;
 
@@ -18,7 +18,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    --primary: 142 69% 45%;     /* Banking Green */
+    --primary: 142 69% 45%;     /* App Green */
     --primary-foreground: 0 0% 98%;
 
     --secondary: 220 14% 96%;
@@ -39,19 +39,19 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
     --radius: 1rem;
 
-    /* Banking Design Tokens */
+    /* App Design Tokens */
     --gradient-primary: linear-gradient(135deg, hsl(142, 69%, 45%), hsl(95, 100%, 40%));
     --gradient-secondary: linear-gradient(135deg, hsl(220, 15%, 97%), hsl(220, 14%, 96%));
     --gradient-hero: linear-gradient(135deg, hsl(142, 69%, 45%) 0%, hsl(95, 100%, 40%) 50%, hsl(80, 100%, 50%) 100%);
     --gradient-orb: radial-gradient(circle, hsl(95, 100%, 70% / 0.3), hsl(142, 69%, 45% / 0.2), transparent 70%);
-    
-    /* Banking Shadows */
+
+    /* App Shadows */
     --shadow-soft: 0 2px 8px hsl(220, 15%, 15% / 0.08);
     --shadow-medium: 0 4px 16px hsl(220, 15%, 15% / 0.12);
     --shadow-strong: 0 8px 32px hsl(220, 15%, 15% / 0.16);
     --shadow-green: 0 4px 20px hsl(142, 69%, 45% / 0.25);
-    
-    /* Banking Effects */
+
+    /* App Effects */
     --glow-primary: 0 0 30px hsl(142, 69%, 45% / 0.3);
     --glow-accent: 0 0 20px hsl(95, 100%, 40% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,7 +107,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   }
 }
 
-/* THEME: Tech (Dark Banking Theme) */
+/* THEME: Tech (Dark App Theme) */
 .theme-tech {
   --background: 165 15% 12%;
   --foreground: 80 30% 92%;
@@ -171,7 +171,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(240, 4.8%, 95.9%));
 }
 
-/* THEME: Neomorphism (Light Banking Theme) */
+/* THEME: Neomorphism (Light App Theme) */
 .theme-neomorphism {
   --background: 0 0% 100%;
   --foreground: 163 76% 13%;
@@ -197,7 +197,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* Theme-specific styles */
 .theme-tile .tile-pattern {
-  background-image: 
+  background-image:
     linear-gradient(45deg, transparent 35%, hsl(var(--accent) / 0.1) 35%, hsl(var(--accent) / 0.1) 65%, transparent 65%),
     linear-gradient(-45deg, transparent 35%, hsl(var(--primary) / 0.1) 35%, hsl(var(--primary) / 0.1) 65%, transparent 65%);
   background-size: 60px 60px;
@@ -218,27 +218,27 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   box-shadow: var(--neo-shadow-in);
 }
 
-/* Banking Component Styles */
-.banking-card {
+/* App Component Styles */
+.app-card {
   @apply bg-card border border-border rounded-xl backdrop-blur-sm;
   box-shadow: var(--shadow-soft);
   transition: var(--transition-smooth);
 }
 
-.banking-card:hover {
+.app-card:hover {
   box-shadow: var(--shadow-medium);
 }
 
-.banking-button-primary {
+.app-button-primary {
   @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold;
   transition: var(--transition-smooth);
 }
 
-.banking-button-primary:hover {
+.app-button-primary:hover {
   @apply bg-accent;
 }
 
-.banking-orb {
+.app-orb {
   background: var(--gradient-orb);
   filter: blur(1px);
   animation: float 6s ease-in-out infinite;
@@ -250,17 +250,17 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .bg-grid-pattern {
-  background-image: 
+  background-image:
     linear-gradient(rgba(142, 191, 123, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(142, 191, 123, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
-.banking-stats {
+.app-stats {
   @apply text-4xl md:text-5xl font-bold text-primary;
 }
 
-.banking-badge {
+.app-badge {
   @apply bg-accent/10 text-accent border border-accent/20 px-4 py-2 rounded-full text-sm font-medium;
 }
 

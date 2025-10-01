@@ -59,28 +59,28 @@ const Services = () => {
     <section id="services" className={getSectionClass()}>
       {/* Background - only for tech theme */}
       {currentTheme === 'tech' && (
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{ backgroundImage: `url(${servicesImage})` }}
         />
       )}
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
             Финтех решения
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Комплексные финансовые технологии от концепции до внедрения. 
+            Комплексные финансовые технологии от концепции до внедрения.
             Создаем безопасные, масштабируемые и инновационные решения для финансовой индустрии
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              className="banking-card p-6 space-y-4 group transition-all duration-300"
+            <div
+              key={index}
+              className="app-card p-6 space-y-4 group transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-4xl mb-4">{service.icon}</div>
