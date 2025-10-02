@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/contexts/ThemeContext";
 import servicesImage from "@/assets/services-bg.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Services = () => {
   const { currentTheme } = useTheme();
+  const { elementRef, isVisible } = useScrollAnimation();
   const services = [
     {
       title: "Банковские системы",
@@ -65,8 +67,8 @@ const Services = () => {
         />
       )}
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+      <div ref={elementRef} className="container mx-auto px-4 relative z-10">
+        <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="section-title text-foreground mb-8">
             IT решения
           </h2>
@@ -80,7 +82,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="app-card p-6 space-y-4 group transition-all duration-300"
+              className={`app-card p-6 space-y-4 group transition-all duration-300 ${isVisible ? 'scroll-fade-up' : ''}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-4xl mb-4">{service.icon}</div>

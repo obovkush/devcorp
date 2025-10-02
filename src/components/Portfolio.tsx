@@ -6,9 +6,11 @@ import { ExternalLink, Github } from "lucide-react";
 import project1Image from "@/assets/project-1.jpg";
 import project2Image from "@/assets/project-2.jpg";
 import project3Image from "@/assets/project-3.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Portfolio = () => {
   const { currentTheme } = useTheme();
+  const { elementRef, isVisible } = useScrollAnimation();
 
   const projects = [
     {
@@ -64,8 +66,8 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className={getSectionClass()}>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+      <div ref={elementRef} className="container mx-auto px-4">
+        <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="section-title text-foreground mb-8">
             Портфолио решений
           </h2>
@@ -78,8 +80,8 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="app-card group cursor-pointer"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`app-card group cursor-pointer ${isVisible ? 'scroll-fade-up' : ''}`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="relative overflow-hidden">
                 <img

@@ -1,4 +1,8 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const Advantages = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   const advantages = [
     {
       title: "Современные технологии",
@@ -24,8 +28,8 @@ const Advantages = () => {
 
   return (
     <section id="advantages" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
+      <div ref={elementRef} className="container mx-auto px-4">
+        <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="section-title text-foreground mb-8">
             Почему выбирают нас
           </h2>
@@ -38,8 +42,8 @@ const Advantages = () => {
           {advantages.map((advantage, index) => (
             <div 
               key={index}
-              className="flex items-start space-x-6 p-6 rounded-lg bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`flex items-start space-x-6 p-6 rounded-lg bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300 ${isVisible ? 'scroll-fade-up' : ''}`}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="text-4xl flex-shrink-0">{advantage.icon}</div>
               <div>

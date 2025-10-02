@@ -421,6 +421,34 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+@keyframes scroll-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  animation: scroll-fade-up 0.8s ease-out forwards;
+}
+
+.scroll-animation-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.scroll-animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.scroll-animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
 .bg-grid-pattern {
   background-image:
     linear-gradient(rgba(142, 191, 123, 0.1) 1px, transparent 1px),

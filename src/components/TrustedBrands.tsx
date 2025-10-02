@@ -1,4 +1,8 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const TrustedBrands = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   const brands = [
     { name: "TechCorp", width: "w-32" },
     { name: "InnovateLab", width: "w-36" },
@@ -9,8 +13,8 @@ const TrustedBrands = () => {
 
   return (
     <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+      <div ref={elementRef} className="container mx-auto px-4 lg:px-8">
+        <div className={`text-center mb-12 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="text-xl font-roboto-medium text-muted-foreground">
             Нам доверяют ведущие мировые бренды
           </h2>

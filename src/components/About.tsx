@@ -1,12 +1,15 @@
 import { Award, Target, Heart } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
+  
   return (
     <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div ref={elementRef} className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-1 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className={`space-y-8 ${isVisible ? 'scroll-fade-up' : ''}`}>
             <div className="text-center mb-16">
               <h2 className="section-title text-foreground mb-6">
                 Почему выбирают нас

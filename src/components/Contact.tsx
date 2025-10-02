@@ -3,13 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, ArrowRight, Users, HelpCircle } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { elementRef, isVisible } = useScrollAnimation();
   return (
     <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div ref={elementRef} className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="text-4xl md:text-5xl font-roboto-bold text-foreground mb-6">
             Свяжитесь с нами!
           </h2>
@@ -20,7 +22,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Details Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 ${isVisible ? 'scroll-fade-up scroll-animation-delay-100' : ''}`}>
           {/* Phone */}
           <div className="contact-card p-8 text-center space-y-4">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto contact-card">
@@ -172,7 +174,7 @@ const Contact = () => {
         </div> */}
 
         {/* FAQ Section */}
-        <div>
+        <div className={`${isVisible ? 'scroll-fade-up scroll-animation-delay-200' : ''}`}>
           <div className="text-center mb-12">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <HelpCircle className="w-8 h-8 text-primary" />
