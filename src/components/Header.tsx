@@ -19,32 +19,30 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-primary font-medium">
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-primary font-medium"
+          >
             Главная
-          </a>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+          </button>
+          <button 
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             О нас
-          </a>
-          <a href="#portfolio" className="text-muted-foreground hover:text-foreground transition-colors">
+          </button>
+          <button 
+            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             Проекты
-          </a>
-          <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
+          </button>
+          <button 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             Контакты
-          </a>
-          {/* <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-            Тарифы
-          </a> */}
-          {/* <a href="#blog" className="text-muted-foreground hover:text-foreground transition-colors">
-            Блог
-          </a> */}
-          {/* <div className="relative group">
-            <button className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
-              Страницы
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div> */}
+          </button>
         </nav>
 
         {/* Actions */}
