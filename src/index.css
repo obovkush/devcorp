@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KSBistra Font - Keeping for backward compatibility but using Roboto */
+@font-face {
+  font-family: 'KSBistra';
+  src: url('./assets/fonts/KSBistra/Web-TT/KS Bistra.woff2') format('woff2'),
+       url('./assets/fonts/KSBistra/Web-TT/KS Bistra.woff') format('woff'),
+       url('./assets/fonts/KSBistra/Web-TT/KS Bistra.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* InterHewn Font */
+@font-face {
+  font-family: 'InterHewn';
+  src: url('./assets/fonts/InterHewn/Inter-accent.otf') format('opentype');
+  font-weight: 400 900;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* App Design System - Modern Financial Aesthetics
 All colors MUST be HSL. Green-focused palette with premium feel.
 */
@@ -218,6 +238,93 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   box-shadow: var(--neo-shadow-in);
 }
 
+/* Roboto Typography - Replacing KSBistra */
+.font-ksbistra {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.font-ksbistra-medium {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.font-ksbistra-semibold {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+/* New Roboto classes for direct usage */
+.font-roboto-medium {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* InterHewn Typography */
+.font-interhewn {
+  font-family: 'InterHewn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.font-interhewn-bold {
+  font-family: 'InterHewn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+/* Roboto Typography */
+.font-roboto {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.font-roboto-bold {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+/* Hero Title Style - Roboto */
+.hero-title {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+/* Section Title Style */
+.section-title {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  /* font-size: clamp(2rem, 5vw, 3.5rem); */
+}
+
+/* Subsection Title Style */
+.subsection-title {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
 /* App Component Styles */
 .app-card {
   @apply bg-card border border-border rounded-xl backdrop-blur-sm;
@@ -230,7 +337,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .app-button-primary {
-  @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold;
+  @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold;
   transition: var(--transition-smooth);
 }
 

@@ -67,12 +67,12 @@ const Services = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-            Финтех решения
+          <h2 className="section-title text-foreground mb-8">
+            IT решения
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Комплексные финансовые технологии от концепции до внедрения.
-            Создаем безопасные, масштабируемые и инновационные решения для финансовой индустрии
+            Комплексные технологии от концепции до внедрения.
+            Создаем безопасные, масштабируемые и инновационные решения для бизнеса
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const Services = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="subsection-title text-foreground">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

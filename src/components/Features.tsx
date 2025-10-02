@@ -44,12 +44,12 @@ const Features = () => {
     <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="section-title text-foreground mb-6">
             Почему выбирают нас
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Мы предоставляем полный спектр финансовых услуг с использованием
-            передовых технологий и высочайших стандартов безопасности
+            Мы предоставляем услуги разработки с использованием
+            передовых технологий
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const Features = () => {
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
 
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3 className="subsection-title text-foreground">
                 {feature.title}
               </h3>
 

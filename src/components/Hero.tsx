@@ -32,7 +32,7 @@ const Hero = () => {
             </div> */}
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-center lg:text-left">
+            <h1 className="font-roboto-bold text-4xl md:text-6xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
               Профессиональная разработка{" "}
               <span className="text-primary">
                 для частных лиц и

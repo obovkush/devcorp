@@ -6,14 +6,14 @@ const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+          <h2 className="section-title text-foreground mb-8">
             Свяжитесь с нами
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Готовы обсудить ваш проект? Мы всегда открыты для новых задач и интересных решений
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Info */}
           <div className="space-y-8 animate-slide-up">
@@ -30,7 +30,7 @@ const Contact = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-card/50 backdrop-blur-sm border-border">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
@@ -44,8 +44,8 @@ const Contact = () => {
                 </CardDescription>
               </CardContent>
             </Card>
-            
-            <Card className="bg-card/50 backdrop-blur-sm border-border">
+
+            {/* <Card className="bg-card/50 backdrop-blur-sm border-border">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
                   <span className="text-2xl">📍</span>
@@ -57,9 +57,9 @@ const Contact = () => {
                   Москва, ул. Технологическая, 15
                 </CardDescription>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
-          
+
           {/* CTA */}
           <div className="flex flex-col justify-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
             <div className="bg-primary p-8 rounded-2xl text-center">
@@ -69,8 +69,8 @@ const Contact = () => {
               <p className="text-white/90 mb-6">
                 Расскажите о своем проекте, и мы подготовим для вас персональное предложение
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="secondary"
                 className="bg-white text-primary hover:bg-white/90 font-semibold px-8 py-3"
               >

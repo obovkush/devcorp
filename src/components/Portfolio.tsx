@@ -66,12 +66,11 @@ const Portfolio = () => {
     <section id="portfolio" className={getSectionClass()}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+          <h2 className="section-title text-foreground mb-8">
             Портфолио решений
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Финтех-проекты, которые меняют индустрию. От банковских экосистем
-            до блокчейн-решений — создаем будущее финансов
+            Проекты, которые меняют индустрию.
           </p>
         </div>
 
@@ -101,7 +100,7 @@ const Portfolio = () => {
               </div>
 
               <CardHeader>
-                <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="subsection-title text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>

@@ -26,7 +26,7 @@ const Advantages = () => {
     <section id="advantages" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+          <h2 className="section-title text-foreground mb-8">
             Почему выбирают нас
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -43,7 +43,7 @@ const Advantages = () => {
             >
               <div className="text-4xl flex-shrink-0">{advantage.icon}</div>
               <div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="subsection-title text-foreground mb-3">
                   {advantage.title}
                 </h3>
                 <p className="text-muted-foreground">
