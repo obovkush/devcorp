@@ -30,7 +30,7 @@ const themes: Record<ThemeType, ThemeConfig> = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<ThemeType>('tech');
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>('neomorphism');
 
   const setTheme = (theme: ThemeType) => {
     setCurrentTheme(theme);

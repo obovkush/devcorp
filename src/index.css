@@ -240,21 +240,21 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* Roboto Typography - Replacing KSBistra */
 .font-ksbistra {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 .font-ksbistra-medium {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
 .font-ksbistra-semibold {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.15;
@@ -313,7 +313,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  /* font-size: clamp(2rem, 5vw, 3.5rem); */
+  font-size: clamp(1.2rem, 5vw, 1.2rem);
 }
 
 /* Subsection Title Style */
@@ -327,7 +327,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* App Component Styles */
 .app-card {
-  @apply bg-card border border-border rounded-xl backdrop-blur-sm;
+  @apply bg-primary/5 border border-border rounded-xl backdrop-blur-sm;
   box-shadow: var(--shadow-soft);
   transition: var(--transition-smooth);
 }
@@ -343,6 +343,71 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 .app-button-primary:hover {
   @apply bg-accent;
+}
+
+/* Contact button inner circle (white circle with chevron) */
+.btn-contact-wrap {
+  position: relative;
+  height: 48px; /* h-12 */
+  padding-right: 3.5rem; /* pr-14: место под круг */
+  border-radius: 9999px;
+}
+
+.btn-contact-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* w-10 */
+  height: 40px; /* h-10 */
+  background: #ffffff;
+  color: hsl(var(--primary));
+  border-radius: 9999px;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-contact-wrap .btn-contact-circle {
+  position: absolute;
+  right: 4px; /* right-1 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* CTA arrow rotation behavior */
+.btn-cta .btn-arrow {
+  transition: transform 0.25s ease;
+  transform: rotate(-45deg);
+}
+
+.btn-cta:hover .btn-arrow {
+  transform: rotate(0deg) translateX(2px);
+}
+
+.app-button-primary:hover .btn-contact-circle {
+  transform: translateY(-50%) translateX(2px);
+}
+
+/* Contact Button - Banki style */
+.btn-contact-app {
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground bg-transparent font-medium;
+  transition: var(--transition-smooth);
+}
+
+.btn-contact-app:hover {
+  @apply bg-primary text-primary-foreground border-primary;
+}
+
+.btn-contact-app:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px hsl(var(--ring) / 0.25);
+}
+
+.btn-contact-app .btn-icon {
+  @apply w-5 h-5;
+  transition: transform 0.2s ease;
+}
+
+.btn-contact-app:hover .btn-icon {
+  transform: translateX(4px);
 }
 
 .app-orb {
@@ -369,6 +434,30 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 .app-badge {
   @apply bg-accent/10 text-accent border border-accent/20 px-4 py-2 rounded-full text-sm font-medium;
+}
+
+/* Footer (App-style) */
+.footer-app {
+  @apply bg-primary text-primary-foreground;
+}
+
+.footer-app a {
+  @apply text-primary-foreground/90 hover:text-primary-foreground;
+}
+
+.footer-app .muted-text {
+  @apply text-primary-foreground/80;
+}
+
+/* Contact cards (App-style) */
+.contact-card {
+  @apply bg-primary/5 rounded-2xl border border-border;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-medium);
 }
 
 @layer base {

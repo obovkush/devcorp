@@ -40,7 +40,7 @@ const Services = () => {
   const getCardClass = () => {
     switch (currentTheme) {
       case 'neomorphism':
-        return "neo-card bg-card backdrop-blur-sm transition-all duration-300 animate-slide-up";
+        return "neo-card/50 bg-card backdrop-blur-sm transition-all duration-300 animate-slide-up";
       default:
         return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 animate-slide-up";
     }

@@ -40,9 +40,9 @@ const Portfolio = () => {
   const getCardClass = () => {
     switch (currentTheme) {
       case 'neomorphism':
-        return "neo-card bg-card group cursor-pointer overflow-hidden";
+        return "neo-card bg-primary/50 group cursor-pointer overflow-hidden";
       default:
-        return "bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer overflow-hidden";
+        return "bg-primary/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer overflow-hidden";
     }
   };
 
@@ -57,7 +57,7 @@ const Portfolio = () => {
 
   const getButtonClass = () => {
     if (currentTheme === 'neomorphism') {
-      return 'neo-button text-sm px-3 py-1';
+      return 'text-sm px-3 py-1';
     }
     return 'text-sm px-3 py-1 transition-colors';
   };
@@ -131,14 +131,14 @@ const Portfolio = () => {
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Демо
                   </Button>
-                  <Button
+                  {/* <Button
                     variant="outline"
                     size="sm"
                     className={getButtonClass()}
                   >
                     <Github className="w-4 h-4 mr-1" />
                     Код
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </div>
@@ -149,7 +149,7 @@ const Portfolio = () => {
           <Button
             variant="outline"
             size="lg"
-            className={currentTheme === 'neomorphism' ? 'neo-button px-8 py-3' : 'border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3'}
+            className={currentTheme === 'neomorphism' ? 'px-8 py-3' : 'border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3'}
           >
             Посмотреть все проекты
           </Button>

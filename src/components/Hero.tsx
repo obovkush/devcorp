@@ -16,11 +16,11 @@ const Hero = () => {
       ></div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/80"></div>
+      <div className="absolute inset-0 bg-background/20"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-1 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             {/* Badge */}
@@ -32,33 +32,31 @@ const Hero = () => {
             </div> */}
 
             {/* Main Heading */}
-            <h1 className="font-roboto-bold text-4xl md:text-6xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
-              Профессиональная разработка{" "}
-              <span className="text-primary">
-                для частных лиц и
-              </span>{" "}
-              компаний
+            <h1 className="font-roboto text-4xl md:text-6xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
+              Профессиональная разработка <br/> для частных лиц и компаний
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl text-center lg:text-left">
-              Создаем инновационные решения для вашего будущего.
+            <p className="text-lg md:text-xl text-muted-foreground text-center">
+              Создаем инновационные решения для вашего будущего. <br/>
               Современные технологии и надежность в каждом проекте.
             </p>
 
             {/* CTA Button */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center">
               <Button
-                className="app-button-primary group"
-                onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+                className="app-button-primary btn-contact-wrap btn-cta"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Начать проект
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <span className="btn-contact-circle">
+                  <ArrowRight className="w-4 h-4 btn-arrow" />
+                </span>
               </Button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8">
+            {/* <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center lg:text-left">
                 <div className="app-stats">70K</div>
                 <p className="text-muted-foreground">Транзакций</p>
@@ -73,7 +71,7 @@ const Hero = () => {
                 </div>
                 <p className="text-muted-foreground">Поддержка</p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - App Interface Mock */}

@@ -4,10 +4,22 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-1 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-6">
+            <div className="text-center mb-16">
+              <h2 className="section-title text-foreground mb-6">
+                Почему выбирают нас
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Мы предоставляем услуги разработки с использованием
+                передовых технологий.
+              </p>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Опыт разработки более 10 лет.
+              </p>
+            </div>
+            {/* <div className="space-y-6">
               <h2 className="section-title text-foreground">
                 Опыт разработки более{" "}
                 <span className="text-primary">
@@ -18,10 +30,11 @@ const About = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                  SOLARM Tech — помогаем технологиям помогать людям.
               </p>
-            </div>
+
+            </div> */}
 
             {/* Values */}
-            <div className="space-y-6">
+            <div className="flex gap-4">
               <div className="flex gap-4">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
