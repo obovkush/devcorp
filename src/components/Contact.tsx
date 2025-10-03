@@ -106,7 +106,7 @@ const Contact = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <MapPin className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-roboto-semibold text-lg text-foreground">Наше местоположение</h3>
+            <h3 className="font-roboto-semibold text-lg text-foreground">Встретиться</h3>
               <p className="text-muted-foreground">
                 {CONTACT_INFO.location}
             </p>
