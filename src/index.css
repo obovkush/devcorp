@@ -224,7 +224,8 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .app-button-primary:hover {
-  @apply bg-accent;
+  background-color: #c9f269;
+  color: hsl(var(--primary));
 }
 
 /* Contact button inner circle (white circle with chevron) */
@@ -275,7 +276,9 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .btn-contact-app:hover {
-  @apply bg-primary text-primary-foreground border-primary;
+  background-color: #c9f269;
+  color: hsl(var(--primary));
+  border-color: #c9f269;
 }
 
 .btn-contact-app:focus-visible {
