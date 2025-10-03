@@ -19,25 +19,31 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <button 
+          <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-primary font-medium"
           >
             Главная
           </button>
-          <button 
+          <button
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             О нас
           </button>
-          <button 
+          <button
             onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Проекты
           </button>
-          <button 
+          <button
+            onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Отзывы
+          </button>
+          <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
