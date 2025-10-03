@@ -15,4 +15,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return `[name]-[hash][extname]`;
+          const info = assetInfo.name.split('.');
+          const extType = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            return `images/[name]-[hash][extname]`;
+          }
+          if (/woff2|woff|ttf|otf|eot/i.test(extType)) {
+            return `fonts/[name]-[hash][extname]`;
+          }
+          return `[name]-[hash][extname]`;
+        },
+      },
+    },
+  },
 }));

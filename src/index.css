@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KSBistra Font - Keeping for backward compatibility but using Roboto */
+/* KSBistra Font - Using URL encoding for spaces */
 @font-face {
   font-family: 'KSBistra';
-  src: url('./assets/fonts/KSBistra/Web-TT/KS Bistra.woff2') format('woff2'),
-       url('./assets/fonts/KSBistra/Web-TT/KS Bistra.woff') format('woff'),
-       url('./assets/fonts/KSBistra/Web-TT/KS Bistra.ttf') format('truetype');
+  src: url('./assets/fonts/KSBistra/Web-TT/KS%20Bistra.woff2') format('woff2'),
+       url('./assets/fonts/KSBistra/Web-TT/KS%20Bistra.woff') format('woff'),
+       url('./assets/fonts/KSBistra/OpenType-TT/KS%20Bistra.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
