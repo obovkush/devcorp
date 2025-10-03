@@ -69,17 +69,17 @@ const Header = () => {
           </Button>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden [&_svg]:size-7"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-7 h-7" />
+              ) : (
+                <Menu className="w-7 h-7" />
+              )}
           </Button>
         </div>
       </div>
