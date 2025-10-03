@@ -265,7 +265,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 }
 
 .app-button-primary:hover .btn-contact-circle {
-  transform: translateY(-50%) translateX(2px);
+  transform: translateY(-50%);
 }
 
 /* Contact Button - Banki style */
