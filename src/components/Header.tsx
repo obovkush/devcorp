@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import ThemeSelector from "@/components/ThemeSelector";
+// import ThemeSelector from "@/components/ThemeSelector";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Zap, Menu, ChevronRight, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
-  const { currentTheme } = useTheme();
+  // const { currentTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
