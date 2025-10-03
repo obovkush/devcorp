@@ -3,7 +3,7 @@ export const CONTACT_INFO = {
   email: "info@solarmtech.ru",
   location: "Наши представители есть в Испании (Валенсия) и России (Москва, Киров, Красноярск, Хабаровск)",
   messengers: {
-    whatsapp: "https://wa.me/7902970682",
+    whatsapp: "https://wa.me/79029706823",
     telegram: "https://t.me/aminlait"
   }
 } as const;
