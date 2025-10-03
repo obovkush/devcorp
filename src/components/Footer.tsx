@@ -1,6 +1,10 @@
-import { Zap } from "lucide-react";
+import { Zap, Copy, Check } from "lucide-react";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
+import { CONTACT_INFO } from "@/constants/contact";
 
 const Footer = () => {
+  const { copyToClipboard, isCopied } = useCopyToClipboard();
+
   return (
     <footer className="footer-app border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -32,9 +36,41 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-roboto-medium text-primary-foreground mb-4">Контакты</h4>
-            <ul className="space-y-2">
-              <li><a href="mailto:hello@solarmtech.ru" className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">hello@solarmtech.ru</a></li>
-              <li><a href="tel:+74951234567" className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">+7 (495) 123-45-67</a></li>
+            <ul className="space-y-3">
+              <li>
+                <div className="flex items-center justify-between group">
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">
+                    {CONTACT_INFO.email}
+                  </a>
+                  <button
+                    onClick={() => copyToClipboard(CONTACT_INFO.email)}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary-foreground/10 rounded"
+                  >
+                    {isCopied(CONTACT_INFO.email) ? (
+                      <Check className="w-3 h-3 text-white" />
+                    ) : (
+                      <Copy className="w-3 h-3 text-white/60 hover:text-white" />
+                    )}
+                  </button>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center justify-between group">
+                  <a href={`tel:${CONTACT_INFO.phone}`} className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">
+                    {CONTACT_INFO.phone}
+                  </a>
+                  <button
+                    onClick={() => copyToClipboard(CONTACT_INFO.phone)}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary-foreground/10 rounded"
+                  >
+                    {isCopied(CONTACT_INFO.phone) ? (
+                      <Check className="w-3 h-3 text-white" />
+                    ) : (
+                      <Copy className="w-3 h-3 text-white/60 hover:text-white" />
+                    )}
+                  </button>
+                </div>
+              </li>
             </ul>
           </div>
         </div>

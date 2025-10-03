@@ -2,11 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, ArrowRight, Users, HelpCircle } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Users, HelpCircle, Copy, Check } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
+import { CONTACT_INFO } from "@/constants/contact";
+
 
 const Contact = () => {
   const { elementRef, isVisible } = useScrollAnimation();
+  const { copyToClipboard, isCopied } = useCopyToClipboard();
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div ref={elementRef} className="container mx-auto px-4">
@@ -29,9 +33,22 @@ const Contact = () => {
               <Phone className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Номер телефона</h3>
-            <div className="space-y-2">
-              <a href="tel:+74951234567" className="text-muted-foreground hover:text-primary transition-colors block">+7 (495) 123-45-67</a>
-              <a href="tel:+74951234568" className="text-muted-foreground hover:text-primary transition-colors block">+7 (495) 123-45-68</a>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between group">
+                  <a href={`tel:${CONTACT_INFO.phone}`} className="text-muted-foreground hover:text-primary transition-colors">
+                    {CONTACT_INFO.phone}
+                </a>
+                <button
+                    onClick={() => copyToClipboard(CONTACT_INFO.phone)}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded"
+                  >
+                    {isCopied(CONTACT_INFO.phone) ? (
+                    <Check className="w-4 h-4 text-green-500" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -41,9 +58,22 @@ const Contact = () => {
               <Mail className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Наш email</h3>
-            <div className="space-y-2">
-              <a href="mailto:hello@solarmtech.ru" className="text-muted-foreground hover:text-primary transition-colors block">hello@solarmtech.ru</a>
-              <a href="mailto:info@solarmtech.ru" className="text-muted-foreground hover:text-primary transition-colors block">info@solarmtech.ru</a>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between group">
+                  <a href={`mailto:${CONTACT_INFO.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                    {CONTACT_INFO.email}
+                </a>
+                <button
+                    onClick={() => copyToClipboard(CONTACT_INFO.email)}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded"
+                  >
+                    {isCopied(CONTACT_INFO.email) ? (
+                    <Check className="w-4 h-4 text-green-500" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -53,8 +83,8 @@ const Contact = () => {
               <MapPin className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Наше местоположение</h3>
-            <p className="text-muted-foreground">
-              Москва, ул. Технологическая, 15
+              <p className="text-muted-foreground">
+                {CONTACT_INFO.location}
             </p>
           </div>
         </div>
