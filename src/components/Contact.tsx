@@ -25,31 +25,31 @@ const Contact = () => {
         <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 ${isVisible ? 'scroll-fade-up scroll-animation-delay-100' : ''}`}>
           {/* Phone */}
           <div className="contact-card p-8 text-center space-y-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto contact-card">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <Phone className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Номер телефона</h3>
             <div className="space-y-2">
-              <p className="text-muted-foreground">+7 (495) 123-45-67</p>
-              <p className="text-muted-foreground">+7 (495) 123-45-68</p>
+              <a href="tel:+74951234567" className="text-muted-foreground hover:text-primary transition-colors block">+7 (495) 123-45-67</a>
+              <a href="tel:+74951234568" className="text-muted-foreground hover:text-primary transition-colors block">+7 (495) 123-45-68</a>
             </div>
           </div>
 
           {/* Email */}
           <div className="contact-card p-8 text-center space-y-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto contact-card">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <Mail className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Наш email</h3>
             <div className="space-y-2">
-              <p className="text-muted-foreground">hello@solarmtech.ru</p>
-              <p className="text-muted-foreground">info@solarmtech.ru</p>
+              <a href="mailto:hello@solarmtech.ru" className="text-muted-foreground hover:text-primary transition-colors block">hello@solarmtech.ru</a>
+              <a href="mailto:info@solarmtech.ru" className="text-muted-foreground hover:text-primary transition-colors block">info@solarmtech.ru</a>
             </div>
           </div>
 
           {/* Location */}
           <div className="contact-card p-8 text-center space-y-4">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto contact-card">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <MapPin className="w-8 h-8 text-primary" />
             </div>
             <h3 className="font-roboto-semibold text-lg text-foreground">Наше местоположение</h3>

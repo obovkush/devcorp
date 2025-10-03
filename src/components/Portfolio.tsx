@@ -126,21 +126,12 @@ const Portfolio = () => {
 
                 <div className="flex gap-2 pt-4">
                   <Button
-                    variant="outline"
+                    className="app-button-primary rounded-full px-3 py-1"
                     size="sm"
-                    className={getButtonClass()}
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Демо
                   </Button>
-                  {/* <Button
-                    variant="outline"
-                    size="sm"
-                    className={getButtonClass()}
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    Код
-                  </Button> */}
                 </div>
               </CardContent>
             </div>
@@ -149,9 +140,8 @@ const Portfolio = () => {
 
         <div className="text-center mt-12">
           <Button
-            variant="outline"
+            className="app-button-primary rounded-full px-8 py-3"
             size="lg"
-            className={currentTheme === 'neomorphism' ? 'px-8 py-3' : 'border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3'}
           >
             Посмотреть все проекты
           </Button>
