@@ -3,7 +3,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
   const { elementRef, isVisible } = useScrollAnimation();
-  
+
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div ref={elementRef} className="container mx-auto px-4 lg:px-8">
@@ -37,8 +37,8 @@ const About = () => {
             </div> */}
 
             {/* Values */}
-            <div className="flex gap-4">
-              <div className="flex gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex gap-4 p-6 bg-primary/5 rounded-xl border border-border hover:border-primary/20 transition-colors">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
@@ -50,7 +50,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 p-6 bg-primary/5 rounded-xl border border-border hover:border-primary/20 transition-colors">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Award className="w-6 h-6 text-white" />
                 </div>
@@ -62,7 +62,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-4 p-6 bg-primary/5 rounded-xl border border-border hover:border-primary/20 transition-colors">
                 <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
