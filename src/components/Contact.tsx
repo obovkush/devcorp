@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, ArrowRight, Users, HelpCircle, Copy, Check } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Users, HelpCircle, Copy, Check, MessageCircle, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { CONTACT_INFO } from "@/constants/contact";
@@ -32,17 +32,18 @@ const Contact = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <Phone className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-roboto-semibold text-lg text-foreground">Номер телефона</h3>
+            <h3 className="font-roboto-semibold text-lg text-foreground">Позвонить</h3>
             <div className="space-y-3">
-              <div className="flex items-center justify-between group">
-                  <a href={`tel:${CONTACT_INFO.phone}`} className="text-muted-foreground hover:text-primary transition-colors">
-                    {CONTACT_INFO.phone}
+              <div className="relative flex items-center justify-center group">
+                <a href={`tel:${CONTACT_INFO.phone}`} className="text-muted-foreground hover:text-primary transition-colors">
+                  {CONTACT_INFO.phone}
                 </a>
                 <button
-                    onClick={() => copyToClipboard(CONTACT_INFO.phone)}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded"
-                  >
-                    {isCopied(CONTACT_INFO.phone) ? (
+                  onClick={() => copyToClipboard(CONTACT_INFO.phone)}
+                  className="absolute opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded ml-2"
+                  style={{ left: 'calc(50% + 70px)' }}
+                >
+                  {isCopied(CONTACT_INFO.phone) ? (
                     <Check className="w-4 h-4 text-green-500" />
                   ) : (
                     <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
@@ -57,23 +58,46 @@ const Contact = () => {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
               <Mail className="w-8 h-8 text-primary" />
             </div>
-            <h3 className="font-roboto-semibold text-lg text-foreground">Наш email</h3>
+            <h3 className="font-roboto-semibold text-lg text-foreground">Написать</h3>
             <div className="space-y-3">
-              <div className="flex items-center justify-between group">
-                  <a href={`mailto:${CONTACT_INFO.email}`} className="text-muted-foreground hover:text-primary transition-colors">
-                    {CONTACT_INFO.email}
+              <div className="relative flex items-center justify-center group">
+                <a href={`mailto:${CONTACT_INFO.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+          {CONTACT_INFO.email}
                 </a>
                 <button
-                    onClick={() => copyToClipboard(CONTACT_INFO.email)}
-                    className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded"
-                  >
-                    {isCopied(CONTACT_INFO.email) ? (
+                  onClick={() => copyToClipboard(CONTACT_INFO.email)}
+                  className="absolute opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded ml-2"
+                  style={{ left: 'calc(50% + 70px)' }}
+                >
+                  {isCopied(CONTACT_INFO.email) ? (
                     <Check className="w-4 h-4 text-green-500" />
                   ) : (
                     <Copy className="w-4 h-4 text-muted-foreground hover:text-primary" />
                   )}
                 </button>
               </div>
+            </div>
+
+            {/* Messengers */}
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <a
+                href={CONTACT_INFO.messengers.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-full transition-colors"
+                title="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a
+                href={CONTACT_INFO.messengers.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors"
+                title="Telegram"
+              >
+                <Send className="w-5 h-5" />
+              </a>
             </div>
           </div>
 

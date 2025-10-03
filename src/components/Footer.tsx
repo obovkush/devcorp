@@ -1,4 +1,4 @@
-import { Zap, Copy, Check } from "lucide-react";
+import { Zap, Copy, Check, MessageCircle, Send } from "lucide-react";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { CONTACT_INFO } from "@/constants/contact";
 
@@ -38,7 +38,7 @@ const Footer = () => {
             <h4 className="font-roboto-medium text-primary-foreground mb-4">Контакты</h4>
             <ul className="space-y-3">
               <li>
-                <div className="flex items-center justify-between group">
+                <div className="flex gap-5 items-center justify-start group">
                   <a href={`mailto:${CONTACT_INFO.email}`} className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">
                     {CONTACT_INFO.email}
                   </a>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
               </li>
               <li>
-                <div className="flex items-center justify-between group">
+                <div className="flex gap-3 items-center justify-start group">
                   <a href={`tel:${CONTACT_INFO.phone}`} className="font-ksbistra muted-text hover:text-primary-foreground transition-colors">
                     {CONTACT_INFO.phone}
                   </a>
@@ -72,6 +72,28 @@ const Footer = () => {
                 </div>
               </li>
             </ul>
+
+                    {/* Messengers */}
+                    <div className="flex items-center gap-3 mt-6">
+                      <a
+                        href={CONTACT_INFO.messengers.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-8 h-8 bg-green-500 hover:bg-green-600 text-white rounded-full transition-colors"
+                        title="WhatsApp"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                      </a>
+                      <a
+                        href={CONTACT_INFO.messengers.telegram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition-colors"
+                        title="Telegram"
+                      >
+                        <Send className="w-4 h-4" />
+                      </a>
+                    </div>
           </div>
         </div>
 
