@@ -127,7 +127,7 @@ const Testimonials = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`mt-16 text-center ${isVisible ? 'scroll-fade-up scroll-animation-delay-200' : ''}`}>
+        {/* <div className={`mt-16 text-center ${isVisible ? 'scroll-fade-up scroll-animation-delay-200' : ''}`}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4">
               <div className="text-4xl md:text-5xl font-bold text-primary">98%</div>
@@ -142,7 +142,7 @@ const Testimonials = () => {
               <p className="text-muted-foreground">Средняя оценка</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
