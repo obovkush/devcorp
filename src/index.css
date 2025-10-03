@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* KSBistra Font - Using URL encoding for spaces */
+/* KSBistra Font - Using public folder paths */
 @font-face {
   font-family: 'KSBistra';
-  src: url('./assets/fonts/KSBistra/Web-TT/KS%20Bistra.woff2') format('woff2'),
-       url('./assets/fonts/KSBistra/Web-TT/KS%20Bistra.woff') format('woff'),
-       url('./assets/fonts/KSBistra/OpenType-TT/KS%20Bistra.ttf') format('truetype');
+  src: url('/KS-Bistra.woff2') format('woff2'),
+       url('/KS-Bistra.woff') format('woff'),
+       url('/KS-Bistra.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
