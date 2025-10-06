@@ -1,5 +1,6 @@
 import { Award, Target, Heart } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import TeamMap from "./TeamMap";
 
 const About = () => {
   const { elementRef, isVisible } = useScrollAnimation();
@@ -76,40 +77,10 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Content - Stats */}
-          {/* <div className="grid grid-cols-2 gap-6">
-            <div className="app-card p-6 text-center space-y-4">
-              <div className="app-stats">70K+</div>
-              <div>
-                <h3 className="font-roboto-medium text-foreground">Активных пользователей</h3>
-                <p className="text-sm text-muted-foreground">Растем каждый день</p>
-              </div>
-            </div>
-
-            <div className="app-card p-6 text-center space-y-4">
-              <div className="app-stats">56</div>
-              <div>
-                <h3 className="font-roboto-medium text-foreground">Стран работы</h3>
-                <p className="text-sm text-muted-foreground">По всему миру</p>
-              </div>
-            </div>
-
-            <div className="app-card p-6 text-center space-y-4">
-              <div className="app-stats">24/7</div>
-              <div>
-                <h3 className="font-roboto-medium text-foreground">Поддержка</h3>
-                <p className="text-sm text-muted-foreground">Всегда на связи</p>
-              </div>
-            </div>
-
-            <div className="app-card p-6 text-center space-y-4">
-              <div className="app-stats">99.9%</div>
-              <div>
-                <h3 className="font-roboto-medium text-foreground">Аптайм</h3>
-                <p className="text-sm text-muted-foreground">Стабильность</p>
-              </div>
-            </div>
-          </div> */}
+          {/* Team Map Section */}
+          <div className={`${isVisible ? 'scroll-fade-up scroll-animation-delay-200' : ''}`}>
+            <TeamMap />
+          </div>
         </div>
       </div>
     </section>
