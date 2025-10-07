@@ -32,10 +32,10 @@ const teamMembers: TeamMember[] = [
   },
   {
     id: 'kirov',
-    name: 'Максим',
-    role: 'Fullstack Developer',
+    name: 'Лёха',
+    role: 'Backend Developer',
     location: 'Киров, Россия',
-    description: 'Серверная разработка и базы данных. Мобильные приложения',
+    description: 'Просто хороший парень.',
     coordinates: { xPercent: 36, yPercent: 33 }
   },
   {
@@ -55,11 +55,11 @@ const teamMembers: TeamMember[] = [
     coordinates: { xPercent: 74, yPercent: 45 }
   },
   {
-    id: 'saint-petersburg',
-    name: 'Лёха',
+    id: 'moscow-2',
+    name: 'Максим',
     role: 'Backend Developer',
     location: 'Москва, Россия',
-    description: 'Просто хороший парень.',
+    description: 'Серверная разработка и базы данных. Мобильные приложения',
     coordinates: { xPercent: 29, yPercent: 38 }
   }
 ];
@@ -82,54 +82,69 @@ const TeamMap = () => {
           </h2>
 
           {/* Map with falling points */}
-          <div className="relative w-full max-w-4xl mx-auto">
-            <img
-              src={mapImg}
-              alt="Евразия - карта"
-              className="w-full h-auto rounded-xl border border-border"
-            />
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="relative">
+              <img
+                src={mapImg}
+                alt="Евразия - карта"
+                className="w-full h-auto rounded-xl border border-border"
+              />
 
-            {/* Points */}
-            {teamMembers.map((member, index) => {
-              const left = `${member.coordinates.xPercent}%`;
-              const top = `${member.coordinates.yPercent}%`;
-              const delayMs = 150 + index * 120; // staggered
-              return (
+              {/* Points positioned relative to the image */}
+              {teamMembers.map((member, index) => {
+                const left = `${member.coordinates.xPercent}%`;
+                const top = `${member.coordinates.yPercent}%`;
+                const delayMs = 150 + index * 120; // staggered
+                return (
+                  <div
+                    key={member.id}
+                    className="absolute"
+                    style={{
+                      left,
+                      top,
+                      transform: mounted ? 'translate(-50%, -50%)' : 'translate(-50%, calc(-50% - 16px))',
+                      opacity: mounted ? 1 : 0,
+                      transition: `transform 500ms ease, opacity 500ms ease ${delayMs}ms`,
+                      zIndex: 2,
+                    }}
+                    onMouseEnter={() => setHoveredMember(member)}
+                    onMouseLeave={() => setHoveredMember(null)}
+                  >
+                  <img
+                    src={pointImg}
+                    alt={member.name}
+                    className="cursor-pointer drop-shadow"
+                    style={{
+                      width: 'clamp(12px, 2vw, 28px)',
+                      height: 'clamp(16px, 2.8vw, 40px)',
+                    }}
+                  />
+                  </div>
+                );
+              })}
+              {/* Hover tooltip */}
+              {hoveredMember && (
                 <div
-                  key={member.id}
-                  className="absolute"
+                  className="absolute bg-background border border-border rounded-lg shadow-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm"
                   style={{
-                    left,
-                    top,
-                    transform: mounted ? 'translate(-50%, -50%)' : 'translate(-50%, calc(-50% - 16px))',
-                    opacity: mounted ? 1 : 0,
-                    transition: `transform 500ms ease, opacity 500ms ease ${delayMs}ms`,
-                    zIndex: 2,
+                    left: hoveredMember.coordinates.xPercent < 20 ? '1rem' :
+                          hoveredMember.coordinates.xPercent > 80 ? 'auto' :
+                          `${hoveredMember.coordinates.xPercent}%`,
+                    right: hoveredMember.coordinates.xPercent > 80 ? '1rem' : 'auto',
+                    top: `${hoveredMember.coordinates.yPercent}%`,
+                    transform: hoveredMember.coordinates.xPercent < 20 ? 'translate(0, -120%)' :
+                              hoveredMember.coordinates.xPercent > 80 ? 'translate(0, -120%)' :
+                              'translate(-50%, -120%)',
+                    maxWidth: 'calc(100vw - 2rem)',
                   }}
-                  onMouseEnter={() => setHoveredMember(member)}
-                  onMouseLeave={() => setHoveredMember(null)}
                 >
-                  <img src={pointImg} alt={member.name} className="w-5 h-7 cursor-pointer drop-shadow" />
+                  <h4 className="font-medium text-foreground mb-1 text-sm md:text-base">{hoveredMember.name}</h4>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-1">{hoveredMember.role}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-2">{hoveredMember.location}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{hoveredMember.description}</p>
                 </div>
-              );
-            })}
-
-            {/* Hover tooltip */}
-            {hoveredMember && (
-              <div
-                className="absolute bg-background border border-border rounded-lg shadow-lg p-4 z-10 max-w-xs"
-                style={{
-                  left: `${hoveredMember.coordinates.xPercent}%`,
-                  top: `${hoveredMember.coordinates.yPercent}%`,
-                  transform: 'translate(-50%, -120%)'
-                }}
-              >
-                <h4 className="font-medium text-foreground mb-1">{hoveredMember.name}</h4>
-                <p className="text-sm text-muted-foreground mb-1">{hoveredMember.role}</p>
-                <p className="text-sm text-muted-foreground mb-2">{hoveredMember.location}</p>
-                <p className="text-xs text-muted-foreground">{hoveredMember.description}</p>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </CardContent>
       </Card>
