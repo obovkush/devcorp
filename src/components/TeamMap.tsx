@@ -19,7 +19,7 @@ const teamMembers: TeamMember[] = [
     name: 'Артём',
     role: 'Fullstack Developer',
     location: 'Валенсия, Испания',
-    description: 'Серверная разработка, опыт работы с международными проектами.',
+    description: 'Серверная разработка и базы данных. Опыт работы с международными проектами.',
     coordinates: { xPercent: 12.5, yPercent: 52 }
   },
   {
@@ -27,15 +27,15 @@ const teamMembers: TeamMember[] = [
     name: 'Роман',
     role: 'Fullstack Developer',
     location: 'Москва, Россия',
-    description: 'Клиент-сервисные приложения.',
+    description: 'Серверная разработка и базы данных. Клиент-серверные приложения.',
     coordinates: { xPercent: 30, yPercent: 37 }
   },
   {
     id: 'kirov',
     name: 'Максим',
-    role: 'Backend Developer',
+    role: 'Fullstack Developer',
     location: 'Киров, Россия',
-    description: 'Серверная разработка и базы данных.',
+    description: 'Серверная разработка и базы данных. Мобильные приложения',
     coordinates: { xPercent: 36, yPercent: 33 }
   },
   {
@@ -43,7 +43,7 @@ const teamMembers: TeamMember[] = [
     name: 'Сергей',
     role: 'Tech Lead',
     location: 'Красноярск, Россия',
-    description: 'Архитектура и автоматизация развертывания. Упарвление командой.',
+    description: 'Архитектура и автоматизация развертывания. Управление командой.',
     coordinates: { xPercent: 52, yPercent: 45 }
   },
   {
@@ -51,7 +51,7 @@ const teamMembers: TeamMember[] = [
     name: 'Олег',
     role: 'Frontend Developer',
     location: 'Хабаровск, Россия',
-    description: 'Создает интерфейсы.',
+    description: 'Разработка интерфейсов.',
     coordinates: { xPercent: 74, yPercent: 45 }
   },
   {
@@ -77,9 +77,9 @@ const TeamMap = () => {
     <div className="relative">
       <Card className="contact-card p-6">
         <CardContent className="p-0">
-          <h3 className="text-2xl font-ksbistra text-foreground mb-6 text-center">
+          <h2 className="section-title text-foreground mb-6 text-center">
             Наша команда
-          </h3>
+          </h2>
 
           {/* Map with falling points */}
           <div className="relative w-full max-w-4xl mx-auto">
