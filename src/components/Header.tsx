@@ -90,18 +90,6 @@ const Header = () => {
             О нас
           </button>
           <button
-            onClick={() => { document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("portfolio")}
-          >
-            Проекты
-          </button>
-          <button
-            onClick={() => { document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("testimonials")}
-          >
-            Отзывы
-          </button>
-          <button
             onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
             className={linkClass("contact")}
           >
