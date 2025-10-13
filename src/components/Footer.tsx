@@ -29,7 +29,7 @@ const Footer = () => {
               <li><a href="#" className="transition-colors">Веб-разработка</a></li>
               <li><a href="#" className="transition-colors">Мобильные приложения</a></li>
               <li><a href="#" className="transition-colors">Корпоративные системы</a></li>
-              <li><a href="#" className="transition-colors">Консалтинг</a></li>
+              <li><a href="#" className="transition-colors">Автоматизация бизнес-процессов</a></li>
             </ul>
           </div>
 
