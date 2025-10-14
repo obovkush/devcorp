@@ -66,17 +66,17 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/95 border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 lg:px-8 py-4 grid grid-cols-3 items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 justify-start">
           <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
             <Zap className="w-6 h-6 text-white" />
           </div>
           <span className="text-2xl font-ksbistra text-foreground">SOLARM Tech</span>
         </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Navigation - Centered */}
+        <nav className="hidden md:flex items-center justify-center space-x-8">
           <button
             onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }}
             className={linkClass("home", true)}
@@ -98,7 +98,7 @@ const Header = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-end space-x-4">
           {/* <ThemeSelector /> */}
           <Button
             className="app-button-primary btn-contact-wrap hidden md:inline-flex items-center gap-3"
