@@ -80,6 +80,7 @@ const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         title="WhatsApp"
+                        className="messenger-icon"
                       >
                         <img src="/images/whatsapp.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
                       </a>
@@ -88,6 +89,7 @@ const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Telegram"
+                        className="messenger-icon"
                       >
                         <img src="/images/telegram.png" alt="Telegram" className="w-8 h-8 object-contain" />
                       </a>

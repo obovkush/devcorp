@@ -87,6 +87,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="WhatsApp"
+                className="messenger-icon"
               >
                 <img src={whatsappImg} alt="WhatsApp" className="w-10 h-10 object-contain" />
               </a>
@@ -95,6 +96,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Telegram"
+                className="messenger-icon"
               >
                 <img src={telegramImg} alt="Telegram" className="w-10 h-10 object-contain" />
               </a>

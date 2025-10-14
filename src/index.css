@@ -306,9 +306,35 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   }
 }
 
+@keyframes messengerShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes messengerPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
 .scroll-fade-up {
   opacity: 0;
   animation: scroll-fade-up 0.8s ease-out forwards;
+}
+
+/* Messenger animations */
+.messenger-icon {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.messenger-icon:hover {
+  animation: messengerShake 0.5s ease-in-out;
+}
+
+.messenger-icon:active {
+  animation: messengerPress 0.2s ease-in-out;
 }
 
 .scroll-animation-delay-100 {
