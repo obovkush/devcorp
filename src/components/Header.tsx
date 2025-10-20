@@ -90,6 +90,12 @@ const Header = () => {
             О нас
           </button>
           <button
+            onClick={() => { document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
+            className={linkClass("portfolio")}
+          >
+            Проекты
+          </button>
+          <button
             onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
             className={linkClass("contact")}
           >
@@ -149,13 +155,6 @@ const Header = () => {
                   className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('portfolio')} hover:bg-primary/10`}
             >
               Проекты
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => { document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-                  className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('testimonials')} hover:bg-primary/10`}
-            >
-              Отзывы
               <ChevronRight className="w-4 h-4" />
             </button>
             <button
