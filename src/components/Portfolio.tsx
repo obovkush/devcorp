@@ -80,22 +80,29 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`app-card group cursor-pointer ${isVisible ? 'scroll-fade-up' : ''}`}
+              className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 ${isVisible ? 'scroll-fade-up' : ''}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-background/80 text-foreground">
+                  <Badge
+                    variant="secondary"
+                    className="bg-background/90 text-foreground backdrop-blur-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100"
+                  >
                     {project.category}
                   </Badge>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <Badge variant="outline" className="bg-background/80 border-primary/50">
+                  <Badge
+                    variant="outline"
+                    className="bg-background/90 border-primary/50 backdrop-blur-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
+                  >
                     {project.year}
                   </Badge>
                 </div>
@@ -126,11 +133,19 @@ const Portfolio = () => {
 
                 <div className="flex gap-2 pt-4">
                   <Button
-                    className="app-button-primary rounded-full px-3 py-1"
+                    className={`app-button-primary rounded-full px-3 py-1 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
                     size="sm"
                   >
                     <ExternalLink className="w-4 h-4 mr-1" />
                     Демо
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className={`rounded-full px-3 py-1 ${getButtonClass()} hover:scale-105 transition-transform duration-200 border-primary/30 hover:border-primary/60`}
+                    size="sm"
+                  >
+                    <Github className="w-4 h-4 mr-1" />
+                    Код
                   </Button>
                 </div>
               </CardContent>
@@ -140,7 +155,7 @@ const Portfolio = () => {
 
         <div className="text-center mt-12">
           <Button
-            className="app-button-primary rounded-full px-8 py-3"
+            className={`app-button-primary rounded-full px-8 py-3 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
             size="lg"
           >
             Посмотреть все проекты
