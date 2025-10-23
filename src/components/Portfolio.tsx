@@ -16,6 +16,13 @@ import parfume2 from "@/assets/parfume/parfume-2.png";
 import parfume3 from "@/assets/parfume/parfume-3.png";
 import parfume4 from "@/assets/parfume/parfume-4.png";
 import parfume5 from "@/assets/parfume/parfume-5.png";
+import backery1 from "@/assets/backery/backery-1.png";
+import backery2 from "@/assets/backery/backery-2.png";
+import backery3 from "@/assets/backery/backery-3.png";
+import backery4 from "@/assets/backery/backery-4.png";
+import backery5 from "@/assets/backery/backery-5.png";
+import backery6 from "@/assets/backery/backery-6.png";
+import backery7 from "@/assets/backery/backery-7.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ImageGallery from "./ImageGallery";
 import { useState } from "react";
@@ -42,6 +49,14 @@ const Portfolio = () => {
       images: [parfume1, parfume2, parfume3, parfume4, parfume5],
       technologies: ["React Native", "TypeScript", "Firebase", "Payment API"],
       category: "E-commerce",
+      year: "2024"
+    },
+    {
+      title: "Британские пекарни",
+      description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
+      images: [backery1, backery2, backery3, backery4, backery5, backery6, backery7],
+      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
+      category: "Food & Beverage",
       year: "2024"
     },
     {
