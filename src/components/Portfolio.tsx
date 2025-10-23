@@ -2,15 +2,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/contexts/ThemeContext";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Search } from "lucide-react";
 import project1Image from "@/assets/project-1.jpg";
 import project2Image from "@/assets/project-2.jpg";
 import project3Image from "@/assets/project-3.jpg";
+import mobileApp1 from "@/assets/asia/photo_1_2025-10-15_22-09-18.jpg";
+import mobileApp2 from "@/assets/asia/photo_2_2025-10-15_22-09-18.jpg";
+import mobileApp3 from "@/assets/asia/photo_3_2025-10-15_22-09-18.jpg";
+import mobileApp4 from "@/assets/asia/photo_4_2025-10-15_22-09-18.jpg";
+import mobileApp5 from "@/assets/asia/photo_5_2025-10-15_22-09-18.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ImageGallery from "./ImageGallery";
+import { useState } from "react";
 
 const Portfolio = () => {
   const { currentTheme } = useTheme();
   const { elementRef, isVisible } = useScrollAnimation();
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
 
   const projects = [
     {
@@ -22,7 +32,7 @@ const Portfolio = () => {
       year: "2024"
     },
     {
-      title: "Платформа криптовалютных платежей",
+      title: "Платформа крипто-платежей",
       description: "Безопасная платформа для обработки криптовалютных транзакций с поддержкой основных криптовалют и DeFi интеграциями.",
       image: project2Image,
       technologies: ["React Native", "Solidity", "Web3.js", "MongoDB"],
@@ -35,6 +45,14 @@ const Portfolio = () => {
       image: project3Image,
       technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
       category: "AI/ML",
+      year: "2024"
+    },
+    {
+      title: "Мобильное приложение AsiiEda",
+      description: "Мобильное приложение для ресторана азиатской еды.",
+      images: [mobileApp1, mobileApp2, mobileApp3, mobileApp4, mobileApp5],
+      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
+      category: "Mobile",
       year: "2024"
     }
   ];
@@ -64,6 +82,16 @@ const Portfolio = () => {
     return 'text-sm px-3 py-1 transition-colors';
   };
 
+  const openGallery = (images: string[], initialIndex: number = 0) => {
+    setGalleryImages(images);
+    setGalleryInitialIndex(initialIndex);
+    setGalleryOpen(true);
+  };
+
+  const closeGallery = () => {
+    setGalleryOpen(false);
+  };
+
   return (
     <section id="portfolio" className={getSectionClass()}>
       <div ref={elementRef} className="container mx-auto px-4">
@@ -72,24 +100,45 @@ const Portfolio = () => {
             Портфолио решений
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Проекты, которые меняют индустрию.
+            Проекты, которые меняют бизнес.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 ${isVisible ? 'scroll-fade-up' : ''}`}
+              className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${isVisible ? 'scroll-fade-up' : ''}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {project.images ? (
+                  <div
+                    className="relative cursor-pointer"
+                    onClick={() => openGallery(project.images, 0)}
+                  >
+                    <img
+                      src={project.images[0]}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-background/80 backdrop-blur-sm p-3 rounded-full">
+                        <Search className="w-6 h-6 text-primary" />
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </>
+                )}
                 <div className="absolute top-4 left-4">
                   <Badge
                     variant="secondary"
@@ -119,7 +168,7 @@ const Portfolio = () => {
                   {project.description}
                 </CardDescription>
 
-                <div className="flex flex-wrap gap-2">
+                {/* <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <Badge
                       key={techIndex}
@@ -129,9 +178,9 @@ const Portfolio = () => {
                       {tech}
                     </Badge>
                   ))}
-                </div>
+                </div> */}
 
-                <div className="flex gap-2 pt-4">
+                {/* <div className="flex gap-2 pt-4">
                   <Button
                     className={`app-button-primary rounded-full px-3 py-1 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
                     size="sm"
@@ -147,21 +196,29 @@ const Portfolio = () => {
                     <Github className="w-4 h-4 mr-1" />
                     Код
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button
             className={`app-button-primary rounded-full px-8 py-3 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
             size="lg"
           >
             Посмотреть все проекты
           </Button>
-        </div>
+        </div> */}
       </div>
+
+      {/* Image Gallery Modal */}
+      <ImageGallery
+        images={galleryImages}
+        isOpen={galleryOpen}
+        onClose={closeGallery}
+        initialIndex={galleryInitialIndex}
+      />
     </section>
   );
 };
