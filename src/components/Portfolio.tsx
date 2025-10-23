@@ -67,15 +67,6 @@ const Portfolio = () => {
       category: "FinTech",
       year: "2024"
     },
-    {
-      title: "Платформа крипто-платежей",
-      description: "Безопасная платформа для обработки криптовалютных транзакций с поддержкой основных криптовалют и DeFi интеграциями.",
-      image: project2Image,
-      technologies: ["React Native", "Solidity", "Web3.js", "MongoDB"],
-      category: "Blockchain",
-      year: "2024"
-    },
-
   ];
 
   const getCardClass = () => {
