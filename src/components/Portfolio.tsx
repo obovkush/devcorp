@@ -11,6 +11,11 @@ import asia2 from "@/assets/asia/asia-2.jpg";
 import asia3 from "@/assets/asia/asia-3.jpg";
 import asia4 from "@/assets/asia/asia-4.jpg";
 import asia5 from "@/assets/asia/asia-5.jpg";
+import parfume1 from "@/assets/parfume/parfume-1.png";
+import parfume2 from "@/assets/parfume/parfume-2.png";
+import parfume3 from "@/assets/parfume/parfume-3.png";
+import parfume4 from "@/assets/parfume/parfume-4.png";
+import parfume5 from "@/assets/parfume/parfume-5.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ImageGallery from "./ImageGallery";
 import { useState } from "react";
@@ -28,7 +33,15 @@ const Portfolio = () => {
       description: "Мобильное приложение для заказа блюд из кафе и ресторанов азиатской кухни.",
       images: [asia1, asia2, asia3, asia4, asia5],
       technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
-      category: "Mobile",
+      category: "E-commerce",
+      year: "2024"
+    },
+    {
+      title: "Парфюмерный супермаркет",
+      description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
+      images: [parfume1, parfume2, parfume3, parfume4, parfume5],
+      technologies: ["React Native", "TypeScript", "Firebase", "Payment API"],
+      category: "E-commerce",
       year: "2024"
     },
     {
@@ -47,14 +60,7 @@ const Portfolio = () => {
       category: "Blockchain",
       year: "2024"
     },
-    // {
-    //   title: "AI-система кредитного скоринга",
-    //   description: "Интеллектуальная система оценки кредитных рисков с машинным обучением и предиктивной аналитикой для банков.",
-    //   image: project3Image,
-    //   technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
-    //   category: "AI/ML",
-    //   year: "2024"
-    // },
+
   ];
 
   const getCardClass = () => {
@@ -104,7 +110,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -158,7 +164,7 @@ const Portfolio = () => {
               </div>
 
               <CardHeader>
-                <CardTitle className="subsection-title text-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>
