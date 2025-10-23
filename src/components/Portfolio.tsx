@@ -6,11 +6,11 @@ import { ExternalLink, Github, Search } from "lucide-react";
 import project1Image from "@/assets/project-1.jpg";
 import project2Image from "@/assets/project-2.jpg";
 import project3Image from "@/assets/project-3.jpg";
-import mobileApp1 from "@/assets/asia/photo_1_2025-10-15_22-09-18.jpg";
-import mobileApp2 from "@/assets/asia/photo_2_2025-10-15_22-09-18.jpg";
-import mobileApp3 from "@/assets/asia/photo_3_2025-10-15_22-09-18.jpg";
-import mobileApp4 from "@/assets/asia/photo_4_2025-10-15_22-09-18.jpg";
-import mobileApp5 from "@/assets/asia/photo_5_2025-10-15_22-09-18.jpg";
+import asia1 from "@/assets/asia/asia-1.jpg";
+import asia2 from "@/assets/asia/asia-2.jpg";
+import asia3 from "@/assets/asia/asia-3.jpg";
+import asia4 from "@/assets/asia/asia-4.jpg";
+import asia5 from "@/assets/asia/asia-5.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ImageGallery from "./ImageGallery";
 import { useState } from "react";
@@ -23,6 +23,14 @@ const Portfolio = () => {
   const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
 
   const projects = [
+    {
+      title: "Магазин доставки азиатской кухни",
+      description: "Мобильное приложение для заказа блюд из кафе и ресторанов азиатской кухни.",
+      images: [asia1, asia2, asia3, asia4, asia5],
+      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
+      category: "Mobile",
+      year: "2024"
+    },
     {
       title: "Банковская экосистема TechBank",
       description: "Комплексная банковская платформа с мобильным приложением, интернет-банкингом, системой платежей и аналитикой в реальном времени.",
@@ -39,22 +47,14 @@ const Portfolio = () => {
       category: "Blockchain",
       year: "2024"
     },
-    {
-      title: "AI-система кредитного скоринга",
-      description: "Интеллектуальная система оценки кредитных рисков с машинным обучением и предиктивной аналитикой для банков.",
-      image: project3Image,
-      technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
-      category: "AI/ML",
-      year: "2024"
-    },
-    {
-      title: "Мобильное приложение AsiiEda",
-      description: "Мобильное приложение для ресторана азиатской еды.",
-      images: [mobileApp1, mobileApp2, mobileApp3, mobileApp4, mobileApp5],
-      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
-      category: "Mobile",
-      year: "2024"
-    }
+    // {
+    //   title: "AI-система кредитного скоринга",
+    //   description: "Интеллектуальная система оценки кредитных рисков с машинным обучением и предиктивной аналитикой для банков.",
+    //   image: project3Image,
+    //   technologies: ["Python", "TensorFlow", "FastAPI", "PostgreSQL"],
+    //   category: "AI/ML",
+    //   year: "2024"
+    // },
   ];
 
   const getCardClass = () => {
@@ -104,7 +104,7 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
