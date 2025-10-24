@@ -1,11 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/contexts/ThemeContext";
-import { ExternalLink, Github, Search } from "lucide-react";
-import project1Image from "@/assets/project-1.jpg";
-import project2Image from "@/assets/project-2.jpg";
-import project3Image from "@/assets/project-3.jpg";
+import { Search } from "lucide-react";
+import smeta1 from "@/assets/smeta/smeta-1.png";
+import smeta2 from "@/assets/smeta/smeta-2.png";
+import smeta3 from "@/assets/smeta/smeta-3.png";
+import smeta4 from "@/assets/smeta/smeta-4.png";
+import smeta5 from "@/assets/smeta/smeta-5.png";
+import smeta6 from "@/assets/smeta/smeta-6.png";
 import asia1 from "@/assets/asia/asia-1.jpg";
 import asia2 from "@/assets/asia/asia-2.jpg";
 import asia3 from "@/assets/asia/asia-3.jpg";
@@ -36,18 +38,16 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "Магазин доставки азиатской кухни",
+      title: "Магазин азиатской кухни",
       description: "Мобильное приложение для заказа блюд из кафе и ресторанов азиатской кухни.",
       images: [asia1, asia2, asia3, asia4, asia5],
-      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
       category: "E-commerce",
       year: "2024"
     },
     {
-      title: "Парфюмерный супермаркет",
+      title: "Магазин парфюмерии",
       description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
       images: [parfume1, parfume2, parfume3, parfume4, parfume5],
-      technologies: ["React Native", "TypeScript", "Firebase", "Payment API"],
       category: "E-commerce",
       year: "2024"
     },
@@ -55,16 +55,14 @@ const Portfolio = () => {
       title: "Британские пекарни",
       description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
       images: [backery1, backery2, backery3, backery4, backery5, backery6, backery7],
-      technologies: ["React Native", "TypeScript", "Firebase", "Maps API"],
-      category: "Food & Beverage",
+      category: "E-commerce",
       year: "2024"
     },
     {
-      title: "Банковская экосистема TechBank",
-      description: "Комплексная банковская платформа с мобильным приложением, интернет-банкингом, системой платежей и аналитикой в реальном времени.",
-      image: project1Image,
-      technologies: ["React", "Node.js", "PostgreSQL", "Blockchain"],
-      category: "FinTech",
+      title: "Калькулятор сметы",
+      description: "Комплексная платформа для расчета сметных работ с формированием печатных форм.",
+      images: [smeta1, smeta2, smeta3, smeta4, smeta5, smeta6],
+      category: "E-commerce",
       year: "2024"
     },
   ];
@@ -85,13 +83,6 @@ const Portfolio = () => {
       default:
         return "py-20 bg-secondary/50";
     }
-  };
-
-  const getButtonClass = () => {
-    if (currentTheme === 'neomorphism') {
-      return 'text-sm px-3 py-1';
-    }
-    return 'text-sm px-3 py-1 transition-colors';
   };
 
   const openGallery = (images: string[], initialIndex: number = 0) => {
@@ -123,34 +114,23 @@ const Portfolio = () => {
               className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${isVisible ? 'scroll-fade-up' : ''}`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="relative overflow-hidden">
-                {project.images ? (
-                  <div
-                    className="relative cursor-pointer"
-                    onClick={() => openGallery(project.images, 0)}
-                  >
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-background/80 backdrop-blur-sm p-3 rounded-full">
-                        <Search className="w-6 h-6 text-primary" />
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </>
-                )}
+               <div className="relative overflow-hidden">
+                 <div
+                   className="relative cursor-pointer"
+                   onClick={() => openGallery(project.images, 0)}
+                 >
+                   <img
+                     src={project.images[0]}
+                     alt={project.title}
+                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     <div className="bg-background/80 backdrop-blur-sm p-3 rounded-full">
+                       <Search className="w-6 h-6 text-primary" />
+                     </div>
+                   </div>
+                 </div>
                 <div className="absolute top-4 left-4">
                   <Badge
                     variant="secondary"
