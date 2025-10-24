@@ -13,6 +13,8 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     setCurrentIndex(initialIndex);
@@ -58,6 +60,31 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
         e.preventDefault();
         handleResetZoom();
         break;
+    }
+  };
+
+  // Функции для обработки свайпов
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentIndex < images.length - 1) {
+      goToNext();
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      goToPrevious();
     }
   };
 
@@ -182,6 +209,9 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
             transform: `scale(${zoomLevel})`,
           }}
           onClick={handleImageClick}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         />
       </div>
 
