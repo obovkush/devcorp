@@ -117,7 +117,7 @@ const Portfolio = () => {
                <div className="relative overflow-hidden">
                  <div
                    className="relative cursor-pointer"
-                   onClick={() => openGallery(project.images, 0)}
+                   onClick={() => openGallery(project.images.slice(1), 0)}
                  >
                    <img
                      src={project.images[0]}
