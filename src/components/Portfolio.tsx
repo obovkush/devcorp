@@ -87,7 +87,7 @@ const Portfolio = () => {
 
   const openGallery = (images: string[], initialIndex: number = 0) => {
     setGalleryImages(images);
-    setGalleryInitialIndex(initialIndex);
+    setGalleryInitialIndex(0); // Всегда начинаем с первого изображения
     setGalleryOpen(true);
   };
 

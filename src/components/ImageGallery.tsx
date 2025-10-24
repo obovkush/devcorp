@@ -25,6 +25,11 @@ const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGaller
     }
   }, [isOpen]);
 
+  // Сброс индекса при изменении массива изображений
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [images]);
+
   const handleKeyDown = (e: KeyboardEvent) => {
     if (!isOpen) return;
 
