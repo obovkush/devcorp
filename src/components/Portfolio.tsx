@@ -143,13 +143,13 @@ const Portfolio = () => {
              return (
              <div
                key={cardIndex}
-               className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${
+               className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col overflow-hidden ${
                  transitioning ? 'project-card-transitioning' : ''
                }`}
                onMouseEnter={() => setIsPaused(true)}
                onMouseLeave={() => setIsPaused(false)}
              >
-               <div className="relative overflow-hidden">
+               <div className="relative overflow-hidden rounded-t-xl">
                  <div
                    className="relative cursor-pointer project-card-content"
                    onClick={() => openGallery(project.images.slice(1), 0)}
