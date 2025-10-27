@@ -27,7 +27,7 @@ import backery6 from "@/assets/backery/backery-6.png";
 import backery7 from "@/assets/backery/backery-7.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ImageGallery from "./ImageGallery";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Portfolio = () => {
   const { currentTheme } = useTheme();
@@ -35,6 +35,9 @@ const Portfolio = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [transitioning, setTransitioning] = useState(false);
 
   const projects = [
     {
@@ -95,6 +98,29 @@ const Portfolio = () => {
     setGalleryOpen(false);
   };
 
+  // Автоматическая ротация проектов
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setTransitioning(true);
+
+      // Меняем индекс в начале fade-in, а не в середине
+      setTimeout(() => {
+        setActiveProjectIndex((prev) => (prev + 1) % projects.length);
+        setTransitioning(false);
+      }, 2400); // середина анимации для более плавного перехода
+    }, 4800);
+
+    return () => clearInterval(interval);
+  }, [isPaused, projects.length]);
+
+  // Вычисляем проекты для отображения в карточках
+  const getProjectForCard = (cardIndex: number) => {
+    const index = (activeProjectIndex + cardIndex) % projects.length;
+    return projects[index];
+  };
+
   return (
     <section id="portfolio" className={getSectionClass()}>
       <div ref={elementRef} className="container mx-auto px-4">
@@ -107,16 +133,21 @@ const Portfolio = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${isVisible ? 'scroll-fade-up' : ''}`}
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+           {Array.from({length: 4}).map((_, cardIndex) => {
+             const project = getProjectForCard(cardIndex);
+             return (
+             <div
+               key={cardIndex}
+               className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${
+                 transitioning ? 'project-card-transitioning' : ''
+               }`}
+               onMouseEnter={() => setIsPaused(true)}
+               onMouseLeave={() => setIsPaused(false)}
+             >
                <div className="relative overflow-hidden">
                  <div
-                   className="relative cursor-pointer"
+                   className="relative cursor-pointer project-card-content"
                    onClick={() => openGallery(project.images.slice(1), 0)}
                  >
                    <img
@@ -149,16 +180,17 @@ const Portfolio = () => {
                 </div>
               </div>
 
-              <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
+              <div className="project-card-content">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                </CardHeader>
 
-              <CardContent className="space-y-4">
-                <CardDescription className="text-muted-foreground line-clamp-3">
-                  {project.description}
-                </CardDescription>
+                <CardContent className="space-y-4">
+                  <CardDescription className="text-muted-foreground line-clamp-3">
+                    {project.description}
+                  </CardDescription>
 
                 {/* <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
@@ -189,9 +221,11 @@ const Portfolio = () => {
                     Код
                   </Button>
                 </div> */}
-              </CardContent>
+                </CardContent>
+              </div>
             </div>
-          ))}
+           );
+           })}
         </div>
 
         {/* <div className="text-center mt-12">

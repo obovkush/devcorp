@@ -207,6 +207,34 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* Fade animation for project carousel */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.project-card-content {
+  opacity: 1;
+  transition: opacity 2.4s cubic-bezier(0.175, 0.22, 0.165, 1);
+}
+
+.project-card-transitioning .project-card-content {
+  opacity: 0;
+}
+
 /* App Component Styles */
 .app-card {
   @apply bg-primary/5 border border-border rounded-xl backdrop-blur-sm;
