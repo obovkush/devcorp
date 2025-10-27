@@ -228,11 +228,11 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 .project-card-content {
   opacity: 1;
-  transition: opacity 2.4s cubic-bezier(0.175, 0.22, 0.165, 1);
+  transition: opacity 2.4s cubic-bezier(0.45, 0.1, 0.45, 1);
 }
 
 .project-card-transitioning .project-card-content {
-  opacity: 0;
+  opacity: 0.05;
 }
 
 /* App Component Styles */
