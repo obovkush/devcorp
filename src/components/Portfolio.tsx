@@ -8,6 +8,15 @@ import smeta3 from "@/assets/smeta/smeta-3.png";
 import smeta4 from "@/assets/smeta/smeta-4.png";
 import smeta5 from "@/assets/smeta/smeta-5.png";
 import smeta6 from "@/assets/smeta/smeta-6.png";
+import sot1 from "@/assets/sot/sot-1.png";
+import sot2 from "@/assets/sot/sot-2.png";
+import sot3 from "@/assets/sot/sot-3.png";
+import sot4 from "@/assets/sot/sot-4.png";
+import sot5 from "@/assets/sot/sot-5.png";
+import sot6 from "@/assets/sot/sot-6.png";
+import sot7 from "@/assets/sot/sot-7.png";
+import sot8 from "@/assets/sot/sot-8.png";
+import sot9 from "@/assets/sot/sot-9.png";
 import asia1 from "@/assets/asia/asia-1.jpg";
 import asia2 from "@/assets/asia/asia-2.jpg";
 import asia3 from "@/assets/asia/asia-3.jpg";
@@ -68,7 +77,14 @@ const Portfolio = () => {
       category: "E-commerce",
       year: "2024"
     },
-  ];
+    {
+      title: "Система охраны труда",
+      description: "Современная мульти-модульная система автоматизации процессов и ведения документов в области охраны труда.",
+      images: [sot1, sot2, sot3, sot4, sot5, sot6, sot7, sot8, sot9],
+      category: "Enterprise",
+      year: "2024"
+    },
+   ];
 
   const getCardClass = () => {
     switch (currentTheme) {
