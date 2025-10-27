@@ -117,9 +117,13 @@ const Portfolio = () => {
 
   // Вычисляем проекты для отображения в карточках
   const getProjectForCard = (cardIndex: number) => {
+    const totalCards = Math.min(4, projects.length);
     const index = (activeProjectIndex + cardIndex) % projects.length;
     return projects[index];
   };
+
+  // Количество отображаемых карточек
+  const totalCards = Math.min(4, projects.length);
 
   return (
     <section id="portfolio" className={getSectionClass()}>
@@ -134,7 +138,7 @@ const Portfolio = () => {
         </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-           {Array.from({length: 4}).map((_, cardIndex) => {
+           {Array.from({length: totalCards}).map((_, cardIndex) => {
              const project = getProjectForCard(cardIndex);
              return (
              <div
