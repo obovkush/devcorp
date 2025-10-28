@@ -102,7 +102,12 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className={getSectionClass()}>
-      <div ref={elementRef} className="container mx-auto px-4">
+      <div
+        ref={elementRef}
+        className="container mx-auto px-4"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
           <h2 className="section-title text-foreground mb-8">
             Портфолио решений
@@ -121,8 +126,6 @@ const Portfolio = () => {
                className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col overflow-hidden ${
                  transitioning ? 'project-card-transitioning' : ''
                }`}
-               onMouseEnter={() => setIsPaused(true)}
-               onMouseLeave={() => setIsPaused(false)}
              >
                <div className="relative overflow-hidden rounded-t-xl">
                  <div
@@ -229,7 +232,7 @@ const Portfolio = () => {
                 }}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === activeProjectIndex
-                    ? 'bg-primary w-8'
+                    ? 'bg-primary'
                     : 'bg-primary/30 hover:bg-primary/50'
                 }`}
                 aria-label={`Перейти к проекту ${index + 1}`}
