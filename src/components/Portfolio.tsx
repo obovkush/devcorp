@@ -172,7 +172,7 @@ const Portfolio = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <CardDescription className="text-muted-foreground line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3 min-h-[4.5rem]">
                     {project.description}
                   </CardDescription>
 
