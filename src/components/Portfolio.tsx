@@ -7,6 +7,8 @@ import ImageGallery from "./ImageGallery";
 import { useState, useEffect } from "react";
 import { projects } from "@/data/projects";
 
+const changeCardCycleTime = 4800;
+
 const Portfolio = () => {
   const { currentTheme } = useTheme();
   const { elementRef, isVisible } = useScrollAnimation();
@@ -64,13 +66,13 @@ const Portfolio = () => {
   const goToPreviousProjects = () => {
     setActiveProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000);
+    setTimeout(() => setIsPaused(false), changeCardCycleTime);
   };
 
   const goToNextProjects = () => {
     setActiveProjectIndex((prev) => (prev + 1) % projects.length);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 5000);
+    setTimeout(() => setIsPaused(false), changeCardCycleTime);
   };
 
   // Автоматическая ротация проектов
@@ -84,8 +86,8 @@ const Portfolio = () => {
       setTimeout(() => {
         setActiveProjectIndex((prev) => (prev + 1) % projects.length);
         setTransitioning(false);
-      }, 2400); // середина анимации для более плавного перехода
-    }, 4800);
+      }, changeCardCycleTime/2); // середина анимации для более плавного перехода
+    }, changeCardCycleTime);
 
     return () => clearInterval(interval);
   }, [isPaused, projects.length]);
