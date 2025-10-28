@@ -15,6 +15,7 @@ const Portfolio = () => {
   const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [cardsPerRow, setCardsPerRow] = useState(4);
   const [transitioning, setTransitioning] = useState(false);
 
   const getCardClass = () => {
@@ -44,6 +45,21 @@ const Portfolio = () => {
   const closeGallery = () => {
     setGalleryOpen(false);
   };
+
+  // Определяем количество карточек на строку по брейкпоинтам
+  useEffect(() => {
+    const computeCardsPerRow = (width: number) => {
+      if (width >= 1280) return 4; // xl
+      if (width >= 1024) return 3; // lg
+      if (width >= 768) return 2;  // md
+      return 1;                    // base
+    };
+
+    const apply = () => setCardsPerRow(computeCardsPerRow(window.innerWidth));
+    apply();
+    window.addEventListener('resize', apply);
+    return () => window.removeEventListener('resize', apply);
+  }, []);
 
   const goToPreviousProjects = () => {
     setActiveProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
@@ -76,13 +92,13 @@ const Portfolio = () => {
 
   // Вычисляем проекты для отображения в карточках
   const getProjectForCard = (cardIndex: number) => {
-    const totalCards = Math.min(4, projects.length);
+    const totalCards = Math.min(cardsPerRow, projects.length);
     const index = (activeProjectIndex + cardIndex) % projects.length;
     return projects[index];
   };
 
   // Количество отображаемых карточек
-  const totalCards = Math.min(4, projects.length);
+  const totalCards = Math.min(cardsPerRow, projects.length);
 
   return (
     <section id="portfolio" className={getSectionClass()}>
