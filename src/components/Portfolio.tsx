@@ -134,11 +134,13 @@ const Portfolio = () => {
                    className="relative cursor-pointer project-card-content"
                    onClick={() => openGallery(project.images.slice(1), 0)}
                  >
-                   <img
-                     src={project.images[0]}
-                     alt={project.title}
-                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                   />
+                  <img
+                    key={`${activeProjectIndex}-${cardIndex}-${project.images[0]}`}
+                    src={project.images[0]}
+                    alt={project.title}
+                    loading="eager"
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                      <div className="bg-background/80 backdrop-blur-sm p-3 rounded-full">
