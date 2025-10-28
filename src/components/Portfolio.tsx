@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Search } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ImageGallery from "./ImageGallery";
 import { useState, useEffect } from "react";
@@ -43,6 +43,18 @@ const Portfolio = () => {
 
   const closeGallery = () => {
     setGalleryOpen(false);
+  };
+
+  const goToPreviousProjects = () => {
+    setActiveProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000);
+  };
+
+  const goToNextProjects = () => {
+    setActiveProjectIndex((prev) => (prev + 1) % projects.length);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   // Автоматическая ротация проектов
@@ -177,6 +189,45 @@ const Portfolio = () => {
             </div>
            );
            })}
+        </div>
+
+        {/* Кнопки навигации */}
+        <div className="flex justify-center items-center gap-6 mt-12">
+          <button
+            onClick={goToPreviousProjects}
+            className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            aria-label="Предыдущие проекты"
+          >
+            <ChevronLeft className="w-6 h-6 text-foreground" />
+          </button>
+
+          {/* Индикатор точками */}
+          <div className="flex gap-2">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setActiveProjectIndex(index);
+                  setIsPaused(true);
+                  setTimeout(() => setIsPaused(false), 5000);
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === activeProjectIndex
+                    ? 'bg-primary w-8'
+                    : 'bg-primary/30 hover:bg-primary/50'
+                }`}
+                aria-label={`Перейти к проекту ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={goToNextProjects}
+            className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+            aria-label="Следующие проекты"
+          >
+            <ChevronRight className="w-6 h-6 text-foreground" />
+          </button>
         </div>
 
         {/* <div className="text-center mt-12">
