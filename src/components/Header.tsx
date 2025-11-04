@@ -8,7 +8,7 @@ const Header = () => {
   // const { currentTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("home");
-  const sectionIds = useMemo(() => ["about", "portfolio", "testimonials", "contact"], []);
+  const sectionIds = useMemo(() => ["about", "services", "portfolio", "contact"], []);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
@@ -90,6 +90,12 @@ const Header = () => {
             О нас
           </button>
           <button
+            onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
+            className={linkClass("services")}
+          >
+            Услуги
+          </button>
+          <button
             onClick={() => { document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
             className={linkClass("portfolio")}
           >
@@ -148,6 +154,13 @@ const Header = () => {
                   className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('about')} hover:bg-primary/10`}
             >
               О нас
+              <ChevronRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
+                  className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('services')} hover:bg-primary/10`}
+            >
+              Услуги
               <ChevronRight className="w-4 h-4" />
             </button>
             <button

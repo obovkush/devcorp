@@ -26,10 +26,54 @@ const Footer = () => {
           <div>
             <h4 className="font-roboto-medium text-primary-foreground mb-4">Услуги</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="transition-colors">Веб-разработка</a></li>
-              <li><a href="#" className="transition-colors">Мобильные приложения</a></li>
-              <li><a href="#" className="transition-colors">Корпоративные системы</a></li>
-              <li><a href="#" className="transition-colors">Автоматизация бизнес-процессов</a></li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="transition-colors hover:text-primary-foreground"
+                >
+                  Веб-разработка
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="transition-colors hover:text-primary-foreground"
+                >
+                  Мобильные приложения
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="transition-colors hover:text-primary-foreground"
+                >
+                  Корпоративные системы
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="transition-colors hover:text-primary-foreground"
+                >
+                  Автоматизация бизнес-процессов
+                </a>
+              </li>
             </ul>
           </div>
 
