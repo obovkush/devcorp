@@ -84,12 +84,6 @@ const Header = () => {
             Главная
           </button>
           <button
-            onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("about")}
-          >
-            О нас
-          </button>
-          <button
             onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
             className={linkClass("services")}
           >
@@ -100,6 +94,12 @@ const Header = () => {
             className={linkClass("portfolio")}
           >
             Проекты
+          </button>
+          <button
+            onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
+            className={linkClass("about")}
+          >
+            О нас
           </button>
           <button
             onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
@@ -150,13 +150,6 @@ const Header = () => {
               <ChevronRight className="w-4 h-4" />
             </button>
             <button
-              onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-                  className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('about')} hover:bg-primary/10`}
-            >
-              О нас
-              <ChevronRight className="w-4 h-4" />
-            </button>
-            <button
               onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
                   className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('services')} hover:bg-primary/10`}
             >
@@ -168,6 +161,13 @@ const Header = () => {
                   className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('portfolio')} hover:bg-primary/10`}
             >
               Проекты
+              <ChevronRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
+                  className={`flex items-center justify-between w-full text-left py-3 px-3 rounded-lg ${linkClass('about')} hover:bg-primary/10`}
+            >
+              О нас
               <ChevronRight className="w-4 h-4" />
             </button>
             <button
