@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 // import ThemeSelector from "@/components/ThemeSelector";
 import { useTheme } from "@/contexts/ThemeContext";
-import { Zap, Menu, ChevronRight, X } from "lucide-react";
+import { Menu, ChevronRight, X } from "lucide-react";
+import logoDark from "@/assets/logo_dark.png";
 import { useEffect, useMemo, useState } from "react";
 
 const Header = () => {
@@ -69,8 +70,12 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8 py-4 flex md:grid md:grid-cols-3 items-center justify-between md:justify-stretch">
         {/* Logo */}
         <div className="flex items-center space-x-2 md:space-x-3 justify-start">
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-primary rounded-xl flex items-center justify-center">
-            <Zap className="w-4 h-4 md:w-6 md:h-6 text-white" />
+          <div className="flex items-center">
+            <img
+              src={logoDark}
+              alt="SOLARM Tech"
+              className="h-8 w-auto md:h-10 object-contain"
+            />
           </div>
           <span className="text-lg md:text-2xl font-ksbistra text-foreground">SOLARM Tech</span>
         </div>

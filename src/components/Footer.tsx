@@ -1,6 +1,7 @@
-import { Zap, Copy, Check } from "lucide-react";
+import { Copy, Check } from "lucide-react";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { CONTACT_INFO } from "@/constants/contact";
+import logoDark from "@/assets/logo_dark.png";
 
 const Footer = () => {
   const { copyToClipboard, isCopied } = useCopyToClipboard();
@@ -12,9 +13,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-6 h-6 bg-primary rounded-xl flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
+              <img
+                src={logoDark}
+                alt="SOLARM Tech"
+                className="h-6 w-auto md:h-7 object-contain"
+              />
               <span className="text-xl font-ksbistra text-primary-foreground">SOLARM Tech</span>
             </div>
             <p className="muted-text max-w-md">
