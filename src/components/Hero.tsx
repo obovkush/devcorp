@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
 
             {/* Main Heading */}
-            <h1 className="font-roboto text-3xl md:text-6xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
+            <h1 className="font-roboto text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
               Профессиональная разработка <br/> для частных лиц и компаний
             </h1>
 

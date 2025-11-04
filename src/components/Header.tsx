@@ -67,58 +67,58 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/95 border-b border-border">
-      <div className="container mx-auto px-4 lg:px-8 py-4 flex md:grid md:grid-cols-3 items-center justify-between md:justify-stretch">
+      <div className="container mx-auto px-4 lg:px-8 py-4 flex lg:grid lg:grid-cols-3 items-center justify-between lg:justify-stretch">
         {/* Logo */}
-        <div className="flex items-center space-x-2 md:space-x-3 justify-start">
+        <div className="flex items-center space-x-2 lg:space-x-3 justify-start">
           <div className="flex items-center">
             <img
               src={logoDark}
               alt="SOLARM Tech"
-              className="h-8 w-auto md:h-10 object-contain"
+              className="h-8 w-auto lg:h-10 object-contain"
             />
           </div>
-          <span className="text-lg md:text-2xl font-ksbistra text-foreground">SOLARM Tech</span>
+          <span className="text-lg lg:text-2xl font-ksbistra text-foreground">SOLARM Tech</span>
         </div>
 
         {/* Navigation - Centered */}
-        <nav className="hidden md:flex items-center justify-center space-x-8">
+        <nav className="hidden lg:flex items-center justify-center space-x-4 xl:space-x-8">
           <button
             onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("home", true)}
+            className={`whitespace-nowrap ${linkClass("home", true)}`}
           >
             Главная
           </button>
           <button
             onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("services")}
+            className={`whitespace-nowrap ${linkClass("services")}`}
           >
             Услуги
           </button>
           <button
             onClick={() => { document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("portfolio")}
+            className={`whitespace-nowrap ${linkClass("portfolio")}`}
           >
             Проекты
           </button>
           <button
             onClick={() => { document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("about")}
+            className={`whitespace-nowrap ${linkClass("about")}`}
           >
             О нас
           </button>
           <button
             onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
-            className={linkClass("contact")}
+            className={`whitespace-nowrap ${linkClass("contact")}`}
           >
             Контакты
           </button>
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center justify-end space-x-2 md:space-x-4">
+        <div className="flex items-center justify-end space-x-2 lg:space-x-4">
           {/* <ThemeSelector /> */}
           <Button
-            className="app-button-primary btn-contact-wrap hidden md:inline-flex items-center gap-3"
+            className="app-button-primary btn-contact-wrap hidden lg:inline-flex items-center gap-3"
             onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
           >
             Связаться
@@ -131,7 +131,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden [&_svg]:size-7"
+              className="lg:hidden [&_svg]:size-7"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -145,7 +145,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
           {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-20 right-4 w-80 bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-lg z-40">
+        <div className="lg:hidden fixed top-20 right-4 w-80 bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-lg z-40">
           <div className="px-6 py-6 space-y-3">
             <button
               onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); closeMobileMenu(); }}
