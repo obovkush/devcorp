@@ -12,7 +12,7 @@ const Services = () => {
     {
       icon: Code,
       title: "Веб-разработка",
-      description: "Создаем современные веб-приложения, которые растут вместе с вашим бизнесом.",
+      description: "Создаем современные веб-приложения для роста бизнеса.",
       features: [
         "Адаптивный дизайн для всех устройств",
         "Высокая производительность и скорость загрузки",
@@ -24,7 +24,7 @@ const Services = () => {
     {
       icon: Smartphone,
       title: "Мобильные приложения",
-      description: "Разрабатываем нативные и кроссплатформенные мобильные приложения, которые покоряют пользователей и увеличивают вовлеченность.",
+      description: "Разрабатываем нативные и кроссплатформенные приложения.",
       features: [
         "iOS и Android разработка",
         "Кроссплатформенные решения (React Native, Flutter)",
@@ -36,7 +36,7 @@ const Services = () => {
     {
       icon: Building2,
       title: "Корпоративные системы",
-      description: "Строим масштабируемые корпоративные решения, которые автоматизируют процессы и повышают эффективность работы команды.",
+      description: "Строим масштабируемые корпоративные решения.",
       features: [
         "Системы управления документооборотом",
         "CRM и ERP интеграции",
@@ -48,7 +48,7 @@ const Services = () => {
     {
       icon: Zap,
       title: "Автоматизация бизнес-процессов",
-      description: "Устраняем рутину и повышаем продуктивность команды с помощью автоматизации, которая работает 24/7 без вашего участия.",
+      description: "Устраняем рутину и повышаем продуктивность команды.",
       features: [
         "Автоматизация рабочих процессов",
         "Интеграция между системами",
@@ -89,20 +89,20 @@ const Services = () => {
                 className={`app-card group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col ${isVisible ? 'scroll-fade-up' : ''}`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <CardHeader className="h-32 flex justify-center items-center">
-                  <div className="flex items-start gap-4 w-full">
-                    <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors flex-shrink-0">
-                      <Icon className="w-8 h-8 text-primary" />
+                <CardHeader className="flex items-start md:h-32 md:items-center">
+                    <div className="flex items-start gap-3 md:gap-4 w-full">
+                        <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                            <Icon className="w-8 h-8 text-primary" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                            <CardTitle className="text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors leading-tight break-words">
+                                {service.title}
+                            </CardTitle>
+                            <CardDescription className="text-sm md:text-base text-muted-foreground leading-relaxed min-h-[4.5rem] md:min-h-[3rem]">
+                                {service.description}
+                            </CardDescription>
+                        </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <CardTitle className="text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                        {service.title}
-                      </CardTitle>
-                      <CardDescription className="text-base text-muted-foreground leading-relaxed line-clamp-2 min-h-[3rem]">
-                        {service.description}
-                      </CardDescription>
-                    </div>
-                  </div>
                 </CardHeader>
 
                 <CardContent className="flex flex-col flex-grow space-y-6">

@@ -18,7 +18,7 @@ import asia2 from "@/assets/asia/asia-2.jpg";
 import asia3 from "@/assets/asia/asia-3.jpg";
 import asia4 from "@/assets/asia/asia-4.jpg";
 import asia5 from "@/assets/asia/asia-5.jpg";
-import parfume1 from "@/assets/parfume/parfume-1.png";
+import parfume1 from "@/assets/parfume/parfume-1.jpg";
 import parfume2 from "@/assets/parfume/parfume-2.png";
 import parfume3 from "@/assets/parfume/parfume-3.png";
 import parfume4 from "@/assets/parfume/parfume-4.png";
@@ -28,8 +28,6 @@ import backery2 from "@/assets/backery/backery-2.png";
 import backery3 from "@/assets/backery/backery-3.png";
 import backery4 from "@/assets/backery/backery-4.png";
 import backery5 from "@/assets/backery/backery-5.png";
-import backery6 from "@/assets/backery/backery-6.png";
-import backery7 from "@/assets/backery/backery-7.png";
 
 export interface Project {
   title: string;
@@ -71,7 +69,7 @@ export const projects: Project[] = [
   {
     title: "Британские пекарни",
     description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
-    images: [backery1, backery2, backery3, backery4, backery5, backery6, backery7],
+    images: [backery1, backery2, backery3, backery4, backery5],
     category: "E-commerce",
     year: "2024"
   },
