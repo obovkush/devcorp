@@ -35,7 +35,7 @@ const teamMembers: TeamMember[] = [
     name: 'Лёха',
     role: 'Backend Developer',
     location: 'Киров, Россия',
-    description: 'Просто хороший парень.',
+    description: 'Серверная разработка и базы данных. Инфраструктура.',
     coordinates: { xPercent: 36, yPercent: 33 }
   },
   {
@@ -61,6 +61,14 @@ const teamMembers: TeamMember[] = [
     location: 'Москва, Россия',
     description: 'Серверная разработка и базы данных. Мобильные приложения',
     coordinates: { xPercent: 29, yPercent: 38 }
+  },
+  {
+    id: 'saint-petersburg',
+    name: 'Алёна',
+    role: 'QA',
+    location: 'Санкт-Петербург, Россия',
+    description: 'Обеспечение качества программного обеспечения',
+    coordinates: { xPercent: 24, yPercent: 30 }
   }
 ];
 
