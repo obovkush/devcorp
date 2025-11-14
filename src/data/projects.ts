@@ -9,16 +9,12 @@ import sot2 from "@/assets/sot/sot-2.png";
 import sot3 from "@/assets/sot/sot-3.png";
 import sot4 from "@/assets/sot/sot-4.png";
 import sot5 from "@/assets/sot/sot-5.png";
-import sot6 from "@/assets/sot/sot-6.png";
-import sot7 from "@/assets/sot/sot-7.png";
-import sot8 from "@/assets/sot/sot-8.png";
-import sot9 from "@/assets/sot/sot-9.png";
-import asia1 from "@/assets/asia/asia-1.jpg";
+import asia1 from "@/assets/asia/asia-1.png";
 import asia2 from "@/assets/asia/asia-2.jpg";
 import asia3 from "@/assets/asia/asia-3.jpg";
 import asia4 from "@/assets/asia/asia-4.jpg";
 import asia5 from "@/assets/asia/asia-5.jpg";
-import parfume1 from "@/assets/parfume/parfume-1.jpg";
+import parfume1 from "@/assets/parfume/parfume-1.png";
 import parfume2 from "@/assets/parfume/parfume-2.png";
 import parfume3 from "@/assets/parfume/parfume-3.png";
 import parfume4 from "@/assets/parfume/parfume-4.png";
@@ -39,10 +35,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Британские пекарни",
+    description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
+    images: [backery1, backery2, backery3, backery4, backery5],
+    category: "E-commerce",
+    year: "2024"
+  },
+  {
     title: "Системы охраны труда",
     description: "Современная мульти-модульная система автоматизации процессов и ведения документов в области охраны труда.",
-    images: [sot1, sot2, sot3, sot4, sot5, sot6, sot7, sot8, sot9],
+    images: [sot1, sot2, sot3, sot4, sot5],
     category: "Enterprise",
+    year: "2024"
+  },
+  {
+    title: "Магазин парфюмерии",
+    description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
+    images: [parfume1, parfume2, parfume3, parfume4, parfume5],
+    category: "E-commerce",
     year: "2024"
   },
   {
@@ -56,20 +66,6 @@ export const projects: Project[] = [
     title: "Магазин азиатской кухни",
     description: "Мобильное приложение для заказа блюд из кафе и ресторанов азиатской кухни.",
     images: [asia1, asia2, asia3, asia4, asia5],
-    category: "E-commerce",
-    year: "2024"
-  },
-  {
-    title: "Магазин парфюмерии",
-    description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
-    images: [parfume1, parfume2, parfume3, parfume4, parfume5],
-    category: "E-commerce",
-    year: "2024"
-  },
-  {
-    title: "Британские пекарни",
-    description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
-    images: [backery1, backery2, backery3, backery4, backery5],
     category: "E-commerce",
     year: "2024"
   },
