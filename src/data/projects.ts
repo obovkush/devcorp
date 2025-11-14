@@ -4,6 +4,7 @@ import smeta3 from "@/assets/smeta/smeta-3.png";
 import smeta4 from "@/assets/smeta/smeta-4.png";
 import smeta5 from "@/assets/smeta/smeta-5.png";
 import smeta6 from "@/assets/smeta/smeta-6.png";
+import smeta7 from "@/assets/smeta/smeta-7.png";
 import sot1 from "@/assets/sot/sot-1.png";
 import sot2 from "@/assets/sot/sot-2.png";
 import sot3 from "@/assets/sot/sot-3.png";
@@ -66,7 +67,7 @@ export const projects: Project[] = [
   {
     title: "Калькулятор сметы",
     description: "Комплексная платформа для расчета сметных работ с формированием печатных форм.",
-    images: [smeta1, smeta2, smeta3, smeta4, smeta5, smeta6],
+    images: [smeta1, smeta2, smeta3, smeta4, smeta5, smeta6, smeta7],
     category: "Enterprise",
     year: "2025"
   },
