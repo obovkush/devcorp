@@ -25,6 +25,8 @@ import parfume2 from "@/assets/parfume/parfume-2.png";
 import parfume3 from "@/assets/parfume/parfume-3.png";
 import parfume4 from "@/assets/parfume/parfume-4.png";
 import parfume5 from "@/assets/parfume/parfume-5.png";
+import parfume6 from "@/assets/parfume/parfume-6.png";
+import parfume7 from "@/assets/parfume/parfume-7.png";
 import backery1 from "@/assets/backery/backery-1.png";
 import backery2 from "@/assets/backery/backery-2.png";
 import backery3 from "@/assets/backery/backery-3.png";
@@ -57,7 +59,7 @@ export const projects: Project[] = [
   {
     title: "Магазин парфюмерии",
     description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
-    images: [parfume1, parfume2, parfume3, parfume4, parfume5],
+    images: [parfume1, parfume2, parfume3, parfume4, parfume5, parfume6, parfume7],
     category: "E-commerce",
     year: "2024"
   },
