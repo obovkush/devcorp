@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
@@ -177,36 +177,6 @@ const Portfolio = () => {
                   <CardDescription className="text-muted-foreground line-clamp-3 min-h-[4.5rem]">
                     {project.description}
                   </CardDescription>
-
-                {/* <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge
-                      key={techIndex}
-                      variant="outline"
-                      className="text-xs border-primary/30 text-primary"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div> */}
-
-                {/* <div className="flex gap-2 pt-4">
-                  <Button
-                    className={`app-button-primary rounded-full px-3 py-1 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
-                    size="sm"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    Демо
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className={`rounded-full px-3 py-1 ${getButtonClass()} hover:scale-105 transition-transform duration-200 border-primary/30 hover:border-primary/60`}
-                    size="sm"
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    Код
-                  </Button>
-                </div> */}
                 </CardContent>
               </div>
             </div>
@@ -252,15 +222,6 @@ const Portfolio = () => {
             <ChevronRight className="w-6 h-6 text-foreground" />
           </button>
         </div>
-
-        {/* <div className="text-center mt-12">
-          <Button
-            className={`app-button-primary rounded-full px-8 py-3 ${getButtonClass()} hover:scale-105 transition-transform duration-200`}
-            size="lg"
-          >
-            Посмотреть все проекты
-          </Button>
-        </div> */}
       </div>
 
       {/* Image Gallery Modal */}
