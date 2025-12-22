@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type ThemeType = 'tech' | 'neomorphism';
+export type ThemeType = 'light' | 'dark';
 
 interface ThemeContextType {
   currentTheme: ThemeType;
@@ -15,22 +15,22 @@ interface ThemeConfig {
 }
 
 const themes: Record<ThemeType, ThemeConfig> = {
-  tech: {
+  dark: {
     name: 'Темная',
     description: 'Темная тема',
-    cssClass: 'theme-tech'
+    cssClass: 'dark'
   },
-  neomorphism: {
+  light: {
     name: 'Светлая',
     description: 'Светлая тема',
-    cssClass: 'theme-neomorphism'
+    cssClass: 'light'
   }
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<ThemeType>('neomorphism');
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>('dark');
 
   const setTheme = (theme: ThemeType) => {
     setCurrentTheme(theme);

@@ -5,7 +5,7 @@ const ThemeSelector = () => {
   const { currentTheme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(currentTheme === 'tech' ? 'neomorphism' : 'tech');
+    setTheme(currentTheme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -16,10 +16,10 @@ const ThemeSelector = () => {
     >
       <span
         className={`inline-block h-7 w-7 transform rounded-full bg-primary transition-transform duration-200 ease-in-out flex items-center justify-center ${
-          currentTheme === 'tech' ? 'translate-x-1' : 'translate-x-8'
+          currentTheme === 'light' ? 'translate-x-1' : 'translate-x-8'
         }`}
       >
-        {currentTheme === 'tech' ? (
+        {currentTheme === 'light' ? (
           <Moon className="h-4 w-4 text-primary-foreground" />
         ) : (
           <Sun className="h-4 w-4 text-primary-foreground" />

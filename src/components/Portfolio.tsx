@@ -20,18 +20,9 @@ const Portfolio = () => {
   const [cardsPerRow, setCardsPerRow] = useState(4);
   const [transitioning, setTransitioning] = useState(false);
 
-  const getCardClass = () => {
-    switch (currentTheme) {
-      case 'neomorphism':
-        return "neo-card bg-primary/50 group cursor-pointer overflow-hidden";
-      default:
-        return "bg-primary/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group cursor-pointer overflow-hidden";
-    }
-  };
-
   const getSectionClass = () => {
     switch (currentTheme) {
-      case 'neomorphism':
+      case 'dark':
         return "py-20 bg-background";
       default:
         return "py-20 bg-secondary/50";

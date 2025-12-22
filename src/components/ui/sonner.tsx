@@ -7,7 +7,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
   const { currentTheme } = useTheme();
 
   // Map our theme to sonner theme
-  const theme = currentTheme === 'neomorphism' ? 'light' : 'dark';
+  const theme = currentTheme === 'dark' ? 'light' : 'dark';
 
   return (
     <Sonner

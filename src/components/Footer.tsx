@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-roboto-medium text-primary-foreground mb-4">Услуги</h4>
+            {/* <h4 className="font-roboto-medium text-primary-foreground mb-4">Услуги</h4>
             <ul className="space-y-2">
               <li>
                 <a
@@ -77,7 +77,7 @@ const Footer = () => {
                   Автоматизация бизнес-процессов
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
           {/* Contact */}
@@ -120,27 +120,27 @@ const Footer = () => {
               </li>
             </ul>
 
-                    {/* Messengers */}
-                    <div className="flex items-center gap-3 mt-6">
-                      <a
-                        href={CONTACT_INFO.messengers.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="WhatsApp"
-                        className="messenger-icon"
-                      >
-                        <img src="/images/whatsapp.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
-                      </a>
-                      <a
-                        href={CONTACT_INFO.messengers.telegram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="Telegram"
-                        className="messenger-icon"
-                      >
-                        <img src="/images/telegram.png" alt="Telegram" className="w-8 h-8 object-contain" />
-                      </a>
-                    </div>
+            {/* Messengers */}
+            <div className="flex items-center gap-3 mt-6">
+              <a
+                href={CONTACT_INFO.messengers.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="WhatsApp"
+                className="messenger-icon"
+              >
+                <img src="/images/whatsapp.png" alt="WhatsApp" className="w-8 h-8 object-contain" />
+              </a>
+              <a
+                href={CONTACT_INFO.messengers.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Telegram"
+                className="messenger-icon"
+              >
+                <img src="/images/telegram.png" alt="Telegram" className="w-8 h-8 object-contain" />
+              </a>
+            </div>
           </div>
         </div>
 

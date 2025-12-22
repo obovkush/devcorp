@@ -121,38 +121,66 @@ const Contact = () => {
             <h3 className="text-3xl font-roboto-semibold text-foreground">
               Часто задаваемые вопросы
             </h3>
+            {/* <p className="text-muted-foreground mt-2">
+              Ответы в формате диалога: задайте вопрос — мы ответим, как в чате.
+            </p> */}
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[
-              {
-                question: "Какие отрасли обслуживает SOLARM Tech?",
-                answer: "Мы работаем с широким спектром отраслей. Независимо от сферы деятельности, в каждом случае мы разрабатываем проект с учетом необходимых технологий и решений для достижения наилучшего результата."
-              },
-              {
-                question: "Как узнать, какая услуга или технология подходит для моего бизнеса?",
-                answer: "Все начинается с разговора. Во время общения мы узнаем о ваших целях, потребностях и возможностях, а затем, исходя из условий, рекомендуем наиболее оптимально подходящие услуги и технологические решения."
-              },
-              {
-                question: "Предлагаете ли вы индивидуальные решения?",
-                answer: "Безусловно! Мы предлагаем гибкий подход, основанный на поэтапной, итеративной разработке продуктов, подбираем фреймворки и инструменты под специфику проекта для достижения максимального эффекта."
-              },
-              {
-                question: "Как начать работу с SOLARM Tech?",
-                answer: "Начать работу просто: свяжитесь с нами одним из удобных для Вас способов. Обрисуем следующие шаги, определим оптимальный путь движения вперёд и подготовим индивидуальный план действий."
-              }
-            ].map((faq, index) => (
-              <Card key={index} className="bg-primary/5 backdrop-blur-sm border-border">
-                <CardContent className="p-6">
-                  <h4 className="font-roboto-semibold text-lg text-foreground mb-3">
-                    {faq.question}
-                  </h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="relative max-w-4xl mx-auto rounded-[32px] bg-background/80 border border-border p-8 md:p-10 shadow-2xl overflow-hidden">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -top-16 -right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-24 -left-16 w-56 h-56 bg-secondary/10 rounded-full blur-3xl" />
+            </div>
+
+            <div className="relative flex flex-col gap-6">
+              {[
+                {
+                  question: "Какие отрасли обслуживает SOLARM Tech?",
+                  answer: "Мы работаем с широким спектром отраслей и всегда подбираем технологии с учётом целей бизнеса, чтобы добиться измеримого результата."
+                },
+                {
+                  question: "Как узнать, какая услуга или технология подходит для моего бизнеса?",
+                  answer: "Начинаем с консультации: обсуждаем задачи, ограничения и ожидания, после чего предлагаем оптимальный стек услуг и технологий."
+                },
+                {
+                  question: "Предлагаете ли вы индивидуальные решения?",
+                  answer: "Да. Мы строим продукты итеративно, адаптируем стек под специфику проекта и фиксируем метрики эффективности на каждом этапе."
+                },
+                {
+                  question: "Как начать работу с SOLARM Tech?",
+                  answer: "Свяжитесь удобным способом — мы подготовим роадмап, определим ресурсы и зафиксируем первые шаги в совместной работе."
+                }
+              ].map((faq, index) => (
+                <div key={faq.question} className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    {/* <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-sm font-roboto-semibold text-muted-foreground">
+                      Вы
+                    </div> */}
+                    <div className="max-w-[80%] rounded-3xl rounded-tl-lg bg-muted text-foreground px-5 py-4 shadow-md">
+                      <p className="font-roboto-semibold text-base mb-1">
+                        {faq.question}
+                      </p>
+                      <span className="text-xs text-muted-foreground/70">
+                        {index === 0 ? "09:30" : index === 1 ? "09:41" : index === 2 ? "09:55" : "10:02"}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3 justify-end">
+                    <div className="max-w-[80%] rounded-3xl rounded-tr-lg bg-primary text-primary-foreground px-5 py-4 shadow-lg">
+                      <p className="text-base leading-relaxed">
+                        {faq.answer}
+                      </p>
+                      <span className="text-xs text-primary-foreground/80 block text-right mt-1">
+                        {index === 0 ? "09:32" : index === 1 ? "09:44" : index === 2 ? "09:58" : "10:05"}
+                      </span>
+                    </div>
+                    {/* <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-roboto-semibold">
+                      SOL
+                    </div> */}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

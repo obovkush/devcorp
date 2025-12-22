@@ -61,7 +61,7 @@ const Services = () => {
 
   const getSectionClass = () => {
     switch (currentTheme) {
-      case 'neomorphism':
+      case 'dark':
         return "py-20 bg-background";
       default:
         return "py-20 bg-muted/30";
@@ -121,15 +121,15 @@ const Services = () => {
                     </p>
                   </div>
 
-                  <div className="mt-auto pt-4">
+                  {/* <div className="ml-auto mt-auto pt-4">
                     <Button
-                      className="app-button-primary w-full group/btn"
+                      className="app-button-primary group/btn"
                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Обсудить проект
                       <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             );
