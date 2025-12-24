@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Bruno Ace Font - Using public folder paths */
+@font-face {
+  font-family: 'BrunoAce';
+  src: url('./assets/fonts/BrunoAce/BrunoAce-Regular.ttf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 /* KSBistra Font - Using public folder paths */
 @font-face {
   font-family: 'KSBistra';
@@ -22,15 +31,13 @@
   font-style: normal;
 }
 
-/* App Design System - Modern Financial Aesthetics
-All colors MUST be HSL. Green-focused palette with premium feel.
-*/
+/* App Design System */
 
 @layer base {
 :root {
     /* App Color Palette */
-    --background: 220 15% 97%;
-    --foreground: 220 15% 15%;
+    --background: 252 20% 5%;
+    --foreground: 163, 66%, 43%;
 
     --card: 0 0% 100%;
     --card-foreground: 220 15% 15%;
@@ -44,8 +51,8 @@ All colors MUST be HSL. Green-focused palette with premium feel.
     --secondary: 220 14% 96%;
     --secondary-foreground: 220 15% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 45%;
+    --muted: 163, 66%, 43%;
+    --muted-foreground: 0, 0%, 55%;
 
     --accent: 95 100% 40%;      /* Bright Green Accent */
     --accent-foreground: 0 0% 98%;
@@ -91,8 +98,8 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* THEME: Dark (Dark App Theme) */
 .dark {
-  --background: #0B0A0F;
-  --foreground: 163 76% 13%;
+  --background: 252 20% 5%;
+  --foreground: 163, 66%, 43%;
   --card: 0 0% 100%;
   --card-foreground: 163 76% 13%;
   --primary: 163 76% 13%;
@@ -101,19 +108,24 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   --accent-foreground: 0 0% 100%;
   --secondary: 0 0% 96%;
   --secondary-foreground: 163 76% 13%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
+  --muted: 163, 66%, 43%;
+  --muted-foreground: 0, 0%, 55%;
   --border: 0 0% 90%;
   --input: 0 0% 90%;
   --gradient-primary: linear-gradient(135deg, hsl(163, 76%, 13%), hsl(163, 76%, 18%));
   --gradient-hero: linear-gradient(135deg, hsl(163, 76%, 13%) 0%, hsl(163, 76%, 13%) 5%, hsl(142, 70%, 45%) 100%);
   --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 96%));
   --gradient-orb: radial-gradient(circle, hsl(142, 70%, 45% / 0.2), hsl(163, 76%, 13% / 0.1), transparent 70%);
-  --neo-shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
-  --neo-shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
+  --shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
+  --shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
 }
 
-/* Roboto Typography - Replacing KSBistra */
+
+.font-bruno-ace {
+  font-family: 'BrunoAce', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
 .font-ksbistra {
   font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
@@ -121,30 +133,30 @@ All colors MUST be HSL. Green-focused palette with premium feel.
   line-height: 1.1;
 }
 
-.font-roboto-medium {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+.font-inter-medium {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.2;
 }
 
-.font-roboto {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+.font-inter {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.1;
 }
 
-.font-roboto-bold {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+.font-inter-bold {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 900;
   letter-spacing: -0.015em;
   line-height: 1.05;
 }
 
-/* Hero Title Style - Roboto */
+/* Hero Title Style - Inter */
 .hero-title {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 900;
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -153,7 +165,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* Section Title Style */
 .section-title {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -162,7 +174,7 @@ All colors MUST be HSL. Green-focused palette with premium feel.
 
 /* Subsection Title Style */
 .subsection-title {
-  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.2;

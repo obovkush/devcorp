@@ -20,7 +20,7 @@ const Hero = () => {
       </picture> */}
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/20"></div>
+      {/* <div className="absolute inset-0 bg-background/20"></div> */}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
@@ -28,19 +28,24 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
 
+            {/* Company name */}
+            <h1 className="font-bruno-ace text-l md:text-xl lg:text-9xl text-white leading-tight text-center lg:text-center">
+              SOLARM TECH
+            </h1>
+
             {/* Main Heading */}
-            <h1 className="font-roboto text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight text-center lg:text-center">
-              Профессиональная разработка <br/> для частных лиц и компаний
+            <h1 className="font-inter-bold uppercase text-base md:text-xl lg:text-2xl text-foreground leading-tight text-center lg:text-center">
+              Профессиональная разработка программного обеспечения<br/>для частных лиц и компаний
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-muted-foreground text-center">
-              Создаем инновационные решения для вашего будущего. <br/>
-              Современные технологии и надежность в каждом проекте.
+            <p className="font-inter-bold uppercase text-base text-muted-foreground text-center">
+              Создаем инновационные решения для вашего будущего <br/>
+              Современные технологии и надежность в каждом проекте
             </p>
 
             {/* CTA Button */}
-            <div className="flex justify-center">
+            {/* <div className="flex justify-center">
               <Button
                 className="app-button-primary btn-contact-wrap btn-cta"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
@@ -50,7 +55,7 @@ const Hero = () => {
                   <ArrowRight className="w-4 h-4 btn-arrow" />
                 </span>
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
