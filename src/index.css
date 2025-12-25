@@ -4,381 +4,391 @@
 
 /* Bruno Ace Font - Using public folder paths */
 @font-face {
-  font-family: 'BrunoAce';
-  src: url('./assets/fonts/BrunoAce/BrunoAce-Regular.ttf') format('opentype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
+    font-family: 'BrunoAce';
+    src: url('./assets/fonts/BrunoAce/BrunoAce-Regular.ttf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
 }
 
 /* KSBistra Font - Using public folder paths */
 @font-face {
-  font-family: 'KSBistra';
-  src: url('/KS-Bistra.woff2') format('woff2'),
-       url('/KS-Bistra.woff') format('woff'),
-       url('/KS-Bistra.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
+    font-family: 'KSBistra';
+    src: url('/KS-Bistra.woff2') format('woff2'), url('/KS-Bistra.woff') format('woff'), url('/KS-Bistra.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
 }
 
 /* InterHewn Font */
 @font-face {
-  font-family: 'InterHewn';
-  src: url('./assets/fonts/InterHewn/Inter-accent.otf') format('opentype');
-  font-weight: 400 900;
-  font-display: swap;
-  font-style: normal;
+    font-family: 'InterHewn';
+    src: url('./assets/fonts/InterHewn/Inter-accent.otf') format('opentype');
+    font-weight: 400 900;
+    font-display: swap;
+    font-style: normal;
 }
 
 /* App Design System */
 
 @layer base {
-:root {
-    /* App Color Palette */
-    --background: 252 20% 5%;
-    --foreground: 163, 66%, 43%;
+    :root {
+        /* App Color Palette */
+        --background: 252 20% 5%;
+        --foreground: 163, 66%, 43%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+        --card: 0 0% 100%;
+        --card-foreground: 220 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 15% 15%;
 
-    --primary: 142 69% 45%;     /* App Green */
-    --primary-foreground: 0 0% 98%;
+        --primary: 163, 78%, 71%; /* App Green */
+        --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 15% 15%;
+        --secondary: 220 14% 96%;
+        --secondary-foreground: 220 15% 15%;
 
-    --muted: 163, 66%, 43%;
-    --muted-foreground: 0, 0%, 55%;
+        --muted: 163, 66%, 43%;
+        --muted-foreground: 0, 0%, 55%;
 
-    --accent: 95 100% 40%;      /* Bright Green Accent */
-    --accent-foreground: 0 0% 98%;
+        --accent: 95 100% 40%; /* Bright Green Accent */
+        --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 142 69% 45%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 163, 78%, 71%;
 
-    --radius: 1rem;
+        --radius: 1rem;
 
-    /* App Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(142, 69%, 45%), hsl(95, 100%, 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(220, 15%, 97%), hsl(220, 14%, 96%));
-    --gradient-hero: linear-gradient(135deg, hsl(142, 69%, 45%) 0%, hsl(95, 100%, 40%) 50%, hsl(80, 100%, 50%) 100%);
-    --gradient-orb: radial-gradient(circle, hsl(95, 100%, 70% / 0.3), hsl(142, 69%, 45% / 0.2), transparent 70%);
+        /* App Design Tokens */
+        --gradient-primary: linear-gradient(135deg, hsl(142, 69%, 45%), hsl(95, 100%, 40%));
+        --gradient-secondary: linear-gradient(135deg, hsl(220, 15%, 97%), hsl(220, 14%, 96%));
+        --gradient-hero: linear-gradient(135deg, hsl(142, 69%, 45%) 0%, hsl(95, 100%, 40%) 50%, hsl(80, 100%, 50%) 100%);
+        --gradient-orb: radial-gradient(circle, hsl(95, 100%, 70% / 0.3), hsl(142, 69%, 45% / 0.2), transparent 70%);
 
-    /* App Shadows */
-    --shadow-soft: 0 2px 8px hsl(220, 15%, 15% / 0.08);
-    --shadow-medium: 0 4px 16px hsl(220, 15%, 15% / 0.12);
-    --shadow-strong: 0 8px 32px hsl(220, 15%, 15% / 0.16);
-    --shadow-green: 0 4px 20px hsl(142, 69%, 45% / 0.25);
+        /* App Shadows */
+        --shadow-soft: 0 2px 8px hsl(220, 15%, 15% / 0.08);
+        --shadow-medium: 0 4px 16px hsl(220, 15%, 15% / 0.12);
+        --shadow-strong: 0 8px 32px hsl(220, 15%, 15% / 0.16);
+        --shadow-green: 0 4px 20px hsl(142, 69%, 45% / 0.25);
 
-    /* App Effects */
-    --glow-primary: 0 0 30px hsl(142, 69%, 45% / 0.3);
-    --glow-accent: 0 0 20px hsl(95, 100%, 40% / 0.4);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        /* App Effects */
+        --glow-primary: 0 0 30px hsl(142, 69%, 45% / 0.3);
+        --glow-accent: 0 0 20px hsl(95, 100%, 40% / 0.4);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    /* Sidebar colors */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 15% 15%;
-    --sidebar-primary: 142 69% 45%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 15% 15%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 142 69% 45%;
-  }
+        /* Sidebar colors */
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 220 15% 15%;
+        --sidebar-primary: 142 69% 45%;
+        --sidebar-primary-foreground: 0 0% 98%;
+        --sidebar-accent: 220 14% 96%;
+        --sidebar-accent-foreground: 220 15% 15%;
+        --sidebar-border: 220 13% 91%;
+        --sidebar-ring: 142 69% 45%;
+    }
 }
 
 /* THEME: Dark (Dark App Theme) */
 .dark {
-  --background: 252 20% 5%;
-  --foreground: 163, 66%, 43%;
-  --card: 0 0% 100%;
-  --card-foreground: 163 76% 13%;
-  --primary: 163 76% 13%;
-  --primary-foreground: 0 0% 100%;
-  --accent: 142 70% 45%;
-  --accent-foreground: 0 0% 100%;
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 163 76% 13%;
-  --muted: 163, 66%, 43%;
-  --muted-foreground: 0, 0%, 55%;
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --gradient-primary: linear-gradient(135deg, hsl(163, 76%, 13%), hsl(163, 76%, 18%));
-  --gradient-hero: linear-gradient(135deg, hsl(163, 76%, 13%) 0%, hsl(163, 76%, 13%) 5%, hsl(142, 70%, 45%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 96%));
-  --gradient-orb: radial-gradient(circle, hsl(142, 70%, 45% / 0.2), hsl(163, 76%, 13% / 0.1), transparent 70%);
-  --shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
-  --shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
+    --background: 252 20% 5%;
+    --foreground: 163, 66%, 43%;
+    --card: 0 0% 100%;
+    --card-foreground: 163, 78%, 71%;
+    --primary: 163, 78%, 71%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 163, 78%, 71%;
+    --muted: 163, 66%, 43%;
+    --muted-foreground: 0, 0%, 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --gradient-primary: linear-gradient(135deg, hsl(163, 76%, 13%), hsl(163, 76%, 18%));
+    --gradient-hero: linear-gradient(135deg, hsl(163, 76%, 13%) 0%, hsl(163, 76%, 13%) 5%, hsl(142, 70%, 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 0%, 96%));
+    --gradient-orb: radial-gradient(circle, hsl(142, 70%, 45% / 0.2), hsl(163, 76%, 13% / 0.1), transparent 70%);
+    --shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
+    --shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
 }
 
-
 .font-bruno-ace {
-  font-family: 'BrunoAce', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 400;
+    font-family: 'BrunoAce', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
 }
 
 .font-ksbistra {
-  font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+    font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .font-inter-medium {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
 }
 
 .font-inter {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
 }
 
 .font-inter-bold {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.015em;
-  line-height: 1.05;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
 }
 
 /* Hero Title Style - Inter */
 .hero-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  font-size: clamp(2.5rem, 8vw, 4rem);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    font-size: clamp(2.5rem, 8vw, 4rem);
 }
 
 /* Section Title Style */
 .section-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  font-size: clamp(1.2rem, 5vw, 1.2rem);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(1.2rem, 5vw, 1.2rem);
 }
 
 /* Subsection Title Style */
 .subsection-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 /* Fade animation for project carousel */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .project-card-content {
-  opacity: 1;
-  transition: opacity 2.4s ease-in-out;
+    opacity: 1;
+    transition: opacity 2.4s ease-in-out;
 }
 
 .project-card-transitioning .project-card-content {
-  opacity: 0.02;
+    opacity: 0.02;
 }
 
 /* App Component Styles */
 .app-card {
-  @apply bg-primary/5 border border-border rounded-xl backdrop-blur-sm;
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition-smooth);
+    @apply bg-primary/5 border border-border rounded-xl backdrop-blur-sm;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
 }
 
 .app-card:hover {
-  box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-medium);
 }
 
 .app-button-primary {
-  @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold;
-  transition: var(--transition-smooth);
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold;
+    transition: var(--transition-smooth);
 }
 
 .app-button-primary:hover {
-  background-color: #c9f269;
-  color: hsl(var(--primary));
+    background-color: #c9f269;
+    color: hsl(var(--primary));
 }
 
 /* Contact button inner circle (white circle with chevron) */
 .btn-contact-wrap {
-  position: relative;
-  height: 48px; /* h-12 */
-  padding-right: 3.5rem; /* pr-14: место под круг */
-  border-radius: 9999px;
+    position: relative;
+    height: 48px; /* h-12 */
+    padding-right: 3.5rem; /* pr-14: место под круг */
+    border-radius: 9999px;
 }
 
 .btn-contact-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; /* w-10 */
-  height: 40px; /* h-10 */
-  background: #ffffff;
-  color: hsl(var(--primary));
-  border-radius: 9999px;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* w-10 */
+    height: 40px; /* h-10 */
+    background: #ffffff;
+    color: hsl(var(--primary));
+    border-radius: 9999px;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-contact-wrap .btn-contact-circle {
-  position: absolute;
-  right: 4px; /* right-1 */
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+    right: 4px; /* right-1 */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* CTA arrow rotation behavior */
 .btn-cta .btn-arrow {
-  transition: transform 0.25s ease;
-  transform: rotate(-45deg);
+    transition: transform 0.25s ease;
+    transform: rotate(-45deg);
 }
 
 .btn-cta:hover .btn-arrow {
-  transform: rotate(0deg) translateX(2px);
+    transform: rotate(0deg) translateX(2px);
 }
 
 .app-button-primary:hover .btn-contact-circle {
-  transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 /* Contact Button - Banki style */
 .btn-contact-app {
-  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground bg-transparent font-medium;
-  transition: var(--transition-smooth);
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border text-foreground bg-transparent font-medium;
+    transition: var(--transition-smooth);
 }
 
 .btn-contact-app:hover {
-  background-color: #c9f269;
-  color: hsl(var(--primary));
-  border-color: #c9f269;
+    background-color: #c9f269;
+    color: hsl(var(--primary));
+    border-color: #c9f269;
 }
 
 .btn-contact-app:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px hsl(var(--ring) / 0.25);
+    outline: none;
+    box-shadow: 0 0 0 4px hsl(var(--ring) / 0.25);
 }
 
 .btn-contact-app .btn-icon {
-  @apply w-5 h-5;
-  transition: transform 0.2s ease;
+    @apply w-5 h-5;
+    transition: transform 0.2s ease;
 }
 
 .btn-contact-app:hover .btn-icon {
-  transform: translateX(4px);
+    transform: translateX(4px);
 }
 
 @keyframes scroll-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes messengerShake {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(5deg); }
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
 }
 
 @keyframes messengerPress {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.95); }
-  100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .scroll-fade-up {
-  opacity: 0;
-  animation: scroll-fade-up 0.8s ease-out forwards;
+    opacity: 0;
+    animation: scroll-fade-up 0.8s ease-out forwards;
 }
 
 /* Messenger animations */
 .messenger-icon {
-  transition: all 0.3s ease;
-  cursor: pointer;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .messenger-icon:hover {
-  animation: messengerShake 0.5s ease-in-out;
+    animation: messengerShake 0.5s ease-in-out;
 }
 
 .messenger-icon:active {
-  animation: messengerPress 0.2s ease-in-out;
+    animation: messengerPress 0.2s ease-in-out;
 }
 
 .scroll-animation-delay-100 {
-  animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 .scroll-animation-delay-200 {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 /* Footer (App-style) */
 .footer-app {
-  @apply bg-primary text-primary-foreground;
+    @apply bg-primary text-primary-foreground;
 }
 
 .footer-app a {
-  @apply text-primary-foreground/90 hover:text-primary-foreground;
+    @apply text-primary-foreground/90 hover:text-primary-foreground;
 }
 
 .footer-app .muted-text {
-  @apply text-primary-foreground/80;
+    @apply text-primary-foreground/80;
 }
 
 /* Contact cards (App-style) */
 .contact-card {
-  @apply bg-primary/5 rounded-2xl border border-border;
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition-smooth);
+    @apply bg-primary/5 rounded-2xl border border-border;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
 }
 
 .contact-card:hover {
-  box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-medium);
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+    * {
+        @apply border-border;
+    }
 
-  body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings: "cv11", "ss01";
-    font-variation-settings: "opsz" 32;
-  }
+    body {
+        @apply bg-background text-foreground font-sans;
+        font-feature-settings: 'cv11', 'ss01';
+        font-variation-settings: 'opsz' 32;
+    }
 }
