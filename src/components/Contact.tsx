@@ -14,9 +14,9 @@ const Contact = () => {
             <div ref={elementRef} className='container mx-auto px-4'>
                 {/* Header Section */}
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
-                    <h2 className='text-4xl md:text-5xl font-inter-bold text-foreground mb-6'>Свяжитесь с нами!</h2>
-                    <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-                        Мы ценим ваши отзывы и запросы. Свяжитесь с нашей командой для получения любой помощи или информации о наших услугах.
+                    <h2 className='section-title mb-2'>Свяжитесь с нами</h2>
+                    <p className='font-inter-medium text-foreground max-w-4xl mx-auto'>
+                        Мы ценим ваши отзывы и запросы. Свяжитесь с нашей командой<br/>для получения любой помощи или информации о наших услугах.
                     </p>
                 </div>
 
@@ -24,7 +24,7 @@ const Contact = () => {
                 <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 ${isVisible ? 'scroll-fade-up scroll-animation-delay-100' : ''}`}>
                     {/* Phone */}
                     <div className='contact-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
+                        <div className='w-16 h-16 rounded-full flex items-center justify-center mx-auto'>
                             <Phone className='w-8 h-8 text-primary' />
                         </div>
                         <h3 className='font-inter-semibold text-lg text-foreground'>Позвонить</h3>

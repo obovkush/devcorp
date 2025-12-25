@@ -181,7 +181,7 @@ body {
     letter-spacing: -0.01em;
     line-height: 1.2;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
-    color: hsl(var(--primary));
+    /* color: hsl(var(--primary)); */
 }
 
 .cloud {
@@ -189,10 +189,9 @@ body {
     position: absolute;
     width: 950px;
     height: 250px;
-    border-radius: 90%;
-    left: 280px;
-    top: 20px;
-    z-index: -1;
+    border-radius: 100%;
+    left: 28vw;
+    top: 40vh;
 
     background: #083a2c;
     filter: blur(125px);
@@ -394,9 +393,10 @@ body {
 
 /* Contact cards (App-style) */
 .contact-card {
-    @apply bg-primary/5 rounded-2xl border border-border;
+    @apply bg-primary/0 rounded-2xl;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
+    border: none;
 }
 
 .contact-card:hover {

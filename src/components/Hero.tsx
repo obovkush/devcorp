@@ -24,7 +24,6 @@ const Hero = () => {
 
             {/* Content */}
             <div className='relative z-10 container mx-auto px-4 lg:px-8'>
-              <div className='cloud' />
                 <div className='grid lg:grid-cols-1 gap-12 items-center'>
                     {/* Left Content */}
                     <div className='space-y-12 animate-fade-in'>

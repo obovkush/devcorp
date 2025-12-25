@@ -85,7 +85,7 @@ const TeamMap = () => {
     <div className="relative">
       <Card className="contact-card p-6">
         <CardContent className="p-0">
-          <h2 className="section-title text-foreground mb-6 text-center">
+          <h2 className="section-title text-center mb-20">
             Наша команда
           </h2>
 
@@ -95,7 +95,7 @@ const TeamMap = () => {
               <img
                 src={mapImg}
                 alt="Евразия - карта"
-                className="w-full h-auto rounded-xl border border-border"
+                className="w-full h-auto rounded-xl"
               />
 
               {/* Points positioned relative to the image */}
@@ -133,7 +133,7 @@ const TeamMap = () => {
               {/* Hover tooltip */}
               {hoveredMember && (
                 <div
-                  className="absolute bg-background border border-border rounded-lg shadow-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm"
+                  className="absolute bg-background rounded-lg shadow-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm"
                   style={{
                     left: hoveredMember.coordinates.xPercent < 20 ? '1rem' :
                           hoveredMember.coordinates.xPercent > 80 ? 'auto' :
