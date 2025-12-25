@@ -98,7 +98,7 @@
 .dark {
     --background: 252 20% 5%;
     --foreground: 163, 66%, 43%;
-    --card: 0 0% 100%;
+    --card: 183, 91%, 5%;
     --card-foreground: 163, 78%, 71%;
     --primary: 163, 78%, 71%;
     --primary-foreground: 0 0% 100%;
@@ -116,6 +116,10 @@
     --gradient-orb: radial-gradient(circle, hsl(142, 70%, 45% / 0.2), hsl(163, 76%, 13% / 0.1), transparent 70%);
     --shadow-out: 8px 8px 24px hsl(0, 0%, 80% / 0.3), -8px -8px 24px hsl(0, 0%, 100%);
     --shadow-in: inset 4px 4px 8px hsl(0, 0%, 90%), inset -4px -4px 8px hsl(0, 0%, 100%);
+}
+
+body {
+  text-transform: uppercase;
 }
 
 .font-bruno-ace {
@@ -163,10 +167,11 @@
 /* Section Title Style */
 .section-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    font-size: clamp(1.2rem, 5vw, 1.2rem);
+    font-size: clamp(2rem, 5vw, 1.2rem);
+    color: hsl(var(--primary-foreground));
 }
 
 /* Subsection Title Style */
@@ -176,6 +181,7 @@
     letter-spacing: -0.01em;
     line-height: 1.2;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: hsl(var(--primary));
 }
 
 /* Fade animation for project carousel */
@@ -208,9 +214,10 @@
 
 /* App Component Styles */
 .app-card {
-    @apply bg-primary/5 border border-border rounded-xl backdrop-blur-sm;
+    @apply bg-card rounded-xl backdrop-blur-sm;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
+    border: none;
 }
 
 .app-card:hover {
