@@ -62,7 +62,7 @@ const Services = () => {
     const getSectionClass = () => {
         switch (currentTheme) {
             case 'dark':
-                return 'py-20 bg-background';
+                return 'pt-20 pb-60 bg-background border-b border-border';
             default:
                 return 'py-20 bg-muted/30';
         }

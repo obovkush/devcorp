@@ -119,7 +119,7 @@
 }
 
 body {
-  text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .font-bruno-ace {
@@ -182,6 +182,21 @@ body {
     line-height: 1.2;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     color: hsl(var(--primary));
+}
+
+.cloud {
+    /* Ellipse 1 */
+    position: absolute;
+    width: 950px;
+    height: 250px;
+    border-radius: 90%;
+    left: 280px;
+    top: 20px;
+    z-index: -1;
+
+    background: #083a2c;
+    filter: blur(125px);
+    transform: rotate(-10.84deg);
 }
 
 /* Fade animation for project carousel */

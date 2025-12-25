@@ -3,7 +3,8 @@ import {ArrowRight} from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section className='relative min-h-screen flex items-center justify-center overflow-hidden pt-20'>
+        <section className='relative min-h-screen flex items-center justify-center overflow-hidden py-20'>
+
             {/* Background Image (local responsive) */}
             {/* <picture>
         <source
@@ -23,6 +24,7 @@ const Hero = () => {
 
             {/* Content */}
             <div className='relative z-10 container mx-auto px-4 lg:px-8'>
+              <div className='cloud' />
                 <div className='grid lg:grid-cols-1 gap-12 items-center'>
                     {/* Left Content */}
                     <div className='space-y-12 animate-fade-in'>
