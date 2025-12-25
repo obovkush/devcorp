@@ -102,10 +102,10 @@
     --card-foreground: 163, 78%, 71%;
     --primary: 163, 78%, 71%;
     --primary-foreground: 0 0% 100%;
-    --accent: 142 70% 45%;
+    --accent: 163, 68%, 42%;
     --accent-foreground: 0 0% 100%;
     --secondary: 0 0% 96%;
-    --secondary-foreground: 163, 78%, 71%;
+    --secondary-foreground: 162, 73%, 7%;
     --muted: 163, 66%, 43%;
     --muted-foreground: 0, 0%, 55%;
     --border: 0 0% 90%;
@@ -380,15 +380,15 @@ body {
 
 /* Footer (App-style) */
 .footer-app {
-    @apply bg-primary text-primary-foreground;
+    @apply bg-secondary-foreground;
 }
 
 .footer-app a {
-    @apply text-primary-foreground/90 hover:text-primary-foreground;
+    @apply text-accent/5 hover:text-accent;
 }
 
 .footer-app .muted-text {
-    @apply text-primary-foreground/80;
+    @apply text-accent/5;
 }
 
 /* Contact cards (App-style) */
