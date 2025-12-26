@@ -25,14 +25,14 @@ const Contact = () => {
                 {/* Contact Details Grid */}
                 <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 ${isVisible ? 'scroll-fade-up scroll-animation-delay-100' : ''}`}>
                     {/* Phone */}
-                    <div className='contact-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 rounded-full flex items-center justify-center mx-auto'>
-                            <Phone className='w-8 h-8 text-primary' />
+                    <div className='app-card p-8 text-center space-y-4'>
+                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <Phone className='w-8 h-8 text-card' />
                         </div>
-                        <h3 className='font-inter-semibold text-lg text-foreground'>Позвонить</h3>
+                        <h3 className='font-inter text-3xl text-white'>Позвонить</h3>
                         <div className='space-y-3'>
                             <div className='relative flex items-center justify-center group'>
-                                <a href={`tel:${CONTACT_INFO.phone}`} className='text-muted-foreground hover:text-primary transition-colors'>
+                                <a href={`tel:${CONTACT_INFO.phone}`} className='text-foreground hover:text-primary transition-colors'>
                                     {CONTACT_INFO.phone}
                                 </a>
                                 <button
@@ -51,19 +51,19 @@ const Contact = () => {
                     </div>
 
                     {/* Email */}
-                    <div className='contact-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                            <Mail className='w-8 h-8 text-primary' />
+                    <div className='app-card p-8 text-center space-y-4'>
+                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <Mail className='w-8 h-8 text-card' />
                         </div>
-                        <h3 className='font-inter-semibold text-lg text-foreground'>Написать</h3>
+                        <h3 className='font-inter text-3xl text-white'>Написать</h3>
                         <div className='space-y-3'>
                             <div className='relative flex items-center justify-center group'>
-                                <a href={`mailto:${CONTACT_INFO.email}`} className='text-muted-foreground hover:text-primary transition-colors'>
+                                <a href={`mailto:${CONTACT_INFO.email}`} className='text-inter text-foreground text-sm hover:text-primary transition-colors'>
                                     {CONTACT_INFO.email}
                                 </a>
                                 <button
                                     onClick={() => copyToClipboard(CONTACT_INFO.email)}
-                                    className='absolute opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded ml-2'
+                                    className='absolute opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-primary/10 rounded ml-10'
                                     style={{left: 'calc(50% + 70px)'}}
                                 >
                                     {isCopied(CONTACT_INFO.email) ? (
@@ -99,12 +99,12 @@ const Contact = () => {
                     </div>
 
                     {/* Location */}
-                    <div className='contact-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto'>
-                            <MapPin className='w-8 h-8 text-primary' />
+                    <div className='app-card p-8 text-center space-y-4'>
+                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <MapPin className='w-8 h-8 text-card' />
                         </div>
-                        <h3 className='font-inter-semibold text-lg text-foreground'>Встретиться</h3>
-                        <p className='text-muted-foreground'>{CONTACT_INFO.location}</p>
+                        <h3 className='font-inter text-3xl text-white'>Встретиться</h3>
+                        <p className='text-inter text-foreground text-sm'>{CONTACT_INFO.location}</p>
                     </div>
                 </div>
 
@@ -115,11 +115,6 @@ const Contact = () => {
                     </div>
 
                     <div className='relative max-w-4xl mx-auto p-8 md:p-10'>
-                        {/* <div className='absolute inset-0 pointer-events-none'>
-                            <div className='absolute -top-16 -right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl' />
-                            <div className='absolute -bottom-24 -left-16 w-56 h-56 bg-secondary/10 rounded-full blur-3xl' />
-                        </div> */}
-
                         <div className='relative flex flex-col gap-6'>
                             {[
                                 {
