@@ -10,13 +10,15 @@ const Contact = () => {
     const whatsappImg = '/images/whatsapp.png';
     const telegramImg = '/images/telegram.png';
     return (
-        <section id='contact' className='py-20 bg-muted/30'>
+        <section id='contact' className='py-20'>
             <div ref={elementRef} className='container mx-auto px-4'>
                 {/* Header Section */}
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>Свяжитесь с нами</h2>
                     <p className='font-inter-medium text-foreground max-w-4xl mx-auto'>
-                        Мы ценим ваши отзывы и запросы. Свяжитесь с нашей командой<br/>для получения любой помощи или информации о наших услугах.
+                        Мы ценим ваши отзывы и запросы. Свяжитесь с нашей командой
+                        <br />
+                        для получения любой помощи или информации о наших услугах.
                     </p>
                 </div>
 
@@ -109,20 +111,14 @@ const Contact = () => {
                 {/* FAQ Section */}
                 <div className={`${isVisible ? 'scroll-fade-up scroll-animation-delay-200' : ''}`}>
                     <div className='text-center mb-12'>
-                        <div className='w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6'>
-                            <HelpCircle className='w-8 h-8 text-primary' />
-                        </div>
-                        <h3 className='text-3xl font-inter-semibold text-foreground'>Часто задаваемые вопросы</h3>
-                        {/* <p className="text-muted-foreground mt-2">
-              Ответы в формате диалога: задайте вопрос — мы ответим, как в чате.
-            </p> */}
+                        <h3 className='section-title'>Часто задаваемые вопросы</h3>
                     </div>
 
-                    <div className='relative max-w-4xl mx-auto rounded-[32px] bg-background/80 border border-border p-8 md:p-10 shadow-2xl overflow-hidden'>
-                        <div className='absolute inset-0 pointer-events-none'>
+                    <div className='relative max-w-4xl mx-auto p-8 md:p-10'>
+                        {/* <div className='absolute inset-0 pointer-events-none'>
                             <div className='absolute -top-16 -right-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl' />
                             <div className='absolute -bottom-24 -left-16 w-56 h-56 bg-secondary/10 rounded-full blur-3xl' />
-                        </div>
+                        </div> */}
 
                         <div className='relative flex flex-col gap-6'>
                             {[
@@ -144,27 +140,11 @@ const Contact = () => {
                                 },
                             ].map((faq, index) => (
                                 <div key={faq.question} className='space-y-4'>
-                                    <div className='flex items-start gap-3'>
-                                        {/* <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-sm font-inter-semibold text-muted-foreground">
-                      Вы
-                    </div> */}
-                                        <div className='max-w-[80%] rounded-3xl rounded-tl-lg bg-muted text-foreground px-5 py-4 shadow-md'>
-                                            <p className='font-inter-semibold text-base mb-1'>{faq.question}</p>
-                                            <span className='text-xs text-muted-foreground/70'>
-                                                {index === 0 ? '09:30' : index === 1 ? '09:41' : index === 2 ? '09:55' : '10:02'}
-                                            </span>
-                                        </div>
-                                    </div>
                                     <div className='flex items-start gap-3 justify-end'>
-                                        <div className='max-w-[80%] rounded-3xl rounded-tr-lg bg-primary text-primary-foreground px-5 py-4 shadow-lg'>
-                                            <p className='text-base leading-relaxed'>{faq.answer}</p>
-                                            <span className='text-xs text-primary-foreground/80 block text-right mt-1'>
-                                                {index === 0 ? '09:32' : index === 1 ? '09:44' : index === 2 ? '09:58' : '10:05'}
-                                            </span>
+                                        <div className=' bg-card px-5 py-4 shadow-lg rounded-lg'>
+                                            <p className='font-inter-semibold text-base text-white mb-6'>{faq.question}</p>
+                                            <p className='font-inter-semibold text-xs text-foreground leading-relaxed mb-6'>{faq.answer}</p>
                                         </div>
-                                        {/* <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-inter-semibold">
-                      SOL
-                    </div> */}
                                     </div>
                                 </div>
                             ))}
