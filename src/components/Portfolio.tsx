@@ -16,9 +16,9 @@ const Portfolio = () => {
     const getSectionClass = () => {
         switch (currentTheme) {
             case 'dark':
-                return 'py-20 bg-background';
+                return 'py-20 border-b border-border/50 pb-20';
             default:
-                return 'py-20 bg-background';
+                return 'py-20 border-b border-border/50 pb-20';
         }
     };
 
@@ -65,30 +65,22 @@ const Portfolio = () => {
                                     </div>
                                 </div>
 
-                                {/* Категория - верхний левый угол */}
-                                <div className='absolute top-4 left-4'>
-                                    <Badge
-                                        variant='secondary'
-                                        className='bg-background/90 text-foreground backdrop-blur-sm font-inter-medium text-xs uppercase'
-                                    >
-                                        {project.category}
-                                    </Badge>
-                                </div>
-
                                 {/* Год - верхний правый угол */}
-                                <div className='absolute top-4 right-4'>
+                                {/* <div className='absolute top-4 right-4'>
                                     <Badge
                                         variant='outline'
                                         className='bg-background/90 border-foreground/20 text-foreground backdrop-blur-sm font-inter-medium text-xs'
                                     >
                                         {project.year}
                                     </Badge>
-                                </div>
+                                </div> */}
                             </div>
 
-                            {/* Название проекта */}
-                            <div className='p-6'>
-                                <h3 className='font-inter-bold text-lg text-foreground uppercase'>{project.title}</h3>
+                            <div className='p-4'>
+                                {/* Категория */}
+                                <span className='font-inter text-sm text-white'>{project.category}</span>
+                                {/* Название проекта */}
+                                <h3 className='font-inter text-2xl text-white my-6'>{project.title}</h3>
                             </div>
                         </div>
                     ))}
@@ -116,30 +108,22 @@ const Portfolio = () => {
                                     </div>
                                 </div>
 
-                                {/* Категория - верхний левый угол */}
-                                <div className='absolute top-4 left-4'>
-                                    <Badge
-                                        variant='secondary'
-                                        className='bg-background/90 text-foreground backdrop-blur-sm font-inter-medium text-xs uppercase'
-                                    >
-                                        {project.category}
-                                    </Badge>
-                                </div>
-
                                 {/* Год - верхний правый угол */}
-                                <div className='absolute top-4 right-4'>
+                                {/* <div className='absolute top-4 right-4'>
                                     <Badge
                                         variant='outline'
                                         className='bg-background/90 border-foreground/20 text-foreground backdrop-blur-sm font-inter-medium text-xs'
                                     >
                                         {project.year}
                                     </Badge>
-                                </div>
+                                </div> */}
                             </div>
 
-                            {/* Название проекта */}
-                            <div className='p-6'>
-                                <h3 className='font-inter-bold text-lg text-foreground uppercase'>{project.title}</h3>
+                            <div className='p-4'>
+                                {/* Категория */}
+                                <span className='font-inter text-sm text-white'>{project.category}</span>
+                                {/* Название проекта */}
+                                <h3 className='font-inter text-2xl text-white my-6'>{project.title}</h3>
                             </div>
                         </div>
                     ))}
