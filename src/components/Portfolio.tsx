@@ -1,13 +1,10 @@
-import {CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
 import {Badge} from '@/components/ui/badge';
 import {useTheme} from '@/contexts/ThemeContext';
-import {Search, ChevronLeft, ChevronRight} from 'lucide-react';
+import {Search} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 import ImageGallery from './ImageGallery';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {projects} from '@/data/projects';
-
-const changeCardCycleTime = 4800;
 
 const Portfolio = () => {
     const {currentTheme} = useTheme();
@@ -15,23 +12,19 @@ const Portfolio = () => {
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [galleryImages, setGalleryImages] = useState<string[]>([]);
     const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
-    const [activeProjectIndex, setActiveProjectIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
-    const [cardsPerRow, setCardsPerRow] = useState(4);
-    const [transitioning, setTransitioning] = useState(false);
 
     const getSectionClass = () => {
         switch (currentTheme) {
             case 'dark':
-                return 'py-20 border-b border-border/50';
+                return 'py-20 bg-background';
             default:
-                return 'py-20 bg-secondary/50';
+                return 'py-20 bg-background';
         }
     };
 
     const openGallery = (images: string[], initialIndex: number = 0) => {
         setGalleryImages(images);
-        setGalleryInitialIndex(0); // Всегда начинаем с первого изображения
+        setGalleryInitialIndex(initialIndex);
         setGalleryOpen(true);
     };
 
@@ -39,168 +32,117 @@ const Portfolio = () => {
         setGalleryOpen(false);
     };
 
-    // Определяем количество карточек на строку по брейкпоинтам
-    useEffect(() => {
-        const computeCardsPerRow = (width: number) => {
-            if (width >= 1280) return 4; // xl
-            if (width >= 1024) return 3; // lg
-            if (width >= 768) return 2; // md
-            return 1; // base
-        };
-
-        const apply = () => setCardsPerRow(computeCardsPerRow(window.innerWidth));
-        apply();
-        window.addEventListener('resize', apply);
-        return () => window.removeEventListener('resize', apply);
-    }, []);
-
-    const goToPreviousProjects = () => {
-        setActiveProjectIndex((prev) => (prev - 1 + projects.length) % projects.length);
-        setIsPaused(true);
-        setTimeout(() => setIsPaused(false), changeCardCycleTime);
-    };
-
-    const goToNextProjects = () => {
-        setActiveProjectIndex((prev) => (prev + 1) % projects.length);
-        setIsPaused(true);
-        setTimeout(() => setIsPaused(false), changeCardCycleTime);
-    };
-
-    // Автоматическая ротация проектов
-    useEffect(() => {
-        if (isPaused) return;
-
-        const interval = setInterval(() => {
-            setTransitioning(true);
-
-            // Меняем индекс в начале fade-in, а не в середине
-            setTimeout(() => {
-                setActiveProjectIndex((prev) => (prev + 1) % projects.length);
-                setTransitioning(false);
-            }, changeCardCycleTime / 2); // середина анимации для более плавного перехода
-        }, changeCardCycleTime);
-
-        return () => clearInterval(interval);
-    }, [isPaused, projects.length]);
-
-    // Вычисляем проекты для отображения в карточках
-    const getProjectForCard = (cardIndex: number) => {
-        const totalCards = Math.min(cardsPerRow, projects.length);
-        const index = (activeProjectIndex + cardIndex) % projects.length;
-        return projects[index];
-    };
-
-    // Количество отображаемых карточек
-    const totalCards = Math.min(cardsPerRow, projects.length);
+    // Разделяем проекты на мобильные и десктопные
+    const mobileProjects = projects.filter((p) => p.type === 'mobile');
+    const desktopProjects = projects.filter((p) => p.type === 'desktop');
 
     return (
         <section id='portfolio' className={getSectionClass()}>
-            <div ref={elementRef} className='container mx-auto px-4' onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+            <div ref={elementRef} className='container mx-auto px-4 lg:px-8'>
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
-                    <h2 className='section-title mb-2'>Портфолио решений</h2>
-                    <p className='font-inter-medium text-foreground max-w-3xl mx-auto'>Проекты, которые меняют бизнес</p>
+                    <h2 className='section-title mb-2'>ПОРТФОЛИО</h2>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-                    {Array.from({length: totalCards}).map((_, cardIndex) => {
-                        const project = getProjectForCard(cardIndex);
-                        return (
-                            <div
-                                key={cardIndex}
-                                className={`app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full flex flex-col overflow-hidden ${
-                                    transitioning ? 'project-card-transitioning' : ''
-                                }`}
-                            >
-                                <div className='relative overflow-hidden rounded-t-xl'>
-                                    <div
-                                        className='relative cursor-pointer project-card-content'
-                                        onClick={() => openGallery(project.images.slice(1), 0)}
-                                    >
-                                        <img
-                                            key={`${activeProjectIndex}-${cardIndex}-${project.images[0]}`}
-                                            src={project.images[0]}
-                                            alt={project.title}
-                                            loading='eager'
-                                            className='w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
-                                        />
-                                        <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
-                                        <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <div className='bg-background/80 backdrop-blur-sm p-3 rounded-full'>
-                                                <Search className='w-6 h-6 text-primary' />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='absolute top-4 left-4'>
-                                        <Badge
-                                            variant='secondary'
-                                            className='bg-background/90 text-foreground backdrop-blur-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100'
-                                        >
-                                            {project.category}
-                                        </Badge>
-                                    </div>
-                                    <div className='absolute top-4 right-4'>
-                                        <Badge
-                                            variant='outline'
-                                            className='bg-background/90 border-primary/50 backdrop-blur-sm transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150'
-                                        >
-                                            {project.year}
-                                        </Badge>
+                {/* Верхний ряд - Мобильные приложения */}
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6'>
+                    {mobileProjects.map((project, index) => (
+                        <div
+                            key={index}
+                            className='app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden relative'
+                            onClick={() => openGallery(project.images, 0)}
+                        >
+                            <div className='relative overflow-hidden aspect-[4/3]'>
+                                <img
+                                    src={project.images[0]}
+                                    alt={project.title}
+                                    loading='lazy'
+                                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
+                                />
+                                <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+                                <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                    <div className='bg-background/80 backdrop-blur-sm p-3 rounded-full'>
+                                        <Search className='w-6 h-6 text-primary' />
                                     </div>
                                 </div>
 
-                                <div className='project-card-content'>
-                                    <CardHeader>
-                                        <CardTitle className='text-2xl font-semibold text-foreground group-hover:text-primary transition-colors'>
-                                            {project.title}
-                                        </CardTitle>
-                                    </CardHeader>
+                                {/* Категория - верхний левый угол */}
+                                <div className='absolute top-4 left-4'>
+                                    <Badge
+                                        variant='secondary'
+                                        className='bg-background/90 text-foreground backdrop-blur-sm font-inter-medium text-xs uppercase'
+                                    >
+                                        {project.category}
+                                    </Badge>
+                                </div>
 
-                                    <CardContent className='space-y-4'>
-                                        <CardDescription className='text-muted-foreground line-clamp-3 min-h-[4.5rem]'>
-                                            {project.description}
-                                        </CardDescription>
-                                    </CardContent>
+                                {/* Год - верхний правый угол */}
+                                <div className='absolute top-4 right-4'>
+                                    <Badge
+                                        variant='outline'
+                                        className='bg-background/90 border-foreground/20 text-foreground backdrop-blur-sm font-inter-medium text-xs'
+                                    >
+                                        {project.year}
+                                    </Badge>
                                 </div>
                             </div>
-                        );
-                    })}
+
+                            {/* Название проекта */}
+                            <div className='p-6'>
+                                <h3 className='font-inter-bold text-lg text-foreground uppercase'>{project.title}</h3>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
-                {/* Кнопки навигации */}
-                <div className='flex justify-center items-center gap-6 mt-12'>
-                    <button
-                        onClick={goToPreviousProjects}
-                        className='p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors'
-                        aria-label='Предыдущие проекты'
-                    >
-                        <ChevronLeft className='w-6 h-6 text-foreground' />
-                    </button>
+                {/* Нижний ряд - Десктопные приложения */}
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                    {desktopProjects.map((project, index) => (
+                        <div
+                            key={index}
+                            className='app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden relative'
+                            onClick={() => openGallery(project.images, 0)}
+                        >
+                            <div className='relative overflow-hidden aspect-[4/3]'>
+                                <img
+                                    src={project.images[0]}
+                                    alt={project.title}
+                                    loading='lazy'
+                                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
+                                />
+                                <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+                                <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                    <div className='bg-background/80 backdrop-blur-sm p-3 rounded-full'>
+                                        <Search className='w-6 h-6 text-primary' />
+                                    </div>
+                                </div>
 
-                    {/* Индикатор точками */}
-                    <div className='flex gap-2'>
-                        {projects.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => {
-                                    setActiveProjectIndex(index);
-                                    setIsPaused(true);
-                                    setTimeout(() => setIsPaused(false), 5000);
-                                }}
-                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                    index === activeProjectIndex ? 'bg-primary' : 'bg-primary/30 hover:bg-primary/50'
-                                }`}
-                                aria-label={`Перейти к проекту ${index + 1}`}
-                            />
-                        ))}
-                    </div>
+                                {/* Категория - верхний левый угол */}
+                                <div className='absolute top-4 left-4'>
+                                    <Badge
+                                        variant='secondary'
+                                        className='bg-background/90 text-foreground backdrop-blur-sm font-inter-medium text-xs uppercase'
+                                    >
+                                        {project.category}
+                                    </Badge>
+                                </div>
 
-                    <button
-                        onClick={goToNextProjects}
-                        className='p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors'
-                        aria-label='Следующие проекты'
-                    >
-                        <ChevronRight className='w-6 h-6 text-foreground' />
-                    </button>
+                                {/* Год - верхний правый угол */}
+                                <div className='absolute top-4 right-4'>
+                                    <Badge
+                                        variant='outline'
+                                        className='bg-background/90 border-foreground/20 text-foreground backdrop-blur-sm font-inter-medium text-xs'
+                                    >
+                                        {project.year}
+                                    </Badge>
+                                </div>
+                            </div>
+
+                            {/* Название проекта */}
+                            <div className='p-6'>
+                                <h3 className='font-inter-bold text-lg text-foreground uppercase'>{project.title}</h3>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 

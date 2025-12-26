@@ -40,42 +40,48 @@ export interface Project {
   images: string[];
   category: string;
   year: string;
+  type: 'mobile' | 'desktop';
 }
 
 export const projects: Project[] = [
   {
-    title: "Британские пекарни",
-    description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
-    images: [backery1, backery2, backery3, backery4, backery5],
-    category: "Food & beverage",
-    year: "2024"
-  },
-  {
-    title: "Системы охраны труда",
-    description: "Мульти-модульная система автоматизации процессов и ведения документов по охране труда.",
-    images: [sot1, sot2, sot3, sot4, sot5, sot6, sot7, sot8, sot9, sot10, sot11],
-    category: "Enterprise",
-    year: "2024"
-  },
-  {
-    title: "Магазин парфюмерии",
+    title: "МАГАЗИН ПАРФЮМЕРИИ",
     description: "Мобильное приложение для покупки парфюмерии и косметики с доставкой на дом.",
     images: [parfume1, parfume2, parfume3, parfume4, parfume5, parfume6, parfume7],
-    category: "E-commerce",
-    year: "2024"
+    category: "E-COMMERCE",
+    year: "2024",
+    type: "mobile"
   },
   {
-    title: "Калькулятор сметы",
-    description: "Комплексная платформа для расчета сметных работ с формированием печатных форм.",
-    images: [smeta1, smeta2, smeta3, smeta4, smeta5, smeta6, smeta7],
-    category: "Enterprise",
-    year: "2025"
+    title: "БРИТАНСКИЕ ПЕКАРНИ",
+    description: "Мобильное приложение для заказа свежей выпечки и десертов из британских пекарен.",
+    images: [backery1, backery2, backery3, backery4, backery5],
+    category: "FOOD & BEVERAGE",
+    year: "2024",
+    type: "mobile"
   },
   {
-    title: "Магазин азиатской кухни",
+    title: "МАГАЗИН АЗИАТСКОЙ КУХНИ",
     description: "Мобильное приложение для заказа блюд из кафе и ресторанов азиатской кухни.",
     images: [asia1, asia2, asia3, asia4, asia5],
-    category: "Food & beverage",
-    year: "2024"
+    category: "FOOD & BEVERAGE",
+    year: "2024",
+    type: "mobile"
+  },
+  {
+    title: "КАЛЬКУЛЯТОР СМЕТЫ",
+    description: "Комплексная платформа для расчета сметных работ с формированием печатных форм.",
+    images: [smeta1, smeta2, smeta3, smeta4, smeta5, smeta6, smeta7],
+    category: "E-COMMERCE",
+    year: "2025",
+    type: "desktop"
+  },
+  {
+    title: "СИСТЕМЫ ОХРАНЫ ТРУДА",
+    description: "Мульти-модульная система автоматизации процессов и ведения документов по охране труда.",
+    images: [sot1, sot2, sot3, sot4, sot5, sot6, sot7, sot8, sot9, sot10, sot11],
+    category: "E-COMMERCE",
+    year: "2024",
+    type: "desktop"
   },
 ];
