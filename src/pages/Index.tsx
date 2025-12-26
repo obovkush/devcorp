@@ -10,6 +10,7 @@ const Index = () => {
     return (
         <div className='min-h-screen bg-background'>
             <div className='cloud' />
+            <div className='cloud2' />
             <Header />
             <Hero />
             <Services />

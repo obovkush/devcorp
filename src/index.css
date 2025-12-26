@@ -184,19 +184,33 @@ body {
     /* color: hsl(var(--primary)); */
 }
 
-.cloud {
+.cloud, .cloud2 {
     /* Ellipse 1 */
     position: absolute;
-    width: 950px;
-    height: 250px;
+
     border-radius: 100%;
-    left: 28vw;
-    top: 40vh;
+
 
     background: #083a2c;
     filter: blur(125px);
     transform: rotate(-10.84deg);
 }
+
+.cloud {
+  width: 950px;
+  height: 250px;
+  left: 28vw;
+  top: 40vh;
+}
+
+.cloud2 {
+  width: 1250px;
+  height: 350px;
+  left: 20vw;
+  top: 470vh;
+  transform: rotate(-18.74deg);
+}
+
 
 /* Fade animation for project carousel */
 @keyframes fadeIn {
