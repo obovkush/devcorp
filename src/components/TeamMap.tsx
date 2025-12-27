@@ -117,8 +117,8 @@ const TeamMap = () => {
                                             alt={member.name}
                                             className='cursor-pointer drop-shadow'
                                             style={{
-                                                width: 'clamp(12px, 2vw, 28px)',
-                                                height: 'clamp(16px, 2.8vw, 40px)',
+                                                width: hoveredMember === member ? 'clamp(24px, 3vw, 48px)' : 'clamp(12px, 2vw, 28px)',
+                                                height: hoveredMember === member ? 'clamp(24px, 3vw, 48px)' : 'clamp(16px, 2.8vw, 40px)',
                                             }}
                                         />
                                     </div>
