@@ -88,7 +88,7 @@ const TeamMap = () => {
                     <h2 className='section-title text-center mb-20'>Наша команда</h2>
 
                     {/* Map with falling points */}
-                    <div className='w-full max-w-4xl mx-auto'>
+                    <div className='w-full max-w-5xl mx-auto'>
                         <div className='relative'>
                             <img src={mapImg} alt='Евразия - карта' className='w-full h-auto rounded-xl' />
 
@@ -127,7 +127,7 @@ const TeamMap = () => {
                             {/* Hover tooltip */}
                             {hoveredMember && (
                                 <div
-                                    className='absolute bg-map rounded-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm'
+                                    className='absolute bg-gradient-to-l from-foreground to-background/20 rounded-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm'
                                     style={{
                                         left:
                                             hoveredMember.coordinates.xPercent < 20
