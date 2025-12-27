@@ -2,7 +2,7 @@ import {Button} from '@/components/ui/button';
 // import ThemeSelector from "@/components/ThemeSelector";
 import {useTheme} from '@/contexts/ThemeContext';
 import {Menu, ChevronRight, X} from 'lucide-react';
-import logoDark from '@/assets/icons/logo.svg';
+import logoIcon from '@/assets/icons/logo.svg';
 import {useEffect, useMemo, useState} from 'react';
 
 const Header = () => {
@@ -72,7 +72,7 @@ const Header = () => {
                 {/* <div className="flex items-center space-x-2 lg:space-x-3 justify-start">
                       <div className="flex items-center">
                         <img
-                          src={logoDark}
+                          src={logoIcon}
                           alt="SOLARM Tech"
                           className="h-8 w-auto lg:h-10 object-contain"
                         />
@@ -107,7 +107,7 @@ const Header = () => {
                         }}
                         className={`whitespace-nowrap ${linkClass('portfolio')} font-inter-bold text-xs uppercase`}
                     >
-                        <img src={logoDark} alt='SOLARM Tech' className='h-8 w-auto lg:h-10 object-contain' />
+                        <img src={logoIcon} alt='Logo SOLARM Tech Portfolio Link' className='h-8 w-auto lg:h-10 object-contain' />
                     </button>
                     <button
                         onClick={() => {
