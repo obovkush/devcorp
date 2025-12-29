@@ -73,7 +73,7 @@ const Services = () => {
             <div ref={elementRef} className='container mx-auto px-4 lg:px-40'>
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>Наши услуги</h2>
-                    <p className='font-inter-medium text-foreground max-w-3xl mx-auto'>
+                    <p className='section-description font-inter-medium text-foreground max-w-3xl mx-auto xs:text-xs'>
                         Комплексные решения для цифровой трансформации вашего бизнеса
                     </p>
                 </div>
@@ -92,46 +92,24 @@ const Services = () => {
                                 <CardHeader className='flex items-start lg:h-24 md:items-center pb-0'>
                                     <div className='flex items-center gap-3 md:gap-4 w-full'>
                                         <div className='p-3 rounded-xl bg-primary-foreground text-card transition-colors flex-shrink-0'>
-                                            <Icon className='w-8 h-8' />
+                                            <Icon className='w-4 h-4 sm:w-8 sm:h-8' />
                                         </div>
                                         <div className='flex-1 min-w-0'>
-                                            <CardTitle className='text-2xl font-semibold text-primary-foreground transition-colors leading-tight break-words'>
+                                            <CardTitle className='text-xl sm:text-2xl font-semibold text-primary-foreground transition-colors leading-tight break-words'>
                                                 {service.title}
                                             </CardTitle>
-                                            {/* <CardDescription className="text-sm md:text-base text-muted-foreground leading-relaxed min-h-[4.5rem] md:min-h-[3rem]">
-                                                    {service.description}
-                                                </CardDescription> */}
                                         </div>
                                     </div>
                                 </CardHeader>
 
                                 <CardContent className='flex flex-col flex-grow space-y-6'>
-
-                                    <div className='space-y-3 ml-16 pl-2 pr-6'>
+                                    <div className='space-y-3 ml-11 sm:ml-16 pl-2 pr-6'>
                                         {service.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className='flex items-start gap-3'>
-                                                {/* <CheckCircle className='w-5 h-5 text-primary flex-shrink-0 mt-0.5' /> */}
-                                                <span className='text-primary text-sm'>{feature}</span>
+                                                <span className='card-content text-primary text-sm'>{feature}</span>
                                             </div>
                                         ))}
                                     </div>
-
-
-                                    {/* <div className="pt-4 border-t border-border">
-                                          <p className="text-sm text-muted-foreground italic min-h-[3rem]">
-                                            {service.benefits}
-                                          </p>
-                                        </div> */}
-
-                                    {/* <div className="ml-auto mt-auto pt-4">
-                                          <Button
-                                            className="app-button-primary group/btn"
-                                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                                          >
-                                            Обсудить проект
-                                            <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                                          </Button>
-                                        </div> */}
                                 </CardContent>
                             </Card>
                         );

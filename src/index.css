@@ -148,6 +148,23 @@ body {
     color: hsl(var(--primary-foreground));
 }
 
+@media screen and (max-width: 640px) {
+    .section-title {
+      font-size: 17px;
+    }
+
+    .section-description {
+        font-size: 13px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+    .card-content {
+        font-size: 13px;
+    }
+  }
+
 /* Subsection Title Style */
 .subsection-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

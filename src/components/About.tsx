@@ -13,26 +13,12 @@ const About = () => {
                     <div className={`space-y-8 ${isVisible ? 'scroll-fade-up' : ''}`}>
                         <div className='text-center mb-16'>
                             <h2 className='section-title mb-2'>Почему выбирают нас</h2>
-                            <p className='font-inter-medium text-foreground max-w-3xl mx-auto'>
+                            <p className='section-description font-inter-medium text-foreground max-w-3xl mx-auto'>
                                 Мы предоставляем услуги разработки с использованием передовых технологий.
                             </p>
                             <p className='font-inter-medium text-foreground max-w-3xl mx-auto'>Опыт разработки более 10 лет.</p>
                         </div>
-                        {/* <div className="space-y-6">
-                              <h2 className="section-title text-foreground">
-                                Опыт разработки более{" "}
-                                <span className="text-primary">
-                                  10 лет
-                                </span>
-                              </h2>
 
-                              <p className="text-lg text-muted-foreground leading-relaxed">
-                                SOLARM Tech — помогаем технологиям помогать людям.
-                              </p>
-
-                            </div> */}
-
-                        {/* Values */}
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                             <div className='flex gap-4 p-6 app-card rounded-xl hover:border-primary/20 transition-colors'>
                                 <div className='w-12 h-12 bg-primary-foreground text-card rounded-xl flex items-center justify-center flex-shrink-0'>
