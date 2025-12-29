@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {createPortal} from 'react-dom';
 import {Button} from '@/components/ui/button';
 import {X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw} from 'lucide-react';
 import {Project} from '@/data/projects';
@@ -28,6 +29,43 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
             setIsZoomed(false);
             setZoomLevel(1);
         }
+    }, [isOpen]);
+
+    // Блокировка скролла страницы при открытой галерее
+    useEffect(() => {
+        if (isOpen) {
+            // Сохраняем текущую позицию скролла
+            const scrollY = window.scrollY;
+            // Блокируем скролл
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = '100%';
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Восстанавливаем скролл
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            document.body.style.overflow = '';
+            if (scrollY) {
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+        }
+
+        return () => {
+            // Очистка при размонтировании компонента
+            if (isOpen) {
+                const scrollY = document.body.style.top;
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                document.body.style.overflow = '';
+                if (scrollY) {
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                }
+            }
+        };
     }, [isOpen]);
 
     // Сброс индекса при изменении проекта
@@ -146,8 +184,8 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
 
     if (!isOpen || !project) return null;
 
-    return (
-        <div className='fixed inset-0 z-50 bg-card/80 backdrop-blur-sm flex items-center justify-center p-4' onClick={handleBackdropClick}>
+    const galleryContent = (
+        <div className='fixed inset-0 z-[9999] bg-card/80 backdrop-blur-sm flex items-center justify-center p-4' onClick={handleBackdropClick}>
             <div className='w-full max-w-6xl bg-card overflow-hidden flex flex-col max-h-[90vh]' onClick={(e) => e.stopPropagation()}>
                 {/* Top Section - Images with Navigation */}
                 <div
@@ -233,6 +271,8 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
             </div>
         </div>
     );
+
+    return createPortal(galleryContent, document.body);
 };
 
 export default ImageGallery;
