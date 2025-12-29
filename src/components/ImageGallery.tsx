@@ -162,7 +162,7 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                             </div>
                         )}
                         {/* Zoom */}
-                        <Button variant='ghost' size='sm' onClick={handleZoomOut} className='text-white hover:bg-white/20'>
+                        {/* <Button variant='ghost' size='sm' onClick={handleZoomOut} className='text-white hover:bg-white/20'>
                             <ZoomOut className='w-4 h-4' />
                         </Button>
                         <Button variant='ghost' size='sm' onClick={handleResetZoom} className='text-white hover:bg-white/20'>
@@ -170,9 +170,9 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                         </Button>
                         <Button variant='ghost' size='sm' onClick={handleZoomIn} className='text-white hover:bg-white/20'>
                             <ZoomIn className='w-4 h-4' />
-                        </Button>
+                        </Button> */}
                         {/* Close button */}
-                        <Button variant='ghost' size='sm' onClick={onClose} className='text-white hover:bg-white/20'>
+                        <Button variant='ghost' size='sm' onClick={onClose} className='text-white hover:bg-white/5 rounded-none'>
                             <X className='w-4 h-4' />
                         </Button>
                     </div>
@@ -182,7 +182,7 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                             <Button
                                 variant='ghost'
                                 onClick={goToPrevious}
-                                className='absolute left-0 bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none w-16 h-16 p-0 [&_svg]:!w-14 [&_svg]:!h-14'
+                                className='absolute left-0 bottom-[-24px] sm:bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none p-0 w-12 h-12 [&_svg]:!w-10 [&_svg]:!h-10 sm:w-16 sm:h-16 sm:[&_svg]:!w-14 sm:[&_svg]:!h-14'
                                 style={{backgroundColor: 'hsl(163, 76%, 13%)'}}
                             >
                                 <ChevronLeft />
@@ -190,7 +190,7 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                             <Button
                                 variant='ghost'
                                 onClick={goToNext}
-                                className='absolute right-0 bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none w-16 h-16 p-0 [&_svg]:!w-14 [&_svg]:!h-14'
+                                className='absolute right-0 bottom-[-24px] sm:bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none p-0 w-12 h-12 [&_svg]:!w-10 [&_svg]:!h-10 sm:w-16 sm:h-16 sm:[&_svg]:!w-14 sm:[&_svg]:!h-14'
                                 style={{backgroundColor: 'hsl(163, 76%, 13%)'}}
                             >
                                 <ChevronRight />
@@ -220,24 +220,14 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                     <div className='relative'>
                         {/* Category */}
                         <div className='mb-3'>
-                            <span className='text-white font-inter text-sm tracking-wider'>{project.category}</span>
+                            <span className='text-white font-inter text-11 sm:text-sm tracking-wider'>{project.category}</span>
                         </div>
 
                         {/* Title */}
-                        <h2 className='font-inter text-3xl md:text-4xl text-white mb-6 pr-24'>{project.title}</h2>
+                        <h2 className='font-inter text-base sm:text-3xl md:text-4xl text-white mb-6 pr-24'>{project.title}</h2>
 
                         {/* Description */}
-                        <p className='font-inter-medium text-white/80 text-xl mb-6 pr-24'>{project.description}</p>
-
-                        {/* Contact Button */}
-                        {/* <div className='flex justify-end'>
-                            <Button
-                                onClick={handleContactClick}
-                                className='bg-transparent border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded-md font-inter-medium transition-colors'
-                            >
-                                СВЯЗАТЬСЯ
-                            </Button>
-                        </div> */}
+                        <p className='font-inter-medium text-white/80 card-content sm:text-xl mb-6 pr-24'>{project.description}</p>
                     </div>
                 </div>
             </div>
