@@ -2,9 +2,13 @@ import {Button} from '@/components/ui/button';
 import {ArrowRight} from 'lucide-react';
 
 const Hero = () => {
+    const handleContactClick = () => {
+        setTimeout(() => {
+            document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+        }, 100);
+    };
     return (
         <section className='relative min-h-screen flex items-center justify-center overflow-hidden py-20'>
-
             {/* Background Image (local responsive) */}
             {/* <picture>
         <source
@@ -33,31 +37,28 @@ const Hero = () => {
                         </h1>
                         <div className='space-y-2'>
                             {/* Main Heading */}
-                            <h1 className='font-inter text-base md:text-xl lg:text-2xl text-primary leading-tight text-center lg:text-center'>
+                            <h1 className='section-description font-inter text-base md:text-xl lg:text-2xl text-primary leading-tight text-center lg:text-center'>
                                 Профессиональная разработка программного обеспечения
                                 <br />
                                 для частных лиц и компаний
                             </h1>
 
                             {/* Subtitle */}
-                            <p className='font-inter text-base text-muted text-center'>
+                            <p className='section-description font-inter text-base text-muted text-center'>
                                 Создаем инновационные решения для вашего будущего <br />
                                 Современные технологии и надежность в каждом проекте
                             </p>
                         </div>
 
-                        {/* CTA Button */}
-                        {/* <div className="flex justify-center">
-              <Button
-                className="app-button-primary btn-contact-wrap btn-cta"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Начать проект
-                <span className="btn-contact-circle">
-                  <ArrowRight className="w-4 h-4 btn-arrow" />
-                </span>
-              </Button>
-            </div> */}
+                        {/* Contact Button */}
+                        <div className='flex justify-center sm:hidden'>
+                            <Button
+                                onClick={handleContactClick}
+                                className='bg-transparent border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded-md font-inter-medium transition-colors'
+                            >
+                                СВЯЗАТЬСЯ
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
