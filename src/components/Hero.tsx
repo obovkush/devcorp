@@ -1,5 +1,4 @@
 import {Button} from '@/components/ui/button';
-import {ArrowRight} from 'lucide-react';
 
 const Hero = () => {
     const handleContactClick = () => {
@@ -9,23 +8,6 @@ const Hero = () => {
     };
     return (
         <section className='section min-h-screen flex items-center justify-center py-20'>
-            {/* Background Image (local responsive) */}
-            {/* <picture>
-        <source
-          type="image/avif"
-          srcSet="/images/hero/hero-512.avif 512w, /images/hero/hero-1024.avif 1024w, /images/hero/hero-2048.avif 2048w, /images/hero/hero-4096.avif 4096w, /images/hero/hero-5760.avif 5760w"
-        />
-        <img
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/images/hero/hero-5760.avif"
-          sizes="(max-width: 640px) 512px, (max-width: 1024px) 1024px, (max-width: 1440px) 2048px, (max-width: 1920px) 4096px, 5760px"
-          alt="Hero background"
-        />
-      </picture> */}
-
-            {/* Overlay for better text readability */}
-            {/* <div className="absolute inset-0 bg-background/20"></div> */}
-
             {/* Content */}
             <div className='relative z-10 container mx-auto px-4 lg:px-8'>
                 <div className='grid lg:grid-cols-1 gap-12 items-center'>

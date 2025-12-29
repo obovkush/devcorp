@@ -1,4 +1,3 @@
-import {Badge} from '@/components/ui/badge';
 import {useTheme} from '@/contexts/ThemeContext';
 import {Search} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';

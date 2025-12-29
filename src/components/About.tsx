@@ -1,4 +1,4 @@
-import {Award, Target, Heart, LucideIcon} from 'lucide-react';
+import {Award, HandHelping, Heart, LucideIcon} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 import TeamMap from './TeamMap';
 
@@ -10,19 +10,19 @@ interface AboutCard {
 
 const aboutCards: AboutCard[] = [
     {
-        icon: Target,
+        icon: HandHelping,
         title: 'Миссия',
-        description: ['Делать полезные сервисы', 'доступными, понятными и', 'выгодными для каждого.'],
+        description: ['Делаем сервисы', 'полезными,  понятными', 'и выгодными для каждого.'],
     },
     {
         icon: Award,
         title: 'Качество',
-        description: ['Высочайшие стандарты', 'разработки и обслуживания', 'в каждом проекте.'],
+        description: ['Применяем стандарты', 'разработки и обслуживания', 'в каждом проекте.'],
     },
     {
         icon: Heart,
         title: 'Забота',
-        description: ['Персональный подход', 'и поддержка наших', 'клиентов.'],
+        description: ['Осуществляем сопровождение', 'и индивидуальную поддержку', 'наших клиентов.'],
     },
 ];
 

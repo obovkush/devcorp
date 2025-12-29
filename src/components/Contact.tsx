@@ -1,5 +1,4 @@
-import {Card, CardContent} from '@/components/ui/card';
-import {Phone, Mail, MapPin, HelpCircle, Copy, Check} from 'lucide-react';
+import {Mail, MapPin, Copy, Check, PhoneCall} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 import {useCopyToClipboard} from '@/hooks/useCopyToClipboard';
 import {CONTACT_INFO} from '@/constants/contact';
@@ -26,7 +25,7 @@ const Contact = () => {
                     {/* Phone */}
                     <div className='app-card p-8 text-center space-y-4'>
                         <div className='w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
-                            <Phone className='w-8 h-8 sm:w-10 sm:h-10 text-card' />
+                            <PhoneCall className='w-8 h-8 sm:w-10 sm:h-10 text-card' />
                         </div>
                         <h3 className='contact-card-title font-inter text-3xl text-white'>Позвонить</h3>
                         <div className='space-y-3'>

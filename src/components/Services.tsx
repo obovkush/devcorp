@@ -1,6 +1,5 @@
-import {Code, Smartphone, Building2, Zap, CheckCircle, ArrowRight} from 'lucide-react';
-import {Button} from '@/components/ui/button';
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {PanelsTopLeft, Smartphone, UsersRound, Cog} from 'lucide-react';
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {useTheme} from '@/contexts/ThemeContext';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 
@@ -10,7 +9,7 @@ const Services = () => {
 
     const services = [
         {
-            icon: Code,
+            icon: PanelsTopLeft,
             title: 'Веб-разработка',
             // description: "Создаем современные веб-приложения для роста бизнеса.",
             features: [
@@ -34,7 +33,7 @@ const Services = () => {
             // benefits: "От идеи до публикации в App Store и Google Play — приложения, которые скачивают и используют ежедневно."
         },
         {
-            icon: Building2,
+            icon: UsersRound,
             title: 'Корпоративные системы',
             // description: "Строим масштабируемые корпоративные решения.",
             features: [
@@ -46,7 +45,7 @@ const Services = () => {
             // benefits: "Централизованное управление бизнес-процессами с аналитикой и отчетностью в реальном времени."
         },
         {
-            icon: Zap,
+            icon: Cog,
             title: 'Автоматизация бизнес-процессов',
             // description: "Устраняем рутину и повышаем продуктивность команды.",
             features: [
