@@ -11,26 +11,7 @@
     font-style: normal;
 }
 
-/* KSBistra Font - Using public folder paths */
-@font-face {
-    font-family: 'KSBistra';
-    src: url('/KS-Bistra.woff2') format('woff2'), url('/KS-Bistra.woff') format('woff'), url('/KS-Bistra.ttf') format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
-}
-
-/* InterHewn Font */
-@font-face {
-    font-family: 'InterHewn';
-    src: url('./assets/fonts/InterHewn/Inter-accent.otf') format('opentype');
-    font-weight: 400 900;
-    font-display: swap;
-    font-style: normal;
-}
-
 /* App Design System */
-
 @layer base {
     :root {
         /* App Color Palette */
@@ -127,13 +108,6 @@ body {
     font-weight: 400;
 }
 
-.font-ksbistra {
-    font-family: 'KSBistra', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-}
-
 .font-inter-medium {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 500;
@@ -181,7 +155,6 @@ body {
     letter-spacing: -0.01em;
     line-height: 1.2;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
-    /* color: hsl(var(--primary)); */
 }
 
 .cloud, .cloud2 {
