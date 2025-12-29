@@ -67,7 +67,7 @@ const Header = () => {
 
     return (
         <header className='fixed top-0 w-full z-50 backdrop-blur-md bg-background/95'>
-            <div className='container mx-auto px-4 lg:px-8 py-4 flex lg:grid lg:grid-cols-1 items-center justify-between lg:justify-stretch'>
+            <div className='container mx-auto px-4 lg:px-8 py-4'>
                 {/* Logo */}
                 {/* <div className="flex items-center space-x-2 lg:space-x-3 justify-start">
                       <div className="flex items-center">
@@ -81,7 +81,7 @@ const Header = () => {
                     </div> */}
 
                 {/* Navigation - Centered */}
-                <nav className='hidden lg:flex items-center justify-center space-x-4 xl:space-x-16'>
+                <nav className='flex items-center justify-center space-x-4 xl:space-x-16'>
                     <button
                         onClick={() => {
                             document.getElementById('services')?.scrollIntoView({behavior: 'smooth'});
@@ -130,7 +130,7 @@ const Header = () => {
                 </nav>
 
                 {/* Actions */}
-                <div className='flex items-center justify-end space-x-2 lg:space-x-4'>
+                {/* <div className='flex items-center justify-end space-x-2 lg:space-x-4'> */}
                     {/* <ThemeSelector /> */}
                     {/* <Button
                           className="app-button-primary btn-contact-wrap hidden lg:inline-flex items-center gap-3"
@@ -143,14 +143,14 @@ const Header = () => {
                         </Button> */}
 
                     {/* Mobile Menu Button */}
-                    <Button variant='ghost' size='icon' className='lg:hidden [&_svg]:size-7' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                    {/* <Button variant='ghost' size='icon' className='lg:hidden [&_svg]:size-7' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         {isMobileMenuOpen ? <X className='w-7 h-7' /> : <Menu className='w-7 h-7' />}
-                    </Button>
-                </div>
+                    </Button> */}
+                {/* </div> */}
             </div>
 
             {/* Mobile Menu */}
-            {isMobileMenuOpen && (
+            {/* {isMobileMenuOpen && (
                 <div className='lg:hidden fixed top-20 right-4 w-80 bg-background/95 backdrop-blur-md border border-border rounded-xl shadow-lg z-40'>
                     <div className='px-6 py-6 space-y-3'>
                         <button
@@ -216,7 +216,7 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-            )}
+            )} */}
         </header>
     );
 };

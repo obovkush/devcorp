@@ -28,7 +28,7 @@ const Hero = () => {
                     {/* Left Content */}
                     <div className='space-y-12 animate-fade-in'>
                         {/* Company name */}
-                        <h1 className='font-bruno-ace text-l md:text-xl lg:text-9xl text-white leading-tight text-center lg:text-center'>
+                        <h1 className='font-bruno-ace text-4xl sm:text-6xl md:text-7xl lg:text-9xl text-white leading-tight text-center lg:text-center'>
                             SOLARM TECH
                         </h1>
                         <div className='space-y-2'>
