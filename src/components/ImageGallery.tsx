@@ -254,7 +254,7 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                 </div>
 
                 {/* Bottom Section - Project Info */}
-                <div className='bg-card px-8 py-8'>
+                <div className='bg-card px-2 py-2 sm: p-8'>
                     <div className='relative'>
                         {/* Category */}
                         <div className='mb-3'>
@@ -262,10 +262,10 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                         </div>
 
                         {/* Title */}
-                        <h2 className='font-inter text-base sm:text-3xl md:text-4xl text-white mb-6 pr-24'>{project.title}</h2>
+                        <h2 className='font-inter text-base sm:text-3xl md:text-4xl text-white mb-3 sm:mb-6 sm:pr-24'>{project.title}</h2>
 
                         {/* Description */}
-                        <p className='font-inter-medium text-white/80 card-content sm:text-xl mb-6 pr-24'>{project.description}</p>
+                        <p className='font-inter-medium text-white/80 card-content sm:text-xl sm:mb-6 sm:pr-24'>{project.description}</p>
                     </div>
                 </div>
             </div>
