@@ -117,7 +117,7 @@ const Contact = () => {
                         <h3 className='section-title'>Часто задаваемые вопросы</h3>
                     </div>
 
-                    <div className='relative max-w-4xl mx-auto p-8 md:p-10'>
+                    <div className='relative max-w-4xl mx-auto'>
                         <div className='relative flex flex-col gap-6'>
                             {[
                                 {
