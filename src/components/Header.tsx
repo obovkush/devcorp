@@ -84,15 +84,6 @@ const Header = () => {
                 <nav className='hidden lg:flex items-center justify-center space-x-4 xl:space-x-16'>
                     <button
                         onClick={() => {
-                            window.scrollTo({top: 0, behavior: 'smooth'});
-                            closeMobileMenu();
-                        }}
-                        className={`whitespace-nowrap ${linkClass('home', true)} font-inter-bold text-xs uppercase`}
-                    >
-                        Главная
-                    </button>
-                    <button
-                        onClick={() => {
                             document.getElementById('services')?.scrollIntoView({behavior: 'smooth'});
                             closeMobileMenu();
                         }}
@@ -106,6 +97,15 @@ const Header = () => {
                             closeMobileMenu();
                         }}
                         className={`whitespace-nowrap ${linkClass('portfolio')} font-inter-bold text-xs uppercase`}
+                    >
+                        Проекты
+                    </button>
+                    <button
+                        onClick={() => {
+                            window.scrollTo({top: 0, behavior: 'smooth'});
+                            closeMobileMenu();
+                        }}
+                        className={`whitespace-nowrap ${linkClass('home', true)} font-inter-bold text-xs uppercase`}
                     >
                         <img src={logoIcon} alt='Logo SOLARM Tech Portfolio Link' className='h-8 w-auto lg:h-10 object-contain' />
                     </button>
