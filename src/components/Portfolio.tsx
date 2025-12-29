@@ -4,13 +4,13 @@ import {Search} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 import ImageGallery from './ImageGallery';
 import {useState} from 'react';
-import {projects} from '@/data/projects';
+import {projects, Project} from '@/data/projects';
 
 const Portfolio = () => {
     const {currentTheme} = useTheme();
     const {elementRef, isVisible} = useScrollAnimation();
     const [galleryOpen, setGalleryOpen] = useState(false);
-    const [galleryImages, setGalleryImages] = useState<string[]>([]);
+    const [galleryProject, setGalleryProject] = useState<Project | null>(null);
     const [galleryInitialIndex, setGalleryInitialIndex] = useState(0);
 
     const getSectionClass = () => {
@@ -22,14 +22,15 @@ const Portfolio = () => {
         }
     };
 
-    const openGallery = (images: string[], initialIndex: number = 0) => {
-        setGalleryImages(images);
+    const openGallery = (project: Project, initialIndex: number = 0) => {
+        setGalleryProject(project);
         setGalleryInitialIndex(initialIndex);
         setGalleryOpen(true);
     };
 
     const closeGallery = () => {
         setGalleryOpen(false);
+        setGalleryProject(null);
     };
 
     // Разделяем проекты на мобильные и десктопные
@@ -44,19 +45,19 @@ const Portfolio = () => {
                 </div>
 
                 {/* Верхний ряд - Мобильные приложения */}
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
                     {mobileProjects.map((project, index) => (
                         <div
                             key={index}
                             className='app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden relative'
-                            onClick={() => openGallery(project.images, 0)}
+                            onClick={() => openGallery(project, 0)}
                         >
-                            <div className='relative overflow-hidden aspect-[4/3]'>
+                            <div className='relative overflow-hidden'>
                                 <img
-                                    src={project.images[0]}
+                                    src={project.mainImage}
                                     alt={project.title}
                                     loading='lazy'
-                                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
+                                    className='w-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
                                 />
                                 <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                                 <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -87,19 +88,19 @@ const Portfolio = () => {
                 </div>
 
                 {/* Нижний ряд - Десктопные приложения */}
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                     {desktopProjects.map((project, index) => (
                         <div
                             key={index}
                             className='app-card group cursor-pointer hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden relative'
-                            onClick={() => openGallery(project.images, 0)}
+                            onClick={() => openGallery(project, 0)}
                         >
-                            <div className='relative overflow-hidden aspect-[4/3]'>
+                            <div className='relative overflow-hidden'>
                                 <img
-                                    src={project.images[0]}
+                                    src={project.mainImage}
                                     alt={project.title}
                                     loading='lazy'
-                                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
+                                    className='w-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out'
                                 />
                                 <div className='absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
                                 <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
@@ -131,7 +132,7 @@ const Portfolio = () => {
             </div>
 
             {/* Image Gallery Modal */}
-            <ImageGallery images={galleryImages} isOpen={galleryOpen} onClose={closeGallery} initialIndex={galleryInitialIndex} />
+            <ImageGallery project={galleryProject} isOpen={galleryOpen} onClose={closeGallery} initialIndex={galleryInitialIndex} />
         </section>
     );
 };

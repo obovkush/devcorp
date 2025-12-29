@@ -1,254 +1,248 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import {useState, useEffect} from 'react';
+import {Button} from '@/components/ui/button';
+import {X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, RotateCcw} from 'lucide-react';
+import {Project} from '@/data/projects';
 
 interface ImageGalleryProps {
-  images: string[];
-  isOpen: boolean;
-  onClose: () => void;
-  initialIndex?: number;
+    project: Project | null;
+    isOpen: boolean;
+    onClose: () => void;
+    initialIndex?: number;
 }
 
-const ImageGallery = ({ images, isOpen, onClose, initialIndex = 0 }: ImageGalleryProps) => {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const [zoomLevel, setZoomLevel] = useState(1);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGalleryProps) => {
+    const [currentIndex, setCurrentIndex] = useState(initialIndex);
+    const [isZoomed, setIsZoomed] = useState(false);
+    const [zoomLevel, setZoomLevel] = useState(1);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  useEffect(() => {
-    setCurrentIndex(initialIndex);
-  }, [initialIndex]);
+    const images = project?.images || [];
 
-  useEffect(() => {
-    if (!isOpen) {
-      setIsZoomed(false);
-      setZoomLevel(1);
-    }
-  }, [isOpen]);
+    useEffect(() => {
+        setCurrentIndex(initialIndex);
+    }, [initialIndex]);
 
-  // Сброс индекса при изменении массива изображений
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [images]);
+    useEffect(() => {
+        if (!isOpen) {
+            setIsZoomed(false);
+            setZoomLevel(1);
+        }
+    }, [isOpen]);
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (!isOpen) return;
+    // Сброс индекса при изменении проекта
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, [project]);
 
-    switch (e.key) {
-      case "Escape":
-        onClose();
-        break;
-      case "ArrowLeft":
-        e.preventDefault();
-        goToPrevious();
-        break;
-      case "ArrowRight":
-        e.preventDefault();
-        goToNext();
-        break;
-      case "+":
-      case "=":
-        e.preventDefault();
-        handleZoomIn();
-        break;
-      case "-":
-        e.preventDefault();
-        handleZoomOut();
-        break;
-      case "0":
-        e.preventDefault();
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (!isOpen) return;
+
+        switch (e.key) {
+            case 'Escape':
+                onClose();
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                goToPrevious();
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                goToNext();
+                break;
+            case '+':
+            case '=':
+                e.preventDefault();
+                handleZoomIn();
+                break;
+            case '-':
+                e.preventDefault();
+                handleZoomOut();
+                break;
+            case '0':
+                e.preventDefault();
+                handleResetZoom();
+                break;
+        }
+    };
+
+    // Функции для обработки свайпов
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
+
+        if (isLeftSwipe && currentIndex < images.length - 1) {
+            goToNext();
+        }
+        if (isRightSwipe && currentIndex > 0) {
+            goToPrevious();
+        }
+    };
+
+    useEffect(() => {
+        if (!isOpen) return;
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen, currentIndex, zoomLevel, onClose]);
+
+    const goToPrevious = () => {
+        setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
         handleResetZoom();
-        break;
-    }
-  };
+    };
 
-  // Функции для обработки свайпов
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
+    const goToNext = () => {
+        setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+        handleResetZoom();
+    };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
+    const handleZoomIn = () => {
+        setZoomLevel((prev) => Math.min(prev + 0.5, 3));
+        setIsZoomed(true);
+    };
 
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    const handleZoomOut = () => {
+        setZoomLevel((prev) => Math.max(prev - 0.5, 0.5));
+        setIsZoomed(zoomLevel > 1);
+    };
 
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
+    const handleResetZoom = () => {
+        setZoomLevel(1);
+        setIsZoomed(false);
+    };
 
-    if (isLeftSwipe && currentIndex < images.length - 1) {
-      goToNext();
-    }
-    if (isRightSwipe && currentIndex > 0) {
-      goToPrevious();
-    }
-  };
+    const handleImageClick = () => {
+        if (zoomLevel === 1) {
+            handleZoomIn();
+        } else {
+            handleResetZoom();
+        }
+    };
 
-  useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, currentIndex, zoomLevel]);
+    const handleContactClick = () => {
+        onClose();
+        setTimeout(() => {
+            document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'});
+        }, 100);
+    };
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-    handleResetZoom();
-  };
+    const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        // Закрываем галерею только если клик был именно на backdrop, а не на карточке
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    handleResetZoom();
-  };
+    if (!isOpen || !project) return null;
 
-  const handleZoomIn = () => {
-    setZoomLevel((prev) => Math.min(prev + 0.5, 3));
-    setIsZoomed(true);
-  };
+    return (
+        <div className='fixed inset-0 z-50 bg-card/80 backdrop-blur-sm flex items-center justify-center p-4' onClick={handleBackdropClick}>
+            <div className='w-full max-w-6xl bg-card overflow-hidden flex flex-col max-h-[90vh]' onClick={(e) => e.stopPropagation()}>
+                {/* Top Section - Images with Navigation */}
+                <div
+                    className='relative flex-1 min-h-[60vh] flex items-center justify-center p-8 overflow-hidden'
+                    style={{backgroundColor: 'hsl(176, 88%, 6%)'}}
+                >
+                    <div className='flex items-center gap-2 absolute right-0 top-0'>
+                        {/* Image Counter */}
+                        {images.length > 1 && (
+                            <div className='text-white/70 text-sm bg-card backdrop-blur-sm px-3 rounded-md border border-border/30'>
+                                {currentIndex + 1} / {images.length}
+                            </div>
+                        )}
+                        {/* Zoom */}
+                        <Button variant='ghost' size='sm' onClick={handleZoomOut} className='text-white hover:bg-white/20'>
+                            <ZoomOut className='w-4 h-4' />
+                        </Button>
+                        <Button variant='ghost' size='sm' onClick={handleResetZoom} className='text-white hover:bg-white/20'>
+                            <RotateCcw className='w-4 h-4' />
+                        </Button>
+                        <Button variant='ghost' size='sm' onClick={handleZoomIn} className='text-white hover:bg-white/20'>
+                            <ZoomIn className='w-4 h-4' />
+                        </Button>
+                        {/* Close button */}
+                        <Button variant='ghost' size='sm' onClick={onClose} className='text-white hover:bg-white/20'>
+                            <X className='w-4 h-4' />
+                        </Button>
+                    </div>
+                    {/* Navigation Arrows */}
+                    {images.length > 1 && (
+                        <>
+                            <Button
+                                variant='ghost'
+                                onClick={goToPrevious}
+                                className='absolute left-0 bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none w-16 h-16 p-0 [&_svg]:!w-14 [&_svg]:!h-14'
+                                style={{backgroundColor: 'hsl(163, 76%, 13%)'}}
+                            >
+                                <ChevronLeft />
+                            </Button>
+                            <Button
+                                variant='ghost'
+                                onClick={goToNext}
+                                className='absolute right-0 bottom-[-32px] -translate-y-1/2 z-10 text-white hover:bg-white/10 backdrop-blur-sm rounded-none w-16 h-16 p-0 [&_svg]:!w-14 [&_svg]:!h-14'
+                                style={{backgroundColor: 'hsl(163, 76%, 13%)'}}
+                            >
+                                <ChevronRight />
+                            </Button>
+                        </>
+                    )}
+                    {/* Main Image */}
+                    <div className='relative overflow-hidden '>
+                        <img
+                            src={images[currentIndex]}
+                            alt={`${project.title} - Screenshot ${currentIndex + 1}`}
+                            className={`h-full object-contain`}
+                            style={{
+                                transform: `scale(${zoomLevel})`,
+                                maxWidth: '100%',
+                            }}
+                            onClick={handleImageClick}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                        />
+                    </div>
+                </div>
 
-  const handleZoomOut = () => {
-    setZoomLevel((prev) => Math.max(prev - 0.5, 0.5));
-    setIsZoomed(zoomLevel > 1);
-  };
+                {/* Bottom Section - Project Info */}
+                <div className='bg-card px-8 py-8'>
+                    <div className='relative'>
+                        {/* Category */}
+                        <div className='mb-3'>
+                            <span className='text-white font-inter text-sm tracking-wider'>{project.category}</span>
+                        </div>
 
-  const handleResetZoom = () => {
-    setZoomLevel(1);
-    setIsZoomed(false);
-  };
+                        {/* Title */}
+                        <h2 className='font-inter text-3xl md:text-4xl text-white mb-6 pr-24'>{project.title}</h2>
 
-  const handleImageClick = () => {
-    if (zoomLevel === 1) {
-      handleZoomIn();
-    } else {
-      handleResetZoom();
-    }
-  };
+                        {/* Description */}
+                        <p className='font-inter-medium text-white/80 text-xl mb-6 pr-24'>{project.description}</p>
 
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm">
-      {/* Header */}
-      <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/50 to-transparent p-4">
-        <div className="flex items-center justify-between">
-          <div className="text-white">
-            <span className="text-sm opacity-75">
-              {currentIndex + 1} из {images.length}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleZoomOut}
-              className="text-white hover:bg-white/20"
-            >
-              <ZoomOut className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleResetZoom}
-              className="text-white hover:bg-white/20"
-            >
-              <RotateCcw className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleZoomIn}
-              className="text-white hover:bg-white/20"
-            >
-              <ZoomIn className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onClose}
-              className="text-white hover:bg-white/20"
-            >
-              <X className="w-4 h-4" />
-            </Button>
-          </div>
+                        {/* Contact Button */}
+                        {/* <div className='flex justify-end'>
+                            <Button
+                                onClick={handleContactClick}
+                                className='bg-transparent border border-white text-white hover:bg-white hover:text-black px-8 py-3 rounded-md font-inter-medium transition-colors'
+                            >
+                                СВЯЗАТЬСЯ
+                            </Button>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      {/* Navigation Arrows */}
-      {images.length > 1 && (
-        <>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white hover:bg-white/20"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </Button>
-        </>
-      )}
-
-      {/* Main Image */}
-      <div className="flex items-center justify-center h-full p-8">
-        <img
-          src={images[currentIndex]}
-          alt={`Screenshot ${currentIndex + 1}`}
-          className={`max-w-full max-h-full object-contain transition-transform duration-300 cursor-zoom-in ${
-            isZoomed ? "cursor-zoom-out" : ""
-          }`}
-          style={{
-            transform: `scale(${zoomLevel})`,
-          }}
-          onClick={handleImageClick}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        />
-      </div>
-
-      {/* Thumbnails */}
-      {images.length > 1 && (
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
-          <div className="flex justify-center gap-2 overflow-x-auto">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setCurrentIndex(index);
-                  handleResetZoom();
-                }}
-                className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                  index === currentIndex
-                    ? "border-primary ring-2 ring-primary/50"
-                    : "border-white/30 hover:border-white/60"
-                }`}
-              >
-                <img
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Instructions */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-xs text-center">
-        Используйте ← → для навигации, + - для зума, ESC для закрытия
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ImageGallery;
