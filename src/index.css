@@ -172,6 +172,7 @@ body {
     background: #083a2c;
     filter: blur(125px);
     transform: rotate(-10.84deg);
+
 }
 
 .ellipse1 {
@@ -183,6 +184,7 @@ body {
 }
 
 .ellipse2 {
+
     width: 1250px;
     height: 350px;
     inset-inline-start: 0;
@@ -220,16 +222,18 @@ body {
         width: 640px;
         height: 200px;
         top: 0;
-        inset-inline-start: -25%;
+        inset-inline-start: 10%;
         filter: blur(75px);
+        max-width: 70vw;
     }
 
     .ellipse2 {
         width: 640px;
         height: 200px;
 
-        inset-inline-start: -70%;
+        inset-inline-start: 10%;
         filter: blur(75px);
+        max-width: 70vw;
     }
 }
 
