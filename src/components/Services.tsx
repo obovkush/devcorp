@@ -73,7 +73,7 @@ const Services = () => {
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>Наши услуги</h2>
                     <p className='section-description font-inter-medium text-foreground max-w-3xl mx-auto xs:text-xs'>
-                        Комплексные решения для цифровой трансформации вашего бизнеса
+                        Комплексные решения для цифровой трансформации вашего бизнеса.
                     </p>
                 </div>
 
