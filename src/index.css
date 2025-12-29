@@ -138,6 +138,10 @@ body {
     font-size: clamp(2.5rem, 8vw, 4rem);
 }
 
+.section {
+    position: relative;
+    z-index: 1;
+}
 /* Section Title Style */
 .section-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -148,9 +152,48 @@ body {
     color: hsl(var(--primary-foreground));
 }
 
+/* Subsection Title Style */
+.subsection-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.ellipse1,
+.ellipse2 {
+    /* Ellipse */
+    position: absolute;
+
+    border-radius: 100%;
+    z-index: -1;
+
+    background: #083a2c;
+    filter: blur(125px);
+    transform: rotate(-10.84deg);
+}
+
+.ellipse1 {
+    width: 950px;
+    height: 250px;
+    top: 0;
+    inset-inline-start: 10%;
+    inset-inline-end: 0;
+}
+
+.ellipse2 {
+    width: 1250px;
+    height: 350px;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    top: -300%;
+    transform: rotate(-18.74deg);
+}
+
 @media screen and (max-width: 640px) {
     .section-title {
-      font-size: 17px;
+        font-size: 17px;
     }
 
     .text-11 {
@@ -172,44 +215,23 @@ body {
     .contact-card-title {
         font-size: 17px;
     }
-  }
 
-/* Subsection Title Style */
-.subsection-title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    .ellipse1 {
+        width: 640px;
+        height: 200px;
+        top: 0;
+        inset-inline-start: -25%;
+        filter: blur(75px);
+    }
+
+    .ellipse2 {
+        width: 640px;
+        height: 200px;
+
+        inset-inline-start: -70%;
+        filter: blur(75px);
+    }
 }
-
-.cloud, .cloud2 {
-    /* Ellipse 1 */
-    position: absolute;
-
-    border-radius: 100%;
-
-
-    background: #083a2c;
-    filter: blur(125px);
-    transform: rotate(-10.84deg);
-}
-
-.cloud {
-  width: 950px;
-  height: 250px;
-  left: 28vw;
-  top: 40vh;
-}
-
-.cloud2 {
-  width: 1250px;
-  height: 350px;
-  left: 20vw;
-  top: 470vh;
-  transform: rotate(-18.74deg);
-}
-
 
 /* Fade animation for project carousel */
 @keyframes fadeIn {
@@ -425,5 +447,6 @@ body {
         @apply bg-background text-foreground font-sans;
         font-feature-settings: 'cv11', 'ss01';
         font-variation-settings: 'opsz' 32;
+        overflow-x: hidden;
     }
 }

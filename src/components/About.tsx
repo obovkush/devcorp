@@ -30,7 +30,7 @@ const About = () => {
     const {elementRef, isVisible} = useScrollAnimation();
 
     return (
-        <section id='about' className='py-20 border-b border-border/50'>
+        <section id='about' className='section py-20 border-b border-border/50'>
             <div ref={elementRef} className='container mx-auto px-4 lg:px-8'>
                 <div className='grid lg:grid-cols-1 gap-16 items-center'>
                     {/* Left Content */}

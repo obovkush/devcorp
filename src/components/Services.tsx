@@ -69,7 +69,7 @@ const Services = () => {
     };
 
     return (
-        <section id='services' className={getSectionClass()}>
+        <section id='services' className={`section ${getSectionClass()}`}>
             <div ref={elementRef} className='container mx-auto px-4 lg:px-40'>
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>Наши услуги</h2>

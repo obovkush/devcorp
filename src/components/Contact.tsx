@@ -3,8 +3,8 @@ import {Phone, Mail, MapPin, HelpCircle, Copy, Check} from 'lucide-react';
 import {useScrollAnimation} from '@/hooks/useScrollAnimation';
 import {useCopyToClipboard} from '@/hooks/useCopyToClipboard';
 import {CONTACT_INFO} from '@/constants/contact';
-import TelegramIcon from '../assets/icons/telegram.svg'
-import WhatsappIcon from '../assets/icons/whatsapp.svg'
+import TelegramIcon from '../assets/icons/telegram.svg';
+import WhatsappIcon from '../assets/icons/whatsapp.svg';
 
 const Contact = () => {
     const {elementRef, isVisible} = useScrollAnimation();
@@ -12,14 +12,13 @@ const Contact = () => {
     const whatsappImg = '/images/whatsapp.png';
     const telegramImg = '/images/telegram.png';
     return (
-        <section id='contact' className='py-20'>
+        <section id='contact' className='section py-20'>
             <div ref={elementRef} className='container mx-auto px-4'>
                 {/* Header Section */}
-                <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
+                <div className={`relative text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
+                    <div className='ellipse2' />
                     <h2 className='section-title mb-2'>Свяжитесь с нами</h2>
-                    <p className='section-description font-inter-medium text-foreground max-w-4xl mx-auto'>
-                        Мы ценим ваши отзывы и запросы.
-                    </p>
+                    <p className='section-description font-inter-medium text-foreground max-w-4xl mx-auto'>Мы ценим ваши отзывы и запросы.</p>
                 </div>
 
                 {/* Contact Details Grid */}
@@ -87,7 +86,7 @@ const Contact = () => {
                                 title='WhatsApp'
                                 className='messenger-icon'
                             >
-                                <img src={WhatsappIcon} alt="WhatsappLink" className='w-10 h-10 sm:w-14 sm:h-14' />
+                                <img src={WhatsappIcon} alt='WhatsappLink' className='w-10 h-10 sm:w-14 sm:h-14' />
                             </a>
                             <a
                                 href={CONTACT_INFO.messengers.telegram}
@@ -96,7 +95,7 @@ const Contact = () => {
                                 title='Telegram'
                                 className='messenger-icon'
                             >
-                                <img src={TelegramIcon} alt="TelegramLink" className='w-10 h-10 sm:w-14 sm:h-14' />
+                                <img src={TelegramIcon} alt='TelegramLink' className='w-10 h-10 sm:w-14 sm:h-14' />
                             </a>
                         </div>
                     </div>

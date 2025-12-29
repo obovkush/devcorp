@@ -8,7 +8,7 @@ const Hero = () => {
         }, 100);
     };
     return (
-        <section className='relative min-h-screen flex items-center justify-center overflow-hidden py-20'>
+        <section className='section min-h-screen flex items-center justify-center py-20'>
             {/* Background Image (local responsive) */}
             {/* <picture>
         <source
@@ -35,7 +35,8 @@ const Hero = () => {
                         <h1 className='font-bruno-ace text-4xl sm:text-6xl md:text-7xl lg:text-9xl text-white leading-tight text-center lg:text-center'>
                             SOLARM TECH
                         </h1>
-                        <div className='space-y-2'>
+                        <div className='relative space-y-2'>
+                            <div className='ellipse1' />
                             {/* Main Heading */}
                             <h1 className='section-description font-inter text-base md:text-xl lg:text-2xl text-primary leading-tight text-center lg:text-center'>
                                 Профессиональная разработка программного обеспечения

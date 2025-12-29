@@ -2,8 +2,8 @@ import {Copy, Check} from 'lucide-react';
 import {useCopyToClipboard} from '@/hooks/useCopyToClipboard';
 import {CONTACT_INFO} from '@/constants/contact';
 import logoIcon from '@/assets/icons/logo.svg';
-import TelegramIcon from '../assets/icons/telegram.svg'
-import WhatsappIcon from '../assets/icons/whatsapp.svg'
+import TelegramIcon from '../assets/icons/telegram.svg';
+import WhatsappIcon from '../assets/icons/whatsapp.svg';
 
 const Footer = () => {
     const {copyToClipboard, isCopied} = useCopyToClipboard();
@@ -125,7 +125,7 @@ const Footer = () => {
                                 title='WhatsApp'
                                 className='messenger-icon'
                             >
-                                <img src={WhatsappIcon} alt="WhatsappLink" />
+                                <img src={WhatsappIcon} alt='WhatsappLink' />
                             </a>
                             <a
                                 href={CONTACT_INFO.messengers.telegram}
@@ -134,7 +134,7 @@ const Footer = () => {
                                 title='Telegram'
                                 className='messenger-icon'
                             >
-                                <img src={TelegramIcon} alt="TelegramLink" />
+                                <img src={TelegramIcon} alt='TelegramLink' />
                             </a>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ const Portfolio = () => {
     const desktopProjects = projects.filter((p) => p.type === 'desktop');
 
     return (
-        <section id='portfolio' className={getSectionClass()}>
+        <section id='portfolio' className={`section ${getSectionClass()}`}>
             <div ref={elementRef} className='container mx-auto px-4 lg:px-8'>
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>ПОРТФОЛИО</h2>

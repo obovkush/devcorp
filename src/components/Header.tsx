@@ -131,8 +131,8 @@ const Header = () => {
 
                 {/* Actions */}
                 {/* <div className='flex items-center justify-end space-x-2 lg:space-x-4'> */}
-                    {/* <ThemeSelector /> */}
-                    {/* <Button
+                {/* <ThemeSelector /> */}
+                {/* <Button
                           className="app-button-primary btn-contact-wrap hidden lg:inline-flex items-center gap-3"
                           onClick={() => { document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); closeMobileMenu(); }}
                         >
@@ -142,8 +142,8 @@ const Header = () => {
                           </span>
                         </Button> */}
 
-                    {/* Mobile Menu Button */}
-                    {/* <Button variant='ghost' size='icon' className='lg:hidden [&_svg]:size-7' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                {/* Mobile Menu Button */}
+                {/* <Button variant='ghost' size='icon' className='lg:hidden [&_svg]:size-7' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         {isMobileMenuOpen ? <X className='w-7 h-7' /> : <Menu className='w-7 h-7' />}
                     </Button> */}
                 {/* </div> */}
