@@ -18,9 +18,7 @@ const Contact = () => {
                 <div className={`text-center mb-16 ${isVisible ? 'scroll-fade-up' : ''}`}>
                     <h2 className='section-title mb-2'>Свяжитесь с нами</h2>
                     <p className='section-description font-inter-medium text-foreground max-w-4xl mx-auto'>
-                        Мы ценим ваши отзывы и запросы. Свяжитесь с нашей командой
-                        <br />
-                        для получения любой помощи или информации о наших услугах.
+                        Мы ценим ваши отзывы и запросы.
                     </p>
                 </div>
 

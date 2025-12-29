@@ -89,7 +89,7 @@ const Services = () => {
                                 }`}
                                 style={{animationDelay: `${index * 0.15}s`}}
                             >
-                                <CardHeader className='flex items-start lg:h-24 md:items-center pb-0'>
+                                <CardHeader className='flex items-start lg:h-24 md:items-center pb-6 sm:pb-0'>
                                     <div className='flex items-center gap-3 md:gap-4 w-full'>
                                         <div className='p-3 rounded-xl bg-primary-foreground text-card transition-colors flex-shrink-0'>
                                             <Icon className='w-4 h-4 sm:w-8 sm:h-8' />
