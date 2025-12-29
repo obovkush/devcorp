@@ -254,7 +254,7 @@ const ImageGallery = ({project, isOpen, onClose, initialIndex = 0}: ImageGallery
                 </div>
 
                 {/* Bottom Section - Project Info */}
-                <div className='bg-card px-2 py-2 sm: p-8'>
+                <div className='bg-card px-2 py-2 sm:p-8'>
                     <div className='relative'>
                         {/* Category */}
                         <div className='mb-3'>
