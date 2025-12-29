@@ -160,8 +160,13 @@ body {
     .card-title {
         font-size: 20px;
     }
+
     .card-content {
         font-size: 13px;
+    }
+
+    .contact-card-title {
+        font-size: 17px;
     }
   }
 

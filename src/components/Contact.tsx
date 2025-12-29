@@ -26,10 +26,10 @@ const Contact = () => {
                 <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 ${isVisible ? 'scroll-fade-up scroll-animation-delay-100' : ''}`}>
                     {/* Phone */}
                     <div className='app-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
-                            <Phone className='w-8 h-8 text-card' />
+                        <div className='w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <Phone className='w-8 h-8 sm:w-10 sm:h-10 text-card' />
                         </div>
-                        <h3 className='font-inter text-3xl text-white'>Позвонить</h3>
+                        <h3 className='contact-card-title font-inter text-3xl text-white'>Позвонить</h3>
                         <div className='space-y-3'>
                             <div className='relative flex items-center justify-center group'>
                                 <a href={`tel:${CONTACT_INFO.phone}`} className='text-foreground hover:text-primary transition-colors'>
@@ -52,10 +52,10 @@ const Contact = () => {
 
                     {/* Email */}
                     <div className='app-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
-                            <Mail className='w-8 h-8 text-card' />
+                        <div className='w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <Mail className='w-8 h-8 sm:w-10 sm:h-10 text-card' />
                         </div>
-                        <h3 className='font-inter text-3xl text-white'>Написать</h3>
+                        <h3 className='contact-card-title font-inter text-3xl text-white'>Написать</h3>
                         <div className='space-y-3'>
                             <div className='relative flex items-center justify-center group'>
                                 <a
@@ -87,7 +87,7 @@ const Contact = () => {
                                 title='WhatsApp'
                                 className='messenger-icon'
                             >
-                                <img src={WhatsappIcon} alt="WhatsappLink" className='w-14 h-14' />
+                                <img src={WhatsappIcon} alt="WhatsappLink" className='w-10 h-10 sm:w-14 sm:h-14' />
                             </a>
                             <a
                                 href={CONTACT_INFO.messengers.telegram}
@@ -96,17 +96,17 @@ const Contact = () => {
                                 title='Telegram'
                                 className='messenger-icon'
                             >
-                                <img src={TelegramIcon} alt="TelegramLink" className='w-14 h-14' />
+                                <img src={TelegramIcon} alt="TelegramLink" className='w-10 h-10 sm:w-14 sm:h-14' />
                             </a>
                         </div>
                     </div>
 
                     {/* Location */}
                     <div className='app-card p-8 text-center space-y-4'>
-                        <div className='w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
-                            <MapPin className='w-8 h-8 text-card' />
+                        <div className='w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-full flex items-center justify-center mx-auto'>
+                            <MapPin className='w-8 h-8 sm:w-10 sm:h-10 text-card' />
                         </div>
-                        <h3 className='font-inter text-3xl text-white'>Встретиться</h3>
+                        <h3 className='contact-card-title font-inter text-3xl text-white'>Встретиться</h3>
                         <p className='text-inter text-foreground text-sm'>{CONTACT_INFO.location}</p>
                     </div>
                 </div>
