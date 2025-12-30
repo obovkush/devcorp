@@ -138,8 +138,8 @@ const Contact = () => {
                                 <div key={faq.question} className='space-y-4'>
                                     <div className='flex items-start gap-3 justify-end'>
                                         <div className=' bg-card px-5 py-4 shadow-lg rounded-lg'>
-                                            <p className='font-inter-semibold text-base text-white mb-6'>{faq.question}</p>
-                                            <p className='font-inter-semibold text-xs text-foreground leading-relaxed mb-6'>{faq.answer}</p>
+                                            <p className='font-inter-semibold text-base text-white mb-6 text-balance'>{faq.question}</p>
+                                            <p className='font-inter-semibold text-xs text-foreground leading-relaxed mb-6 text-balance'>{faq.answer}</p>
                                         </div>
                                     </div>
                                 </div>

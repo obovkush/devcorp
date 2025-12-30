@@ -20,14 +20,14 @@ const Hero = () => {
                         <div className='relative space-y-2'>
                             <div className='ellipse1' />
                             {/* Main Heading */}
-                            <h1 className='section-description font-inter text-base md:text-xl lg:text-2xl text-primary leading-tight text-center lg:text-center'>
+                            <h1 className='section-description font-inter text-base md:text-xl lg:text-2xl text-primary leading-tight text-center lg:text-center text-pretty'>
                                 Профессиональная разработка программного обеспечения
                                 <br />
                                 для частных лиц и компаний
                             </h1>
 
                             {/* Subtitle */}
-                            <p className='section-description font-inter text-base text-muted text-center'>
+                            <p className='section-description font-inter text-base text-muted text-center text-pretty'>
                                 Создаем инновационные решения для вашего будущего <br />
                                 Современные технологии и надежность в каждом проекте
                             </p>
