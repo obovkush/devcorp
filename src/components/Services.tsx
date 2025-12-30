@@ -61,7 +61,7 @@ const Services = () => {
     const getSectionClass = () => {
         switch (currentTheme) {
             case 'dark':
-                return 'pt-20 pb-60 border-b border-border/50';
+                return 'pt-20 pb-20 sm:pb-60 border-b border-border/50';
             default:
                 return 'py-20 bg-muted/30';
         }
@@ -89,9 +89,9 @@ const Services = () => {
                                 style={{animationDelay: `${index * 0.15}s`}}
                             >
                                 <CardHeader className='flex items-start lg:h-24 md:items-center pb-6 sm:pb-0'>
-                                    <div className='flex items-center gap-3 md:gap-4 w-full'>
-                                        <div className='p-3 rounded-xl bg-primary-foreground text-card transition-colors flex-shrink-0'>
-                                            <Icon className='w-4 h-4 sm:w-8 sm:h-8' />
+                                    <div className='flex items-center p-0 gap-3 md:gap-4 w-full'>
+                                        <div className='p-2 rounded-xl bg-primary-foreground text-card transition-colors flex-shrink-0'>
+                                            <Icon className='w-8 h-8 sm:w-10 sm:h-10' />
                                         </div>
                                         <div className='flex-1 min-w-0'>
                                             <CardTitle className='text-xl sm:text-2xl font-semibold text-primary-foreground transition-colors leading-tight break-words'>
@@ -102,7 +102,7 @@ const Services = () => {
                                 </CardHeader>
 
                                 <CardContent className='flex flex-col flex-grow space-y-6'>
-                                    <div className='space-y-3 ml-11 sm:ml-16 pl-2 pr-6'>
+                                    <div className='space-y-3 ml-12 sm:ml-16 pl-2 pr-2 sm:pr-6'>
                                         {service.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className='flex items-start gap-3'>
                                                 <span className='card-content text-primary text-sm'>{feature}</span>
