@@ -21,61 +21,6 @@ const Footer = () => {
                         <p className='font-inter text-sm max-w-md'>Помогаем технологиям помогать бизнесу.</p>
                     </div>
 
-                    {/* Services */}
-                    <div>
-                        {/* <h4 className="font-inter-medium text-primary-foreground mb-4">Услуги</h4>
-                              <ul className="space-y-2">
-                                <li>
-                                  <a
-                                    href="#services"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className="transition-colors hover:text-primary-foreground"
-                                  >
-                                    Веб-разработка
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#services"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className="transition-colors hover:text-primary-foreground"
-                                  >
-                                    Мобильные приложения
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#services"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className="transition-colors hover:text-primary-foreground"
-                                  >
-                                    Корпоративные системы
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#services"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                                    }}
-                                    className="transition-colors hover:text-primary-foreground"
-                                  >
-                                    Автоматизация бизнес-процессов
-                                  </a>
-                                </li>
-                              </ul> */}
-                    </div>
-
                     {/* Contact */}
                     <div>
                         <h4 className='font-inter-medium text-primary-foreground mb-4'>Контакты</h4>
