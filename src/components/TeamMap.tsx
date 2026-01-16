@@ -127,7 +127,7 @@ const TeamMap = () => {
                             {/* Hover tooltip */}
                             {hoveredMember && (
                                 <div
-                                    className='absolute bg-gradient-to-l from-foreground to-background/20 rounded-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm'
+                                    className='absolute bg-gradient-to-r from-[#052018] to-[#25B78E]/80 rounded-lg p-3 md:p-4 z-10 max-w-xs md:max-w-sm'
                                     style={{
                                         left:
                                             hoveredMember.coordinates.xPercent < 20
@@ -149,7 +149,7 @@ const TeamMap = () => {
                                     <h4 className='font-medium text-white mb-1 text-sm md:text-base'>{hoveredMember.name}</h4>
                                     <p className='text-xs md:text-sm text-white mb-1'>{hoveredMember.role}</p>
                                     <p className='text-xs md:text-sm text-white mb-2'>{hoveredMember.location}</p>
-                                    <p className='text-xs text-white leading-relaxed'>{hoveredMember.description}</p>
+                                    <p className='text-xs text-white leading-relaxed text-balance'>{hoveredMember.description}</p>
                                 </div>
                             )}
                         </div>
